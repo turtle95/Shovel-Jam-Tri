@@ -21,8 +21,11 @@ public class ScrollingBackgroundController : MonoBehaviour {
 		_myTransform = GetComponent<Transform>();
 
 		DoubleScrollingImage();
-		ApplyScrollSpeed();
 
+	}
+
+	private void Start () {
+		ApplyScrollSpeed();
 	}
 
 	/// <summary>
