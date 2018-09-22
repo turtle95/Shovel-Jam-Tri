@@ -17,7 +17,7 @@ public class MoveInput : MonoBehaviour
     {
         public int ID;
         public float timeStamp;
-        public Vector2 position;
+        public Vector3 position;
         public TouchPhase touchPhase;
 
         public Finger(int id, float time, Vector3 pos, TouchPhase phase)
