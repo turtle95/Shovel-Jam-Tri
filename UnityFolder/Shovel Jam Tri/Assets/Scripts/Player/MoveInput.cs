@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+[System.Serializable]
 public enum MoveInputEventType
 {
     Tap, SwipeUp, SwipeDown
 }
-
+[System.Serializable]
 public class MoveInputEvent : UnityEvent<MoveInputEventType> { }
 public class MoveInput : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class MoveInput : MonoBehaviour
             touchPhase = phase;
         }
     }
-
+    public Camera cam;
     [SerializeField] private MoveInputEvent _onUserTouched;
 
     [System.NonSerialized] private List<Finger> activeFingers = new List<Finger>();
@@ -56,7 +56,7 @@ public class MoveInput : MonoBehaviour
 
     private Vector3 ComputeScreenToWorldPoint(Vector3 position)
     {
-        Ray ray = Camera.main.ScreenPointToRay(position);
+        Ray ray = cam.ScreenPointToRay(position);
         var point = ray.origin + (ray.direction * 10f);
         return point;
     }
