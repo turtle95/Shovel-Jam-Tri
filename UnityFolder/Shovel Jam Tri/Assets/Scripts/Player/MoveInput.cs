@@ -2,23 +2,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
 public enum MoveInputEventType
 {
-    Tap, SwipeUp, SwipeDown
+    Tap, Move
 }
 
-public class MoveInputEvent : UnityEvent<MoveInputEventType> { }
+[System.Serializable]
+public class MoveInputEvent : UnityEvent<MoveInputEventType, Vector3> { }
+
 public class MoveInput : MonoBehaviour
 {
     private struct Finger
     {
         public int ID;
+        public float timeStamp;
         public Vector2 position;
         public TouchPhase touchPhase;
 
-        public Finger(int id, Vector3 pos, TouchPhase phase)
+        public Finger(int id, float time, Vector3 pos, TouchPhase phase)
         {
             ID = id;
+            timeStamp = time;
             position = pos;
             touchPhase = phase;
         }
@@ -33,7 +38,7 @@ public class MoveInput : MonoBehaviour
         //touch screen stuff
         foreach (Touch touch in Input.touches)
         {
-            HandleTouch(new Finger(touch.fingerId, ComputeScreenToWorldPoint(touch.position), touch.phase));
+            HandleTouch(new Finger(touch.fingerId, Time.time, ComputeScreenToWorldPoint(touch.position), touch.phase));
         }
 
         if (Input.touchCount == 0)
@@ -41,15 +46,15 @@ public class MoveInput : MonoBehaviour
             //Mouse input
             if (Input.GetMouseButtonDown(0))
             {
-                HandleTouch(new Finger(10, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Began));
+                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Began));
             }
             if (Input.GetMouseButton(0))
             {
-                HandleTouch(new Finger(10, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Moved));
+                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Moved));
             }
             if (Input.GetMouseButtonUp(0))
             {
-                HandleTouch(new Finger(10, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Ended));
+                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Ended));
             }
         }
     }
@@ -67,33 +72,33 @@ public class MoveInput : MonoBehaviour
         {
             case TouchPhase.Began:
                 if (!activeFingers.Contains(finger))
-                {
-                    Debug.Log("touch id BEGAN " + finger.ID + " Position: " + finger.position);
                     activeFingers.Add(finger);
+                break;
+
+            case TouchPhase.Moved:
+                Finger oldFinger = activeFingers.Find(f => f.ID == finger.ID);
+
+                if (Vector3.Distance(oldFinger.position, finger.position) > 1f) //tolerance
+                {
+                    oldFinger.touchPhase = TouchPhase.Moved;
+                    oldFinger.position = finger.position;
+                    _onUserTouched.Invoke(MoveInputEventType.Move, oldFinger.position);
                 }
                 break;
+
             case TouchPhase.Ended:
                 Finger registeredFinger = activeFingers.Find(f => f.ID == finger.ID);
-                float distance = Vector3.Distance(registeredFinger.position, finger.position);
-                if (distance < 0.01f) //tolerance
-                {
-                    Debug.Log("User tap/click detected");
-                    _onUserTouched.Invoke(MoveInputEventType.Tap);
-                }
-                else
-                {
-                    Vector2 direct = finger.position - registeredFinger.position;
 
-                    if (direct.y > 0)
-                    {
-                        Debug.Log("User swiped up");
-                        _onUserTouched.Invoke(MoveInputEventType.SwipeUp);
-                    }
-                    else
-                    {
-                        Debug.Log("User swiped down");
-                        _onUserTouched.Invoke(MoveInputEventType.SwipeDown);
-                    }
+                if (registeredFinger.touchPhase == TouchPhase.Moved) //this is move/swipe input, remove it.
+                {
+                    activeFingers.Remove(registeredFinger);
+                    return;
+                }
+
+                float distance = Vector3.Distance(registeredFinger.position, finger.position);
+                if (distance < 1f && (Time.time - registeredFinger.timeStamp < 0.5f)) //tolerance
+                {
+                    _onUserTouched.Invoke(MoveInputEventType.Tap, finger.position);
                 }
                 activeFingers.Remove(registeredFinger);
                 break;
