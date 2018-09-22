@@ -29,6 +29,7 @@ public class MoveInput : MonoBehaviour
         }
     }
 
+    [SerializeField] private Camera _cam;
     [SerializeField] private MoveInputEvent _onUserTouched;
 
     [System.NonSerialized] private List<Finger> activeFingers = new List<Finger>();
@@ -61,7 +62,7 @@ public class MoveInput : MonoBehaviour
 
     private Vector3 ComputeScreenToWorldPoint(Vector3 position)
     {
-        Ray ray = Camera.main.ScreenPointToRay(position);
+        Ray ray = _cam.ScreenPointToRay(position);
         var point = ray.origin + (ray.direction * 10f);
         return point;
     }

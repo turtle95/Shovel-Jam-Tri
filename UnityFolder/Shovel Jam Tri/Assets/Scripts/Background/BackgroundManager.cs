@@ -5,7 +5,7 @@ public class BackgroundManager : MonoBehaviour {
 	public static BackgroundManager instance;
 	[Header("This singleton manages all moving background elements")]
 	[SerializeField] public ScrollingBackgroundController[] _scrollingBackground;
-	[SerializeField] public ParticleSystem[] _particles;
+	[SerializeField] public ParticleSystemWrapper[] _particles;
 
 	[SerializeField] public float _startSpeed = 0.0f;
 
@@ -61,7 +61,7 @@ public class BackgroundManager : MonoBehaviour {
 		// Send to all particle systems
 		for (int i = 0; i < _particles.Length; ++i) {
 			if (_particles[i] != null) {
-				// TODO: Set speed
+				_particles[i].SetBackgroundSpeed(_backgroundSpeed);
 			}
 			
 		}
