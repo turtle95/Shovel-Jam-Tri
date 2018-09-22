@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    [SerializeField] private Vector2 defaultMoveDirection;
+    [SerializeField] private Vector3 defaultMoveDirection;
 
     private Rigidbody rigidBodyComp;
 
