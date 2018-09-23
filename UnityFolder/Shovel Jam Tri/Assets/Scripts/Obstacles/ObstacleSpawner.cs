@@ -26,7 +26,7 @@ public class ObstacleSpawner : MonoBehaviour {
     float spawnTimeMax = 2f;
     public int stage = 1;
 
-    float prevDist = 0;
+    //float prevDist = 0;
     float curDist = 0;
     float goalDist = 5;
 
@@ -34,16 +34,17 @@ public class ObstacleSpawner : MonoBehaviour {
 
 	void Start () {
         StartCoroutine(WhenToSpawn());
-        prevDist = player.position.x;
+        //prevDist = player.position.x;
     }
 
     private void Update()
     {
         curDist = player.position.x; 
-        if(curDist > goalDist)
+        if(curDist < goalDist)
         {
             SpawnSomething();
-            goalDist = curDist + 5;
+            goalDist = curDist -5;
+            Debug.Log("Current Dist " + curDist + "goal Dist " + goalDist);
         }
     }
 
@@ -69,7 +70,7 @@ public class ObstacleSpawner : MonoBehaviour {
             {
                 case 0:
                     chosenSpawner = topScreen.position;
-                    Debug.Log(topScreen.position);
+                   // Debug.Log(topScreen.position);
                     randNum = Random.Range(-widthRange, 0);
                     spawnPos = new Vector3(chosenSpawner.x + randNum, chosenSpawner.y, chosenSpawner.z);
                     break;
