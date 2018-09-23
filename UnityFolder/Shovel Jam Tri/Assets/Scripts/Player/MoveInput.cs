@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public enum MoveInputEventType
 {
-    Tap, Move
+    Tap, Move, None
 }
 
 [System.Serializable]
@@ -49,15 +49,19 @@ public class MoveInput : MonoBehaviour
             {
                 HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Began));
             }
-            if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(0))
             {
                 HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Moved));
             }
-            if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0))
             {
                 HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Ended));
             }
+            else
+                _onUserTouched.Invoke(MoveInputEventType.None, Vector3.zero);
         }
+        else
+            _onUserTouched.Invoke(MoveInputEventType.None, Vector3.zero);
     }
 
     private Vector3 ComputeScreenToWorldPoint(Vector3 position)
