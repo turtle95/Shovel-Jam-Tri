@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class CloudLayer : MonoBehaviour {
 
-	public enum CloudShaderType { multiLayer, swirls }
-
 	// Set this high for close clouds, low for far away ones
-	[SerializeField] public CloudShaderType _cloudShader;
 	[SerializeField] public float _movementMult = 0.2f;
 
 	[SerializeField] public Vector2 _cloudVel;
-	[SerializeField] public Vector2 _maskVel1;
-	[SerializeField] public Vector2 _maskVel2;
-
 	private Vector2 _cloudTexOffset = Vector2.zero;
-	private Vector2 _maskTexOffset1 = Vector2.zero;
-	private Vector2 _maskTexOffset2 = Vector2.zero;
 
 	private MeshRenderer _renderer;
 	private Vector3 _lastPosition;
@@ -34,13 +26,9 @@ public class CloudLayer : MonoBehaviour {
 
 		// Apply camera movement
 		_cloudTexOffset += frameMovement * _movementMult;
-		_maskTexOffset1 += frameMovement * _movementMult * 0.25f;
-		_maskTexOffset2 += frameMovement * _movementMult * 0.33f;
 
 		// Apply velocity
 		_cloudTexOffset += _cloudVel * Time.deltaTime;
-		_maskTexOffset1 += _maskVel1 * Time.deltaTime;
-		_maskTexOffset2 += _maskVel2 * Time.deltaTime;
 
 		_renderer.material.SetVector("_CameraOffset", _cloudTexOffset);
 
