@@ -84,12 +84,12 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Dash()
     {
-        runTimeMoveSpeed += 2;
+        runTimeMoveSpeed += 10;
         rigidBodyComp.AddForce(rigidBodyComp.velocity.normalized * runTimeMoveSpeed, ForceMode.Impulse);
-        if (rigidBodyComp.velocity.magnitude > runTimeMoveSpeed)
-        {
-            rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * runTimeMoveSpeed;
-        }
+        //if (rigidBodyComp.velocity.magnitude > runTimeMoveSpeed)
+        //{
+        //    rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * runTimeMoveSpeed;
+        //}
     }
    
     private void RotatePlayer()
