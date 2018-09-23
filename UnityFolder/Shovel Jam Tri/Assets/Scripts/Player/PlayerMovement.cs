@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private Vector3 defaultMoveDirection;
-    [SerializeField] private float defaultMoveSpeed;
+    public float defaultMoveSpeed;
 
     private Rigidbody rigidBodyComp;
+    [HideInInspector] public float runTimeMoveSpeed;
 
     void Start()
     {
         rigidBodyComp = GetComponent<Rigidbody>();
+        runTimeMoveSpeed = defaultMoveSpeed;
     }
 
     private void FixedUpdate()
     {
-        rigidBodyComp.AddRelativeForce(defaultMoveDirection);
+        //rigidBodyComp.AddRelativeForce(defaultMoveDirection);
     }
 
     private void Update()
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             MoveToward(playerInput.position);
         }
-        else if (rigidBodyComp.velocity.magnitude < defaultMoveSpeed)
+        else if (rigidBodyComp.velocity.magnitude < runTimeMoveSpeed)
         {
             MoveToward(transform.position + defaultMoveDirection);
         }
@@ -62,9 +64,13 @@ public class PlayerMovement : MonoBehaviour {
     {
         pos.z = transform.position.z;
 
-        if (pos.x > transform.position.x)
+        if (pos.x < transform.position.x)
         {
-            rigidBodyComp.AddForce((pos - transform.position).normalized * Time.deltaTime, ForceMode.Impulse);
+            rigidBodyComp.AddForce((pos - transform.position).normalized * runTimeMoveSpeed * Time.deltaTime, ForceMode.Impulse);
+            if (rigidBodyComp.velocity.magnitude > runTimeMoveSpeed)
+            {
+                rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * runTimeMoveSpeed;
+            }
         }
 
         //uncomment this section to slow down
@@ -72,13 +78,18 @@ public class PlayerMovement : MonoBehaviour {
         //{
         //    rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * defaultMoveSpeed;
         //}
-
+        //Debug.Log(rigidBodyComp.velocity.magnitude);
         RotatePlayer();
     }
 
     public void Dash()
     {
-        rigidBodyComp.AddForce(rigidBodyComp.velocity.normalized, ForceMode.Impulse);
+        runTimeMoveSpeed += 2;
+        rigidBodyComp.AddForce(rigidBodyComp.velocity.normalized * runTimeMoveSpeed, ForceMode.Impulse);
+        if (rigidBodyComp.velocity.magnitude > runTimeMoveSpeed)
+        {
+            rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * runTimeMoveSpeed;
+        }
     }
    
     private void RotatePlayer()
