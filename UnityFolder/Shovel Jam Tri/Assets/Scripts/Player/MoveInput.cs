@@ -42,26 +42,26 @@ public class MoveInput : MonoBehaviour
             HandleTouch(new Finger(touch.fingerId, Time.time, ComputeScreenToWorldPoint(touch.position), touch.phase));
         }
 
-        if (Input.touchCount == 0)
+        if (activeFingers.Count == 0)
         {
-            //Mouse input
-            if (Input.GetMouseButtonDown(0))
-            {
-                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Began));
-            }
-            else if (Input.GetMouseButton(0))
-            {
-                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Moved));
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Ended));
-            }
-            else
-                _onUserTouched.Invoke(MoveInputEventType.None, Vector3.zero);
-        }
-        else
             _onUserTouched.Invoke(MoveInputEventType.None, Vector3.zero);
+
+            ////Mouse input
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Began));
+            //}
+            //else if (Input.GetMouseButton(0))
+            //{
+            //    HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Moved));
+            //}
+            //else if (Input.GetMouseButtonUp(0))
+            //{
+            //    HandleTouch(new Finger(10, Time.time, ComputeScreenToWorldPoint(Input.mousePosition), TouchPhase.Ended));
+            //}
+            //else
+            //    _onUserTouched.Invoke(MoveInputEventType.None, Vector3.zero);
+        }
     }
 
     private Vector3 ComputeScreenToWorldPoint(Vector3 position)

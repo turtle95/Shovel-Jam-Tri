@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (playerInput.type == MoveInputEventType.Tap)
         {
-            Dash(playerInput.position);
+            Dash();
         }
         else if (playerInput.type == MoveInputEventType.Move)
         {
@@ -53,28 +53,32 @@ public class PlayerMovement : MonoBehaviour {
     {
         playerInput.type = type;
         playerInput.position = position;
+
+        if (type == MoveInputEventType.Tap)
+            Dash();
     }
 
     public void MoveToward(Vector3 pos)
     {
         pos.z = transform.position.z;
-        rigidBodyComp.AddForce((pos - transform.position).normalized  * Time.deltaTime, ForceMode.Impulse);
 
-        if (rigidBodyComp.velocity.magnitude > defaultMoveSpeed)
+        if (pos.x > transform.position.x)
         {
-            rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * defaultMoveSpeed;
+            rigidBodyComp.AddForce((pos - transform.position).normalized * Time.deltaTime, ForceMode.Impulse);
         }
 
+        //uncomment this section to slow down
+        //if (rigidBodyComp.velocity.magnitude > defaultMoveSpeed)
+        //{
+        //    rigidBodyComp.velocity = rigidBodyComp.velocity.normalized * defaultMoveSpeed;
+        //}
+
         RotatePlayer();
-        Debug.Log("Veclocity mag " + rigidBodyComp.velocity.magnitude);
     }
 
-    public void Dash(Vector3 pos)
+    public void Dash()
     {
-        pos.z = transform.position.z;
-        rigidBodyComp.AddForce(transform.forward * 100f * Time.deltaTime, ForceMode.Impulse);
-
-        Debug.Log("Veclocity mag " + rigidBodyComp.velocity.magnitude);
+        rigidBodyComp.AddForce(rigidBodyComp.velocity.normalized, ForceMode.Impulse);
     }
    
     private void RotatePlayer()
