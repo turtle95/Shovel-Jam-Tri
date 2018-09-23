@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CloudLayerNear
-  m_Shader: {fileID: 4800000, guid: 98c4869911b87bd4eb1984cca86e8418, type: 3}
+  m_Name: BackgroundClouds
+  m_Shader: {fileID: 4800000, guid: 90251695a3d955142bf35d8dc7dec4b7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -68,6 +68,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _CloudReact: 0.2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -82,11 +83,15 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _SwirlIntensity: 1.19
+    - _SwirlReact: 0.513
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _CameraOffset: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _StarColor: {r: 1, g: 1, b: 1, a: 1}
+    - _StarColor: {r: 0.993709, g: 1, b: 0.8349056, a: 1}
+    - _SwirlTintColor: {r: 0.4764151, g: 1, b: 0.5123924, a: 0.38431373}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.315, g: 0.7979498, b: 1, a: 1}
+    - _TintColor: {r: 0.448, g: 0.8359771, b: 1, a: 0.7137255}

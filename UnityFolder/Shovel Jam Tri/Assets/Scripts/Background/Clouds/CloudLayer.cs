@@ -42,14 +42,7 @@ public class CloudLayer : MonoBehaviour {
 		_maskTexOffset1 += _maskVel1 * Time.deltaTime;
 		_maskTexOffset2 += _maskVel2 * Time.deltaTime;
 
-		_renderer.material.SetTextureOffset("_MainTex", _cloudTexOffset);
-		if (_cloudShader == CloudShaderType.multiLayer) {
-			_renderer.material.SetTextureOffset("_MaskTex1", _maskTexOffset1);
-			_renderer.material.SetTextureOffset("_MaskTex2", _maskTexOffset2);
-		} else {
-			_renderer.material.SetTextureOffset("_MaskTex", _maskTexOffset1);
-		}
-		
+		_renderer.material.SetVector("_CameraOffset", _cloudTexOffset);
 
 	}
 
