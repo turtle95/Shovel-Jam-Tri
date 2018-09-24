@@ -65,7 +65,32 @@ ModelImporter:
     13700000: whale_riggin2:pCube1
     13700002: whale_riggin2:pSphere3
     13700004: whale_riggin2:pSphere4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whale_riggin2_lambert3
+    second: {fileID: 2100000, guid: a57128653bb38c54898447c002ac2c80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whale_riggin2_lambert4
+    second: {fileID: 2100000, guid: 2b6396f98e7e91a4fbe7d0866005adfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whale_riggin2_lambert5
+    second: {fileID: 2100000, guid: 9d43c76fb00d9914bbeb7625cf22f302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whale_riggin2_lambert6
+    second: {fileID: 2100000, guid: fc41e584432ff14498331aabe8fe176a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whale_riggin2_lambert7
+    second: {fileID: 2100000, guid: 15f5ca4ae34dff644939dd47afa1cadf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
