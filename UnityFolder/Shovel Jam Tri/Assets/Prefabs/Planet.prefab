@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 135705502315496750}
   - component: {fileID: 54031339753114000}
   - component: {fileID: 114201417144303906}
-  - component: {fileID: 114875910823942542}
+  - component: {fileID: 114517312982378838}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -291,7 +291,7 @@ MonoBehaviour:
   _range: 15
   _maxStrength: 7
   _minStrength: 0
---- !u!114 &114875910823942542
+--- !u!114 &114517312982378838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

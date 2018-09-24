@@ -44,7 +44,7 @@ public class ObstacleSpawner : MonoBehaviour {
         {
             SpawnSomething();
             goalDist = curDist -15;
-            Debug.Log("Current Dist " + curDist + "goal Dist " + goalDist);
+          //  Debug.Log("Current Dist " + curDist + "goal Dist " + goalDist);
         }
     }
 

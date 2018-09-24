@@ -21,6 +21,9 @@ public class ObstacleCollision : MonoBehaviour
             Rigidbody playerRigid = collision.gameObject.GetComponent<Rigidbody>();
             playerRigid.velocity = Vector3.zero;
 
+            Transform playerT = collision.gameObject.GetComponent<Transform>();
+            playerT.position = new Vector3(playerT.position.x, playerT.position.y, 0);
+
             Destroy(gameObject);
         }
     }
