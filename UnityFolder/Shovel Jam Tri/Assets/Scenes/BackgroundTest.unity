@@ -4897,11 +4897,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 23634265221432390, guid: 762d7c171f9c40641b79bb1b488d7681,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5481d1e37810a914ebc6715eaccb9c71, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762d7c171f9c40641b79bb1b488d7681, type: 2}
   m_IsPrefabAsset: 0
@@ -4949,11 +4944,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 23782294188236116, guid: 0d619565b49190d4a977a3f950f1a7cd,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 567b165680f0c0a4298cbc519a687c4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d619565b49190d4a977a3f950f1a7cd, type: 2}
   m_IsPrefabAsset: 0
@@ -5275,7 +5265,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

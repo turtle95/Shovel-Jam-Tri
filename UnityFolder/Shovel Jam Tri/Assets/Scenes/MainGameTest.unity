@@ -176,7 +176,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4cb6aa8e4fccd47b67aaaf993dba64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 534669904}
+  _cam: {fileID: 0}
   _onUserTouched:
     m_PersistentCalls:
       m_Calls: []
