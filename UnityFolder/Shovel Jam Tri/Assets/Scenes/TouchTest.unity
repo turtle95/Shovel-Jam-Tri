@@ -4817,14 +4817,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 946421895}
-  speed: 3
+  speed: 10
   dashSpeed: 4
   targetObj: {fileID: 682067688}
   rb: {fileID: 272641381}
   dashParticles: {fileID: 1698244400}
   dashParticles2: {fileID: 1232705386}
-  maxSpeed: 20
-  maxRegSpeed: 5
+  maxSpeed: 15
+  maxRegSpeed: 3
 --- !u!114 &272641377
 MonoBehaviour:
   m_ObjectHideFlags: 0
