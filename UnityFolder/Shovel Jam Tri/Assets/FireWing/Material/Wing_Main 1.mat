@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Wing_Main
+  m_Name: Wing_Main 1
   m_Shader: {fileID: 4800000, guid: c21bcbc9ba3d0bd429196396aa0e9563, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -100,4 +100,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0, g: 0.2627451, b: 0.04651304, a: 1}
+    - _TintColor: {r: 0.12259703, g: 0.5879995, b: 0.8962264, a: 1}
