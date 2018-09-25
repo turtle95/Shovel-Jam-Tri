@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Bump:
+        m_Texture: {fileID: 2800000, guid: 5f43e68eab46949428e7c51c9a61979b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -76,5 +80,5 @@ Material:
     m_Colors:
     - _Color: {r: 0.13710395, g: 0.3679245, b: 0.16980605, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.740566, g: 0.9012696, b: 1, a: 1}
-    - _SpecTint: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.740566, g: 0.9012696, b: 1, a: 0.08235294}
+    - _SpecTint: {r: 1, g: 1, b: 1, a: 0.6509804}

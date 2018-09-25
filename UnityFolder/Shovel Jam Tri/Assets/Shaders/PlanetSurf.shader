@@ -3,7 +3,7 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_SpecTint ("Spec Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_Bump ("Bumpmap (RGB)", 2D) = "white" {}
+		_Bump ("Bumpmap (RGB)", 2D) = "bump" {}
 		_SpecPow ("Spec Power", Range(0.05,1.0)) = 0.3
 		_RimColor ("Rim Color", Color) = (1,1,1,1)
 		_RimPow ("Rim Power", Range(0.05,10.0)) = 0.3
@@ -37,8 +37,6 @@
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb * _Color.rgb;
 
-			o.Normal = UnpackNormal(tex2D (_Bump, IN.uv_Bump));
-
 			/* RIM */
 			half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
 			o.Emission = _RimColor.rgb * pow(rim, _RimPow) * _RimColor.a;
@@ -48,6 +46,8 @@
 			_SpecColor.rgb = c.rgb * _SpecTint.rgb * _SpecTint.a;
 			o.Gloss = _SpecTint.a;
 			o.Alpha = _SpecTint.a;
+
+			o.Normal = UnpackNormal(tex2D (_Bump, IN.uv_Bump));
 
 		}
 		ENDCG
