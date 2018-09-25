@@ -3,6 +3,7 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_SpecTint ("Spec Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_Bump ("Bumpmap (RGB)", 2D) = "white" {}
 		_SpecPow ("Spec Power", Range(0.05,10.0)) = 0.3
 		_RimColor ("Color", Color) = (1,1,1,1)
 		_RimPow ("Rim Power", Range(0.05,10.0)) = 0.3
@@ -18,6 +19,7 @@
 		#pragma target 3.0
 
 		sampler2D _MainTex;
+		sampler2D _Bump;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -33,6 +35,8 @@
 		void surf (Input IN, inout SurfaceOutput o) {
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb * _Color.rgb;
+
+			o.Normal = UnpackNormal(tex2D (_MainTex, IN.uv_MainTex));
 
 			/* RIM */
 			half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
