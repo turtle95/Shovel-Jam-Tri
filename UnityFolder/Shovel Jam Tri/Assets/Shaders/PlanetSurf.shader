@@ -3,7 +3,6 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_SpecTint ("Spec Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_Bump ("Bumpmap (RGB)", 2D) = "bump" {}
 		_SpecPow ("Spec Power", Range(0.05,1.0)) = 0.3
 		_RimColor ("Rim Color", Color) = (1,1,1,1)
 		_RimPow ("Rim Power", Range(0.05,10.0)) = 0.3
@@ -23,7 +22,6 @@
 
 		struct Input {
 			float2 uv_MainTex;
-			float2 uv_Bump;
 			float3 viewDir;
 		};
 
@@ -46,8 +44,6 @@
 			_SpecColor.rgb = c.rgb * _SpecTint.rgb * _SpecTint.a;
 			o.Gloss = _SpecTint.a;
 			o.Alpha = _SpecTint.a;
-
-			o.Normal = UnpackNormal(tex2D (_Bump, IN.uv_Bump));
 
 		}
 		ENDCG
