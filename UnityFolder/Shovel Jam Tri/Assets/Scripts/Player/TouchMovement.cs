@@ -71,7 +71,10 @@ public class TouchMovement : MonoBehaviour {
     void Move()
     {
         if (rb.velocity.magnitude < maxRegSpeed) //if rb's moving slower than 5, then add force
-            rb.AddForce (transform.forward * speed);
+            rb.AddForce(transform.forward * speed);
+      
+
+            
             //rb.velocity = transform.forward * speed;
         if(transform.position.z  != 0)
         {
