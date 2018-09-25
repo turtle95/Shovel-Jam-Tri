@@ -28898,7 +28898,6 @@ MonoBehaviour:
   obsListOne:
   - {fileID: 1568219085161574, guid: 0d619565b49190d4a977a3f950f1a7cd, type: 2}
   - {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9, type: 2}
-  - {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2, type: 2}
   obsListTwo: []
   obsListThree: []
   spawnBox: {x: 0, y: 0, z: 0}
