@@ -34,7 +34,7 @@ public class TouchMovement : MonoBehaviour {
         w = Screen.width ; //finds the height and width of the screen and halves it
         h = Screen.height ;
 
-        Debug.Log(rb.velocity.magnitude);
+       // Debug.Log(rb.velocity.magnitude);
         Touch[] myTouches = Input.touches; //gets an array of all the touches going on
         
         touchPoint = cam.ScreenToWorldPoint(new Vector3(w, h, 5)); //initializes the touchPoint to being straight in front of the player... probably don't need this anymore
@@ -70,8 +70,14 @@ public class TouchMovement : MonoBehaviour {
 
     void Move()
     {
-        if (rb.velocity.magnitude < maxRegSpeed) //if rb's moving slower than 5, then add force
+        if (rb.velocity.magnitude < maxSpeed) //if rb's moving slower than 5, then add force
             rb.AddForce(transform.forward * speed);
+        else
+        {     //if you are above the speed limit then add force as normal but also add a force in the opposite direction that will keep you in the speed limit
+            rb.AddForce(transform.forward * speed);
+            rb.AddForce(-(rb.velocity.normalized * (rb.velocity.magnitude - maxSpeed)));
+            
+        }
       
 
             
