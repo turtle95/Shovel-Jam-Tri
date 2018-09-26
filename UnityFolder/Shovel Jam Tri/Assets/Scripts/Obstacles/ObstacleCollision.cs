@@ -24,6 +24,8 @@ public class ObstacleCollision : MonoBehaviour
             Transform playerT = collision.gameObject.GetComponent<Transform>();
             playerT.position = new Vector3(playerT.position.x, playerT.position.y, 0);
 
+            collision.gameObject.BroadcastMessage("ResetCombo");
+
             Destroy(gameObject);
         }
     }
