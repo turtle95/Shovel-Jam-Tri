@@ -34,7 +34,7 @@ public class TouchMovement : MonoBehaviour {
         w = Screen.width ; //finds the height and width of the screen and halves it
         h = Screen.height ;
 
-       // Debug.Log(rb.velocity.magnitude);
+      
         Touch[] myTouches = Input.touches; //gets an array of all the touches going on
         
         touchPoint = cam.ScreenToWorldPoint(new Vector3(w, h, 5)); //initializes the touchPoint to being straight in front of the player... probably don't need this anymore
@@ -65,6 +65,7 @@ public class TouchMovement : MonoBehaviour {
         }
         touchPoint.z = 0; //sets the z value of the position to 0
         target.position = touchPoint; //sets the target position to the touchPoint
+        touchPoint = new Vector3(transform.position.x - 3, touchPoint.y, 0); //this makes it so that you get the same angle of movement no matter where you touch on the screen
         Move();
 	}
 
@@ -91,7 +92,7 @@ public class TouchMovement : MonoBehaviour {
         if (touching == true)
         {
             //looks at the target position
-            transform.LookAt(target.position);
+            transform.LookAt(touchPoint);
             targetObj.SetActive(true);
         }
 
