@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward * launchSpeed, ForceMode.Impulse);
+        rb.AddForce(transform.forward * launchSpeed, ForceMode.Impulse);
 	}
 
     private void OnCollisionEnter(Collision collision)

@@ -10,8 +10,8 @@ public class ButtonFire : MonoBehaviour {
 
     public Transform aimer;
 
+    Rigidbody rb;
     //turns things on and off depending on which state is called
-
     public void Pressed()
     {
         for(int i =0; i< active.Length; i++)
@@ -24,7 +24,8 @@ public class ButtonFire : MonoBehaviour {
             inactive[i].SetActive(false);
         }
 
-        Instantiate(bulletRock, aimer.position, aimer.rotation);
+        //rb = Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
+        //rb.AddForce(Vector3.forward, ForceMode.Impulse);
     }
 
     public void notPressed()

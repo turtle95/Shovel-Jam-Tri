@@ -12,30 +12,35 @@ public class ButtonMain : MonoBehaviour {
     public ButtonFire highScore;
 
     void Update () {
-        if (Input.GetTouch(0).phase != TouchPhase.Ended) //stores the position of the touch
+        if (Input.touchCount > 0)
         {
-            //sens ray from touch position and activates button that was touched
-            Ray ray = cam.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 1000))
+            if (Input.GetTouch(0).phase != TouchPhase.Ended) //stores the position of the touch
             {
-                if (hit.collider.gameObject.CompareTag("Play"))
+                //sens ray from touch position and activates button that was touched
+                Ray ray = cam.ScreenPointToRay(Input.GetTouch(0).position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 1000))
                 {
-                    play.Pressed();
+                    if (hit.collider.gameObject.CompareTag("Play"))
+                    {
+                        play.Pressed();
 
-                } else if (hit.collider.gameObject.CompareTag("Credits"))
-                {
-                    credits.Pressed();
-                    highScore.notPressed();
-                } else if (hit.collider.gameObject.CompareTag("HighScore"))
-                {
-                    highScore.Pressed();
-                    credits.notPressed();
+                    }
+                    else if (hit.collider.gameObject.CompareTag("Credits"))
+                    {
+                        credits.Pressed();
+                        highScore.notPressed();
+                    }
+                    else if (hit.collider.gameObject.CompareTag("HighScore"))
+                    {
+                        highScore.Pressed();
+                        credits.notPressed();
+                    }
+
                 }
+                touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 5));
 
             }
-            touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 5));
-            
         }
     }
 

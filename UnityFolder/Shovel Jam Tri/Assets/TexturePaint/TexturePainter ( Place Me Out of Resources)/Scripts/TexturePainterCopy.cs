@@ -44,7 +44,7 @@ public class TexturePainterCopy : MonoBehaviour {
                 brushObj = Instantiate(smudge); //Paint a brush
                 brushObj.GetComponent<SpriteRenderer>().color = brushColor; //Set the brush color
 
-            //brushColor.a = brushSize * 2.0f; // Brushes have alpha to have a merging effect when painted over.
+            brushColor.a = brushSize * 2.0f; // Brushes have alpha to have a merging effect when painted over.
             brushObj.transform.parent = brushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition; //The position of the brush (in the UVMap)
             brushObj.transform.localScale = Vector3.one * brushSize;//The size of the brush
