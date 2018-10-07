@@ -1,12 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using BayatGames.SaveGameFree;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    float score;
-    [HideInInspector] public float combo = 1;
+    [System.Serializable]
+    public struct MaxScores
+    {
+        public const string identifier = "maxscore.dat";
+        public int score;
+        public int combo;
+    }
+
+    private MaxScores maxScores;
+
+    int score;
+    [HideInInspector] public int combo = 1;
 
     public GameObject gameFeel; //cool particle effect to spawn when collectable is grabbed
     public GameObject comboGameFeel;
@@ -16,8 +26,21 @@ public class Score : MonoBehaviour {
 
     private void Start()
     {
+        InitSaveGame();
+        maxScores = LoadScores();
+
         scoreCounter.text = "Score: " + score.ToString();
         comboCounter.text = "Combo: " + combo.ToString();
+    }
+
+    private void OnDisable()
+    {
+        SaveScores();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveScores();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,8 +60,12 @@ public class Score : MonoBehaviour {
             else
                 Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
 
-
             Destroy(other.gameObject); //kill the krill :)
+
+            if (score > maxScores.score)
+                maxScores.score = score;
+            if (combo > maxScores.combo)
+                maxScores.combo = combo;
         }
     }
 
@@ -47,4 +74,56 @@ public class Score : MonoBehaviour {
         combo = 1;
         comboCounter.text = "Combo: " + combo.ToString();
     }
+
+    #region save/load MaxScores
+    private void InitSaveGame()
+    {
+        if (Debug.isDebugBuild)
+            SaveGame.SavePath = SaveGamePath.DataPath; //local path if debug build
+        else
+            SaveGame.SavePath = SaveGamePath.PersistentDataPath; //save to persistent location on release builds
+    }
+
+    private MaxScores LoadScores()
+    {
+        if (SaveGame.Exists(MaxScores.identifier))
+        {
+            try
+            {
+                MaxScores data;
+                if (Debug.isDebugBuild)
+                {
+                    data = SaveGame.Load(MaxScores.identifier, new MaxScores(), false);
+                }
+                else
+                {
+                    data = SaveGame.Load(MaxScores.identifier, new MaxScores(), true);
+                }
+                return data;
+            }
+            catch (Exception)
+            {
+                SaveGame.Delete(MaxScores.identifier);
+                return new MaxScores();
+            }
+        }
+        else
+            return new MaxScores();
+    }
+
+    private void SaveScores()
+    {
+        try
+        {
+            if (Debug.isDebugBuild)
+                SaveGame.Save(MaxScores.identifier, maxScores, false);
+            else
+                SaveGame.Save(MaxScores.identifier, maxScores, true);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+    }
+    #endregion
 }
