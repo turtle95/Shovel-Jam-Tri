@@ -44,6 +44,7 @@ public class TouchMovement : MonoBehaviour {
         {
             if (myTouches[i].phase != TouchPhase.Ended ) //stores the position of the touch
             {
+               
                 touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 5));
                
                 touching = true;
