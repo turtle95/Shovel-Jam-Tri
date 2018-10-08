@@ -13,9 +13,9 @@ public class Score : MonoBehaviour {
         public int combo;
     }
 
-    private MaxScores maxScores;
+    public MaxScores maxScores;
 
-    int score;
+    public int score;
     [HideInInspector] public int combo = 1;
 
     public GameObject gameFeel; //cool particle effect to spawn when collectable is grabbed
@@ -55,10 +55,9 @@ public class Score : MonoBehaviour {
             comboCounter.text = "Combo: " + combo.ToString();
 
 
-            if (combo > 1)
-                Instantiate(comboGameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
-            else
-                Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
+           
+            Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
+           
 
             Destroy(other.gameObject); //kill the krill :)
 
@@ -111,7 +110,7 @@ public class Score : MonoBehaviour {
             return new MaxScores();
     }
 
-    private void SaveScores()
+    public void SaveScores()
     {
         try
         {
