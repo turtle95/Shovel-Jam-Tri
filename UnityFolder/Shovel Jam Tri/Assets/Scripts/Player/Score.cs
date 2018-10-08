@@ -28,9 +28,10 @@ public class Score : MonoBehaviour {
     {
         InitSaveGame();
         maxScores = LoadScores();
-
-        scoreCounter.text = "Score: " + score.ToString();
-        comboCounter.text = "Combo: " + combo.ToString();
+        if (scoreCounter)
+            scoreCounter.text = "Score: " + score.ToString();
+        if (comboCounter)
+            comboCounter.text = "Combo: " + combo.ToString();
     }
 
     private void OnDisable()
