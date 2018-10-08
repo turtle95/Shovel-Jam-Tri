@@ -24,7 +24,7 @@ public class ButtonFire : MonoBehaviour {
             inactive[i].SetActive(false);
         }
 
-        //rb = Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
+        Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
         //rb.AddForce(Vector3.forward, ForceMode.Impulse);
     }
 
