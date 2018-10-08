@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int _health;
 
     public GameObject scoreMenu;
+    public AudioSource deathSoundSource;
 
     public void TakeDamage(int damage)
     {
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
         if (_health <= 0)
         {
             Debug.Log("player died.");
+            deathSoundSource.Play();
             scoreMenu.SetActive(true);
             gameObject.SetActive(false);
         }
