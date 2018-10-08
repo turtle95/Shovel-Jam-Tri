@@ -15,9 +15,6 @@ public class ObstacleCollision : MonoBehaviour
             Health healthComp = collision.gameObject.GetComponent<Health>();
             healthComp.TakeDamage(_damage);
 
-            PlayerMovement playerMove = collision.gameObject.GetComponent<PlayerMovement>();
-            playerMove.runTimeMoveSpeed = playerMove.defaultMoveSpeed;
-
             Rigidbody playerRigid = collision.gameObject.GetComponent<Rigidbody>();
             playerRigid.velocity = Vector3.zero;
 
