@@ -32,7 +32,11 @@ public class ObstacleSpawner : MonoBehaviour {
 
     public Transform player;
 
+    private List<Transform> spawnedObjects;
+
 	void Start () {
+        spawnedObjects = new List<Transform>();
+
         StartCoroutine(WhenToSpawn());
         //prevDist = player.position.x;
     }
@@ -45,6 +49,24 @@ public class ObstacleSpawner : MonoBehaviour {
             SpawnSomething();
             goalDist = curDist -15;
           //  Debug.Log("Current Dist " + curDist + "goal Dist " + goalDist);
+        }
+
+        //remove stuff if it is behind and far enough from player
+        for (int i = spawnedObjects.Count - 1; i >= 0; i --)
+        {
+            var objTransform = spawnedObjects[i];
+            if (objTransform == null)
+            {
+                spawnedObjects.RemoveAt(i);
+                continue;
+            }
+
+            if (objTransform.position.x > player.position.x
+            && Mathf.Abs(objTransform.position.x - player.position.x) > 50f)
+            {
+                Destroy(objTransform.gameObject);
+                spawnedObjects.RemoveAt(i);
+            }
         }
     }
 
@@ -60,8 +82,6 @@ public class ObstacleSpawner : MonoBehaviour {
     //spawns obstacles to avoid
     void SpawnSomething()
     {
-
-
         for (int i = 0; i < 4; i++)
         {
             //spawn something at both top, bottom, and right of screen
@@ -87,28 +107,29 @@ public class ObstacleSpawner : MonoBehaviour {
                 default:                  
                     break;
             }
-            
-            
 
             //changes which list an obstacle is chosen from
+            GameObject newObject = null;
             switch (stage)
             {
                 case 1:
                     randNumInt = Random.Range(0, obsListOne.Length);
-                    Instantiate(obsListOne[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListOne[randNumInt], spawnPos, transform.rotation);
                     break;
                 case 2:
                     randNumInt = Random.Range(0, obsListTwo.Length);
-                    Instantiate(obsListTwo[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListTwo[randNumInt], spawnPos, transform.rotation);
                     break;
                 case 3:
                     randNumInt = Random.Range(0, obsListThree.Length);
-                    Instantiate(obsListThree[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListThree[randNumInt], spawnPos, transform.rotation);
                     break;
                 default:
                     break;
             }
+
+            if (newObject != null)
+                spawnedObjects.Add(newObject.transform);
         }
-        
     }
 }

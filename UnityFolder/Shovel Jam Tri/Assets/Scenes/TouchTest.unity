@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015554532, g: 0.015063206, b: 0.014816795, a: 1}
+  m_IndirectSpecularColor: {r: 0.016223663, g: 0.014705494, b: 0.01387946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5072,8 +5072,6 @@ GameObject:
   m_Component:
   - component: {fileID: 272641382}
   - component: {fileID: 272641381}
-  - component: {fileID: 272641380}
-  - component: {fileID: 272641379}
   - component: {fileID: 272641378}
   - component: {fileID: 272641377}
   - component: {fileID: 272641376}
@@ -5130,48 +5128,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23064466, y: 0.15296133, z: 0.61621565}
   m_Center: {x: -0.005124773, y: 0.015695184, z: 0.06415537}
---- !u!114 &272641379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272641375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d459d36883aa8244854c4d2b5c6643f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultMoveDirection: {x: -1, y: 0, z: 1}
-  defaultMoveSpeed: 10
-  runTimeMoveSpeed: 0
---- !u!114 &272641380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272641375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4cb6aa8e4fccd47b67aaaf993dba64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cam: {fileID: 2073064701}
-  _onUserTouched:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 272641379}
-        m_MethodName: OnUserInputChangedEventHandler
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: MoveInputEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!54 &272641381
 Rigidbody:
   m_ObjectHideFlags: 0
