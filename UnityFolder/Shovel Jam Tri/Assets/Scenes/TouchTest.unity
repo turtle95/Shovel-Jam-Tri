@@ -5645,8 +5645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnScript: {fileID: 2073064703}
   fadeScript: {fileID: 1624184957}
-  minDist: 2500
-  maxDist: 3500
+  minDist: 1000
+  maxDist: 1500
 --- !u!1 &242117975
 GameObject:
   m_ObjectHideFlags: 0
