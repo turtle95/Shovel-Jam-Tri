@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54872590770802642}
   - component: {fileID: 114417754348458018}
   - component: {fileID: 135323703114338272}
+  - component: {fileID: 114584117087594676}
   m_Layer: 0
   m_Name: Meteor2b
   m_TagString: Untagged
@@ -143,6 +144,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
+--- !u!114 &114584117087594676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821017637098418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6395717379bc2c140bbef80591e05fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  minSpeed: 1
+  maxSpeed: 10
 --- !u!135 &135323703114338272
 SphereCollider:
   m_ObjectHideFlags: 1

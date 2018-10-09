@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114453379322093828}
   - component: {fileID: 54801067690159318}
   - component: {fileID: 135633817780716778}
+  - component: {fileID: 114370006053372684}
   m_Layer: 0
   m_Name: Meteor1Tex
   m_TagString: Untagged
@@ -130,6 +131,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114370006053372684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360667916974262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6395717379bc2c140bbef80591e05fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  minSpeed: 1
+  maxSpeed: 10
 --- !u!114 &114453379322093828
 MonoBehaviour:
   m_ObjectHideFlags: 1
