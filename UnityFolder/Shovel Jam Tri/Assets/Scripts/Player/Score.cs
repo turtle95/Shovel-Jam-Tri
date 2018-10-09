@@ -24,6 +24,8 @@ public class Score : MonoBehaviour {
     public Text scoreCounter;
     public Text comboCounter;
 
+    public AudioSource collectNoise;
+
     private void Start()
     {
         InitSaveGame();
@@ -55,7 +57,7 @@ public class Score : MonoBehaviour {
             scoreCounter.text = "Score: " + score.ToString();
             comboCounter.text = "Combo: " + combo.ToString();
 
-
+            collectNoise.Play();
            
             Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
            

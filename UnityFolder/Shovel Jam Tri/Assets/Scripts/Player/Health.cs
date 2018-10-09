@@ -6,6 +6,9 @@ public class Health : MonoBehaviour
 
     public GameObject scoreMenu;
     public AudioSource deathSoundSource;
+    public AudioSource damageSound;
+    public AudioSource damageSound2;
+
 
     public void TakeDamage(int damage)
     {
@@ -16,11 +19,14 @@ public class Health : MonoBehaviour
         {
             Debug.Log("player died.");
             deathSoundSource.Play();
+            
             scoreMenu.SetActive(true);
             gameObject.SetActive(false);
         }
         else
         {
+            damageSound.Play();
+            damageSound2.Play(); 
             Debug.Log("Current Health = " + _health);
         }
     }

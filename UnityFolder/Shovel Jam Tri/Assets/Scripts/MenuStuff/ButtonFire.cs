@@ -17,17 +17,17 @@ public class ButtonFire : MonoBehaviour {
 
     
 
-    public bool playButton = false;
-    public AudioFade fadeScript;
+    //public bool playButton = false;
+    public AudioSource pressSound;
 
 
     //turns things on and off depending on which state is called
     public void Pressed()
     {
 
-        if (playButton)
-           fadeScript.FadeAudio(1);
-
+        //if (playButton)
+        //   fadeScript.FadeAudio(1);
+        pressSound.Play();
         for (int i =0; i< active.Length; i++)
         {
             active[i].SetActive(true);

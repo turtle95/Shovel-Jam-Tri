@@ -9,7 +9,8 @@ public class HighScoreDisplay : MonoBehaviour {
     public Text currentScore;
     public Score scoreScript;
 
-    
+    public AudioSource looserSound;
+    public AudioSource winnerSound;
 
     private void OnEnable()
     {
@@ -21,11 +22,13 @@ public class HighScoreDisplay : MonoBehaviour {
             if (scoreScript.score > scoreScript.maxScores.score)
             {
                 scoreScript.maxScores.score = scoreScript.score;
+                winnerSound.Play();
             }
 
             if (scoreScript.combo > scoreScript.maxScores.combo)
             {
                 scoreScript.maxScores.combo = scoreScript.combo;
+                looserSound.Play();
             }
             scoreScript.SaveScores();
         }

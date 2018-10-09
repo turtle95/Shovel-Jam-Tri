@@ -23,6 +23,8 @@ public class TouchMovement : MonoBehaviour {
     public float maxRegSpeed = 5;
 
 
+    public AudioSource dashSound;
+
     private void Start()
     {
         target = targetObj.GetComponent<Transform>();
@@ -60,6 +62,7 @@ public class TouchMovement : MonoBehaviour {
                     rb.velocity = (transform.forward * maxSpeed);
                 dashParticles.Play();
                 dashParticles2.Play();
+                dashSound.Play();
                 //rb.velocity = transform.forward * dashSpeed * Time.deltaTime;
             }
         }
