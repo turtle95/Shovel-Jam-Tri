@@ -54,6 +54,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4585788421339116}
+  - component: {fileID: 135344456572313912}
+  - component: {fileID: 54981187240685506}
+  - component: {fileID: 114023595440082292}
+  - component: {fileID: 114786274892747036}
   m_Layer: 0
   m_Name: Planet1
   m_TagString: Untagged
@@ -111,8 +115,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1485228396310728}
   m_LocalRotation: {x: 0.00085513253, y: 0.99483895, z: 0.10141281, w: 0.0031896003}
-  m_LocalPosition: {x: 2.9949574, y: 4.181347, z: 5.6865187}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.201103, y: -0.453228, z: 7.745199}
+  m_LocalScale: {x: 2.9889634, y: 2.9889634, z: 2.9889634}
   m_Children:
   - {fileID: 4742576823405252}
   - {fileID: 4376747188116526}
@@ -259,6 +263,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1944268476861762}
   m_Mesh: {fileID: 4300000, guid: 981fa6dd0c7c64d46b1a15bb48311da4, type: 3}
+--- !u!54 &54981187240685506
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485228396310728}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114023595440082292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485228396310728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b884c73a94db234eb11485be4fd2579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _range: 12
+  _maxStrength: 8
+  _minStrength: 8
+--- !u!114 &114786274892747036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485228396310728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21951934593520c41813f540d26bc425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
 --- !u!135 &135253093749841786
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -270,4 +316,16 @@ SphereCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135344456572313912
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485228396310728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.11
   m_Center: {x: 0, y: 0, z: 0}

@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b884c73a94db234eb11485be4fd2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 15
-  _maxStrength: 25
+  _range: 12
+  _maxStrength: 8
   _minStrength: 5
 --- !u!114 &114517312982378838
 MonoBehaviour:
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
 --- !u!135 &135705502315496750
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -36,6 +36,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400332737726582}
+  - component: {fileID: 54872590770802642}
+  - component: {fileID: 114417754348458018}
+  - component: {fileID: 135323703114338272}
   m_Layer: 0
   m_Name: Meteor2b
   m_TagString: Untagged
@@ -63,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821017637098418}
   m_LocalRotation: {x: -0.08945461, y: -0.784836, z: 0.6062707, w: 0.092011824}
-  m_LocalPosition: {x: 0, y: 2.37, z: 0}
+  m_LocalPosition: {x: 11.155847, y: 0.4190755, z: 5.882491}
   m_LocalScale: {x: 0.73531365, y: 0.73531365, z: 0.73531365}
   m_Children:
   - {fileID: 4301790969860562}
@@ -112,3 +115,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363287052766676}
   m_Mesh: {fileID: 4300000, guid: f1ffd76b8cc30ab46bb86196feb0d3aa, type: 3}
+--- !u!54 &54872590770802642
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821017637098418}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114417754348458018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821017637098418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21951934593520c41813f540d26bc425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
+--- !u!135 &135323703114338272
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821017637098418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.06
+  m_Center: {x: 0, y: 0, z: 0}

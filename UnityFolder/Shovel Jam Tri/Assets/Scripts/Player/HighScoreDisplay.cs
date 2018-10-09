@@ -28,8 +28,11 @@ public class HighScoreDisplay : MonoBehaviour {
             if (scoreScript.combo > scoreScript.maxScores.combo)
             {
                 scoreScript.maxScores.combo = scoreScript.combo;
-                looserSound.Play();
+                winnerSound.Play();
             }
+            else if (scoreScript.score < scoreScript.maxScores.score)
+                looserSound.Play();
+
             scoreScript.SaveScores();
         }
     }

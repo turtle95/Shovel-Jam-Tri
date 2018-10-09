@@ -9,11 +9,42 @@ public class Health : MonoBehaviour
     public AudioSource damageSound;
     public AudioSource damageSound2;
 
+    public GameObject[] fullHealth;
+    public GameObject[] injured;
+    public GameObject[] dyin;
 
     public void TakeDamage(int damage)
     {
         _health -= damage;
+        if (_health == 3)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                fullHealth[i].SetActive(true);
+                injured[i].SetActive(false);
+                dyin[i].SetActive(false);
+            }
+        }
+        else if (_health == 2)
+        {
+            for(int i =0; i < 4; i++)
+            {
+                fullHealth[i].SetActive(false);
+                injured[i].SetActive(true);
+                dyin[i].SetActive(false);
+            }
+        }
+        else if (_health == 1)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                fullHealth[i].SetActive(false);
+                injured[i].SetActive(false);
+                dyin[i].SetActive(true);
+            }
+        }
 
+        
         //TODO proper player dead handling
         if (_health <= 0)
         {

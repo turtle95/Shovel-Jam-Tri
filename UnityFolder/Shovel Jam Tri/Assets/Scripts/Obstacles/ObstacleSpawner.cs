@@ -29,10 +29,12 @@ public class ObstacleSpawner : MonoBehaviour {
    
     public float curDist = 0;
     public float goalDist = 5;
-
+    public float distToSpawn = 10f;
     public Transform player;
 
     private List<Transform> spawnedObjects;
+
+    public bool backgroundSpawner = false;
 
 	void Start () {
         spawnedObjects = new List<Transform>();
@@ -47,7 +49,7 @@ public class ObstacleSpawner : MonoBehaviour {
         if(curDist < goalDist)
         {
             SpawnSomething();
-            goalDist = curDist -15;
+            goalDist = curDist -(distToSpawn - area);
           
         }
 
@@ -84,6 +86,8 @@ public class ObstacleSpawner : MonoBehaviour {
     {
         for (int i = 0; i < 3; i++)
         {
+            if (backgroundSpawner)
+                i = Random.Range(0, 2);
             //spawn something at both top, bottom, and right of screen
            
             switch (i)
@@ -114,15 +118,15 @@ public class ObstacleSpawner : MonoBehaviour {
             {
                 case 1:
                     randNumInt = Random.Range(0, obsListOne.Length);
-                    newObject = Instantiate(obsListOne[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListOne[randNumInt], spawnPos, Random.rotation);
                     break;
                 case 2:
                     randNumInt = Random.Range(0, obsListTwo.Length);
-                    newObject = Instantiate(obsListTwo[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListTwo[randNumInt], spawnPos, Random.rotation);
                     break;
                 case 3:
                     randNumInt = Random.Range(0, obsListThree.Length);
-                    newObject = Instantiate(obsListThree[randNumInt], spawnPos, transform.rotation);
+                    newObject = Instantiate(obsListThree[randNumInt], spawnPos, Random.rotation);
                     break;
                 default:
                     break;
@@ -130,6 +134,9 @@ public class ObstacleSpawner : MonoBehaviour {
 
             if (newObject != null)
                 spawnedObjects.Add(newObject.transform);
+
+            if (backgroundSpawner)
+                i = 3;
         }
     }
 }

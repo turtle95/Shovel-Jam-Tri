@@ -7,6 +7,8 @@ public class ObstacleCollision : MonoBehaviour
 {
     [SerializeField] private int _damage;
 
+    public GameObject explosion;
+
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +24,8 @@ public class ObstacleCollision : MonoBehaviour
             playerT.position = new Vector3(playerT.position.x, playerT.position.y, 0);
 
             collision.gameObject.BroadcastMessage("ResetCombo");
+
+            Instantiate(explosion, transform.position, transform.rotation);
 
             Destroy(gameObject);
         }
