@@ -24,11 +24,11 @@ public class ObstacleSpawner : MonoBehaviour {
     int randNumInt;
     float spawnTimeMin = 0.5f;
     float spawnTimeMax = 2f;
-    public int stage = 1;
+    public int area = 1;
 
-    //float prevDist = 0;
-    float curDist = 0;
-    float goalDist = 5;
+   
+    public float curDist = 0;
+    public float goalDist = 5;
 
     public Transform player;
 
@@ -38,7 +38,7 @@ public class ObstacleSpawner : MonoBehaviour {
         spawnedObjects = new List<Transform>();
 
         StartCoroutine(WhenToSpawn());
-        //prevDist = player.position.x;
+        
     }
 
     private void Update()
@@ -48,7 +48,7 @@ public class ObstacleSpawner : MonoBehaviour {
         {
             SpawnSomething();
             goalDist = curDist -15;
-          //  Debug.Log("Current Dist " + curDist + "goal Dist " + goalDist);
+          
         }
 
         //remove stuff if it is behind and far enough from player
@@ -75,14 +75,14 @@ public class ObstacleSpawner : MonoBehaviour {
         randNum = Random.Range(spawnTimeMin, spawnTimeMax);
         yield return new WaitForSeconds(1);
         SpawnSomething();
-        //StartCoroutine(WhenToSpawn());
+       
     }
 
 
     //spawns obstacles to avoid
     void SpawnSomething()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             //spawn something at both top, bottom, and right of screen
            
@@ -90,7 +90,7 @@ public class ObstacleSpawner : MonoBehaviour {
             {
                 case 0:
                     chosenSpawner = topScreen.position;
-                   // Debug.Log(topScreen.position);
+                   
                     randNum = Random.Range(-widthRange, 0);
                     spawnPos = new Vector3(chosenSpawner.x + randNum, chosenSpawner.y, chosenSpawner.z);
                     break;
@@ -99,7 +99,7 @@ public class ObstacleSpawner : MonoBehaviour {
                     randNum = Random.Range(-widthRange, 0);
                     spawnPos = new Vector3(chosenSpawner.x + randNum, chosenSpawner.y, chosenSpawner.z);
                     break;
-                case 3:
+                case 2:
                     chosenSpawner = rightScreen.position;
                     randNum = Random.Range(-heightRange, heightRange);
                     spawnPos = new Vector3(chosenSpawner.x, chosenSpawner.y + randNum, chosenSpawner.z);
@@ -110,7 +110,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
             //changes which list an obstacle is chosen from
             GameObject newObject = null;
-            switch (stage)
+            switch (area)
             {
                 case 1:
                     randNumInt = Random.Range(0, obsListOne.Length);
