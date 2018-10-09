@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour {
 
-    
-
     public GameObject[] obsListOne;
     public GameObject[] obsListTwo;
     public GameObject[] obsListThree;
@@ -25,11 +23,10 @@ public class ObstacleSpawner : MonoBehaviour {
     float spawnTimeMin = 0.5f;
     float spawnTimeMax = 2f;
     public int area = 1;
-
    
     public float curDist = 0;
     public float goalDist = 5;
-    public float distToSpawn = 10f;
+    public float distToSpawn = 5f;
     public Transform player;
 
     private List<Transform> spawnedObjects;
@@ -40,7 +37,6 @@ public class ObstacleSpawner : MonoBehaviour {
         spawnedObjects = new List<Transform>();
 
         StartCoroutine(WhenToSpawn());
-        
     }
 
     private void Update()
@@ -50,11 +46,10 @@ public class ObstacleSpawner : MonoBehaviour {
         {
             SpawnSomething();
             goalDist = curDist -(distToSpawn - area);
-          
         }
 
         //remove stuff if it is behind and far enough from player
-        for (int i = spawnedObjects.Count - 1; i >= 0; i --)
+        for (int i = spawnedObjects.Count - 1; i >= 0; i--)
         {
             var objTransform = spawnedObjects[i];
             if (objTransform == null)
@@ -79,7 +74,6 @@ public class ObstacleSpawner : MonoBehaviour {
         SpawnSomething();
        
     }
-
 
     //spawns obstacles to avoid
     void SpawnSomething()
