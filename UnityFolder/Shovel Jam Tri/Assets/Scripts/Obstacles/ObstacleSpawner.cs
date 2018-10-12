@@ -70,7 +70,7 @@ public class ObstacleSpawner : MonoBehaviour {
     IEnumerator WhenToSpawn()
     {
         randNum = Random.Range(spawnTimeMin, spawnTimeMax);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(randNum);
         SpawnSomething();
        
     }
@@ -130,7 +130,7 @@ public class ObstacleSpawner : MonoBehaviour {
                 spawnedObjects.Add(newObject.transform);
 
             if (backgroundSpawner)
-                i = 3;
+                i = 4;
         }
     }
 }
