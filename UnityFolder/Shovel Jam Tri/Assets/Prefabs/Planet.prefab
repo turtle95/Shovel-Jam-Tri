@@ -225,11 +225,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1568219085161574}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 100
+  m_Drag: 5
+  m_AngularDrag: 0.5
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b884c73a94db234eb11485be4fd2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 15
-  _maxStrength: 7
-  _minStrength: 0
+  _range: 12
+  _maxStrength: 8
+  _minStrength: 5
 --- !u!114 &114517312982378838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
 --- !u!135 &135705502315496750
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: c64aa6e2245f8c84dafc37d2c082e2d4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Antenna
+    100002: Backdrop Item
+    100004: BodyJoint
+    100006: BodyJoint (2)
+    100008: BodyJoint (3)
+    100010: BodyJoint (4)
+    100012: BodyJoint (5)
+    100014: BodyJoint (6)
+    100016: BodyJoint (7)
+    100018: BodyJoint (8)
+    100020: Eye
+    100022: Eye2
+    100024: FrontLeg
+    100026: FrontLeg (10)
+    100028: FrontLeg (11)
+    100030: FrontLeg (12)
+    100032: FrontLeg (2)
+    100034: FrontLeg (3)
+    100036: FrontLeg (4)
+    100038: FrontLeg (5)
+    100040: FrontLeg (6)
+    100042: FrontLeg (7)
+    100044: FrontLeg (8)
+    100046: FrontLeg (9)
+    100048: FrontLegEnd
+    100050: FrontLegEnd (10)
+    100052: FrontLegEnd (11)
+    100054: FrontLegEnd (12)
+    100056: FrontLegEnd (2)
+    100058: FrontLegEnd (3)
+    100060: FrontLegEnd (4)
+    100062: FrontLegEnd (5)
+    100064: FrontLegEnd (6)
+    100066: FrontLegEnd (7)
+    100068: FrontLegEnd (8)
+    100070: FrontLegEnd (9)
+    100072: HindLegP2
+    100074: HindLegP2 (10)
+    100076: HindLegP2 (2)
+    100078: HindLegP2 (3)
+    100080: HindLegP2 (4)
+    100082: HindLegP2 (5)
+    100084: HindLegP2 (6)
+    100086: HindLegP2 (7)
+    100088: HindLegP2 (8)
+    100090: HindLegP2 (9)
+    100092: HindLegs
+    100094: HindLegs (10)
+    100096: HindLegs (2)
+    100098: HindLegs (3)
+    100100: HindLegs (4)
+    100102: HindLegs (5)
+    100104: HindLegs (6)
+    100106: HindLegs (7)
+    100108: HindLegs (8)
+    100110: HindLegs (9)
+    100112: //RootNode
+    100114: Mesh
+    100116: Texture Group
+    400000: Antenna
+    400002: Backdrop Item
+    400004: BodyJoint
+    400006: BodyJoint (2)
+    400008: BodyJoint (3)
+    400010: BodyJoint (4)
+    400012: BodyJoint (5)
+    400014: BodyJoint (6)
+    400016: BodyJoint (7)
+    400018: BodyJoint (8)
+    400020: Eye
+    400022: Eye2
+    400024: FrontLeg
+    400026: FrontLeg (10)
+    400028: FrontLeg (11)
+    400030: FrontLeg (12)
+    400032: FrontLeg (2)
+    400034: FrontLeg (3)
+    400036: FrontLeg (4)
+    400038: FrontLeg (5)
+    400040: FrontLeg (6)
+    400042: FrontLeg (7)
+    400044: FrontLeg (8)
+    400046: FrontLeg (9)
+    400048: FrontLegEnd
+    400050: FrontLegEnd (10)
+    400052: FrontLegEnd (11)
+    400054: FrontLegEnd (12)
+    400056: FrontLegEnd (2)
+    400058: FrontLegEnd (3)
+    400060: FrontLegEnd (4)
+    400062: FrontLegEnd (5)
+    400064: FrontLegEnd (6)
+    400066: FrontLegEnd (7)
+    400068: FrontLegEnd (8)
+    400070: FrontLegEnd (9)
+    400072: HindLegP2
+    400074: HindLegP2 (10)
+    400076: HindLegP2 (2)
+    400078: HindLegP2 (3)
+    400080: HindLegP2 (4)
+    400082: HindLegP2 (5)
+    400084: HindLegP2 (6)
+    400086: HindLegP2 (7)
+    400088: HindLegP2 (8)
+    400090: HindLegP2 (9)
+    400092: HindLegs
+    400094: HindLegs (10)
+    400096: HindLegs (2)
+    400098: HindLegs (3)
+    400100: HindLegs (4)
+    400102: HindLegs (5)
+    400104: HindLegs (6)
+    400106: HindLegs (7)
+    400108: HindLegs (8)
+    400110: HindLegs (9)
+    400112: //RootNode
+    400114: Mesh
+    400116: Texture Group
+    2100000: Leg1
+    2100002: Leg2
+    2100004: Eyeball
+    2100006: OuterEye
+    2100008: Body
+    2100010: Tail
+    2300000: Antenna
+    2300002: Eye
+    2300004: Eye2
+    2300006: FrontLeg
+    2300008: FrontLeg (10)
+    2300010: FrontLeg (11)
+    2300012: FrontLeg (12)
+    2300014: FrontLeg (2)
+    2300016: FrontLeg (3)
+    2300018: FrontLeg (4)
+    2300020: FrontLeg (5)
+    2300022: FrontLeg (6)
+    2300024: FrontLeg (7)
+    2300026: FrontLeg (8)
+    2300028: FrontLeg (9)
+    2300030: FrontLegEnd
+    2300032: FrontLegEnd (10)
+    2300034: FrontLegEnd (11)
+    2300036: FrontLegEnd (12)
+    2300038: FrontLegEnd (2)
+    2300040: FrontLegEnd (3)
+    2300042: FrontLegEnd (4)
+    2300044: FrontLegEnd (5)
+    2300046: FrontLegEnd (6)
+    2300048: FrontLegEnd (7)
+    2300050: FrontLegEnd (8)
+    2300052: FrontLegEnd (9)
+    2300054: HindLegP2
+    2300056: HindLegP2 (10)
+    2300058: HindLegP2 (2)
+    2300060: HindLegP2 (3)
+    2300062: HindLegP2 (4)
+    2300064: HindLegP2 (5)
+    2300066: HindLegP2 (6)
+    2300068: HindLegP2 (7)
+    2300070: HindLegP2 (8)
+    2300072: HindLegP2 (9)
+    2300074: HindLegs
+    2300076: HindLegs (10)
+    2300078: HindLegs (2)
+    2300080: HindLegs (3)
+    2300082: HindLegs (4)
+    2300084: HindLegs (5)
+    2300086: HindLegs (6)
+    2300088: HindLegs (7)
+    2300090: HindLegs (8)
+    2300092: HindLegs (9)
+    3300000: Antenna
+    3300002: Eye
+    3300004: Eye2
+    3300006: FrontLeg
+    3300008: FrontLeg (10)
+    3300010: FrontLeg (11)
+    3300012: FrontLeg (12)
+    3300014: FrontLeg (2)
+    3300016: FrontLeg (3)
+    3300018: FrontLeg (4)
+    3300020: FrontLeg (5)
+    3300022: FrontLeg (6)
+    3300024: FrontLeg (7)
+    3300026: FrontLeg (8)
+    3300028: FrontLeg (9)
+    3300030: FrontLegEnd
+    3300032: FrontLegEnd (10)
+    3300034: FrontLegEnd (11)
+    3300036: FrontLegEnd (12)
+    3300038: FrontLegEnd (2)
+    3300040: FrontLegEnd (3)
+    3300042: FrontLegEnd (4)
+    3300044: FrontLegEnd (5)
+    3300046: FrontLegEnd (6)
+    3300048: FrontLegEnd (7)
+    3300050: FrontLegEnd (8)
+    3300052: FrontLegEnd (9)
+    3300054: HindLegP2
+    3300056: HindLegP2 (10)
+    3300058: HindLegP2 (2)
+    3300060: HindLegP2 (3)
+    3300062: HindLegP2 (4)
+    3300064: HindLegP2 (5)
+    3300066: HindLegP2 (6)
+    3300068: HindLegP2 (7)
+    3300070: HindLegP2 (8)
+    3300072: HindLegP2 (9)
+    3300074: HindLegs
+    3300076: HindLegs (10)
+    3300078: HindLegs (2)
+    3300080: HindLegs (3)
+    3300082: HindLegs (4)
+    3300084: HindLegs (5)
+    3300086: HindLegs (6)
+    3300088: HindLegs (7)
+    3300090: HindLegs (8)
+    3300092: HindLegs (9)
+    4300000: HindLegs (4)
+    4300002: HindLegP2 (4)
+    4300004: HindLegs (9)
+    4300006: HindLegP2 (6)
+    4300008: FrontLeg
+    4300010: FrontLegEnd
+    4300012: FrontLeg (11)
+    4300014: FrontLegEnd (11)
+    4300016: FrontLeg (2)
+    4300018: FrontLegEnd (2)
+    4300020: FrontLeg (12)
+    4300022: FrontLegEnd (12)
+    4300024: FrontLeg (3)
+    4300026: FrontLegEnd (3)
+    4300028: FrontLeg (7)
+    4300030: FrontLegEnd (9)
+    4300032: FrontLeg (4)
+    4300034: FrontLegEnd (4)
+    4300036: FrontLeg (8)
+    4300038: FrontLegEnd (7)
+    4300040: FrontLeg (5)
+    4300042: FrontLegEnd (5)
+    4300044: FrontLeg (9)
+    4300046: FrontLegEnd (8)
+    4300048: FrontLeg (6)
+    4300050: FrontLegEnd (6)
+    4300052: FrontLeg (10)
+    4300054: FrontLegEnd (10)
+    4300056: Antenna
+    4300058: Eye
+    4300060: Eye2
+    4300062: HindLegs (2)
+    4300064: HindLegP2 (2)
+    4300066: HindLegs (7)
+    4300068: HindLegP2 (8)
+    4300070: HindLegs (3)
+    4300072: HindLegP2 (3)
+    4300074: HindLegs (8)
+    4300076: HindLegP2 (7)
+    4300078: HindLegs
+    4300080: HindLegP2
+    4300082: HindLegs (6)
+    4300084: HindLegP2 (9)
+    4300086: HindLegs (5)
+    4300088: HindLegP2 (5)
+    4300090: HindLegs (10)
+    4300092: HindLegP2 (10)
+    4300094: Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Mesh
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 0b4fce2f398cdcf4b9a0dab42a5a1751, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyeball
+    second: {fileID: 2100000, guid: b02c4cd13f76b2344992d39d28c380fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leg1
+    second: {fileID: 2100000, guid: fccbdc9ce72185c489af1c30bb83709d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leg2
+    second: {fileID: 2100000, guid: 91b75b3aada7db840a2dcb6f03d0d8a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterEye
+    second: {fileID: 2100000, guid: 6758e53ec17028c4f84092d4ae34a507, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tail
+    second: {fileID: 2100000, guid: 625bcbb4ecc107b4eaa5ceb901c45928, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

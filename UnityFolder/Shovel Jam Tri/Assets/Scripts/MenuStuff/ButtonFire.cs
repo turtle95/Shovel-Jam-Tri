@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class ButtonFire : MonoBehaviour {
 
+    /// <summary>
+    /// Comments Comming Soon~ish! 
+    /// -Josh
+    /// </summary>
+
     public GameObject[] active;
     public GameObject[] inactive;
     public GameObject bulletRock;
 
     public Transform aimer;
 
-    Rigidbody rb;
+    
+
+    //public bool playButton = false;
+    public AudioSource pressSound;
+
+
     //turns things on and off depending on which state is called
     public void Pressed()
     {
-        for(int i =0; i< active.Length; i++)
+
+        //if (playButton)
+        //   fadeScript.FadeAudio(1);
+        pressSound.Play();
+        for (int i =0; i< active.Length; i++)
         {
             active[i].SetActive(true);
         }
@@ -24,8 +38,10 @@ public class ButtonFire : MonoBehaviour {
             inactive[i].SetActive(false);
         }
 
-        //rb = Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
-        //rb.AddForce(Vector3.forward, ForceMode.Impulse);
+        
+
+        Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
+       
     }
 
     public void notPressed()

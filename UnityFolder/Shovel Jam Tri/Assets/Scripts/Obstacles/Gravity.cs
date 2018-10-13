@@ -18,7 +18,7 @@ public class Gravity : MonoBehaviour
 
         foreach (var col in colliders)
         {
-            if (col.gameObject != gameObject)
+            if (col.gameObject != gameObject && col.gameObject.tag == "Player")
             {
                 Pull(col.gameObject);
             }
