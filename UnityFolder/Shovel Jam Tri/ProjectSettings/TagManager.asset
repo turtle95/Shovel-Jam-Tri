@@ -9,6 +9,7 @@ TagManager:
   - Credits
   - HighScore
   - Helmet
+  - Tutorial
   layers:
   - Default
   - TransparentFX

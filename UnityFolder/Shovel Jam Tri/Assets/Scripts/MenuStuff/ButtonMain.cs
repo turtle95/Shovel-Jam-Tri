@@ -10,6 +10,7 @@ public class ButtonMain : MonoBehaviour {
     public ButtonFire play;
     public ButtonFire credits;
     public ButtonFire highScore;
+    public Tutorial tutScript;
 
     void Update () {
         if (Input.touchCount > 0)
@@ -35,6 +36,11 @@ public class ButtonMain : MonoBehaviour {
                     {
                         highScore.Pressed();
                         credits.notPressed();
+                    } else if (hit.collider.gameObject.CompareTag("Tutorial"))
+                    {
+                        tutScript.enabled = true;
+                        tutScript.viewedTutorial = false;
+                        play.Pressed();
                     }
 
                 }

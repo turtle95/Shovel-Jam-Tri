@@ -26,8 +26,11 @@ public class Score : MonoBehaviour {
 
     public AudioSource collectNoise;
 
+    Health hScript;
+
     private void Start()
     {
+        hScript = GetComponent<Health>();
         InitSaveGame();
         maxScores = LoadScores();
         if (scoreCounter)
@@ -51,23 +54,34 @@ public class Score : MonoBehaviour {
         //if collide with collectable then add to score and combo, spawn the game feel particles, and destroy the collectable
         if (other.CompareTag("Collectable"))
         {
-            score += 1*combo; //give points plus combo multiplier
-            combo++;
+            if (!other.GetComponent<Collectable>().fishOfLife)
+            {
+                score += 1 * combo; //give points plus combo multiplier
+                combo++;
 
-            scoreCounter.text = "Score: " + score.ToString();
-            comboCounter.text = "Combo: " + combo.ToString();
+                scoreCounter.text = "Score: " + score.ToString();
+                comboCounter.text = "Combo: " + combo.ToString();
+
+                if (score > maxScores.score)
+                    maxScores.score = score;
+                if (combo > maxScores.combo)
+                    maxScores.combo = combo;
+            }
+            else
+            {
+                hScript.TakeDamage(-1);
+            }
+           
 
             collectNoise.Play();
            
             Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
-           
 
-            Destroy(other.gameObject); //kill the krill :)
 
-            if (score > maxScores.score)
-                maxScores.score = score;
-            if (combo > maxScores.combo)
-                maxScores.combo = combo;
+            if (!other.GetComponent<Collectable>().tutorialObj)           
+                Destroy(other.gameObject); //kill the krill :)
+
+            
         }
     }
 
