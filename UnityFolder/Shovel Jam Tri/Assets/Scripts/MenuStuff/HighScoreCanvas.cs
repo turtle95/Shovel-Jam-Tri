@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Score))]
+//[RequireComponent(typeof(Score))]
 public class HighScoreCanvas : MonoBehaviour
 {
     public Text scoreText;
     public Text comboText;
-
+    public Score score;
     // Use this for initialization
     void Start ()
     {
-        var score = GetComponent<Score>();
+       // var score = GetComponent<Score>();
         scoreText.text = "Score: " + score.maxScores.score;
         comboText.text = "Combo: " + score.maxScores.combo;
     }

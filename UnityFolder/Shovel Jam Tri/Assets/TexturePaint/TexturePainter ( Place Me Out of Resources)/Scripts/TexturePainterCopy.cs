@@ -112,7 +112,7 @@ public class TexturePainterCopy : MonoBehaviour {
    
 
 
-    void ClearTexture()
+    public void ClearTexture()
     {
         brushCounter = 0;
         foreach (Transform child in brushContainer.transform)

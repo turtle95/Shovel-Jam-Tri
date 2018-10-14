@@ -11,11 +11,11 @@ public class ButtonFire : MonoBehaviour {
 
     public GameObject[] active;
     public GameObject[] inactive;
-  //  public GameObject bulletRock;
+    public GameObject innerGlass;
 
     //public Transform aimer;
 
-    
+    public TexturePainterCopy paintScript;
 
     //public bool playButton = false;
     public AudioSource pressSound;
@@ -24,7 +24,8 @@ public class ButtonFire : MonoBehaviour {
     //turns things on and off depending on which state is called
     public void Pressed()
     {
-
+        paintScript.ClearTexture();
+        innerGlass.SetActive(false);
         //if (playButton)
         //   fadeScript.FadeAudio(1);
         pressSound.Play();

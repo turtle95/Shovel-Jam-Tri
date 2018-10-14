@@ -39,7 +39,7 @@ public class Tutorial : MonoBehaviour {
                 }
                 if(stageOfTut == 1)
                 {
-                    playerScript.maxSpeed = 10f;
+                    playerScript.maxSpeed = 5f;
                     StartCoroutine(WaitForSomething(2));
                 }
                 
