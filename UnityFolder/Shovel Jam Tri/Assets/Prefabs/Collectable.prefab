@@ -13256,8 +13256,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735759581281838}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -17.520296, y: 12.796297, z: 33.003838}
-  m_LocalScale: {x: 0.9599922, y: 0.9599922, z: 0.9599925}
+  m_LocalPosition: {x: 1.7332726, y: 6.5518026, z: 19.056292}
+  m_LocalScale: {x: 1.7117034, y: 1.7117034, z: 1.711704}
   m_Children:
   - {fileID: 4492358503210202}
   - {fileID: 4821672713213258}
@@ -30705,6 +30705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72696579c9f71a845abeaeff903b9953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishOfLife: 0
+  tutorialObj: 0
   speed: 2
 --- !u!136 &136323703948461048
 CapsuleCollider:

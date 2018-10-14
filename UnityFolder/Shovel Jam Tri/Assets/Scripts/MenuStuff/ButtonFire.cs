@@ -11,9 +11,9 @@ public class ButtonFire : MonoBehaviour {
 
     public GameObject[] active;
     public GameObject[] inactive;
-    public GameObject bulletRock;
+  //  public GameObject bulletRock;
 
-    public Transform aimer;
+    //public Transform aimer;
 
     
 
@@ -40,7 +40,7 @@ public class ButtonFire : MonoBehaviour {
 
         
 
-        Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
+       // Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
        
     }
 

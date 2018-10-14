@@ -12,6 +12,14 @@ public class ButtonMain : MonoBehaviour {
     public ButtonFire highScore;
     public Tutorial tutScript;
 
+    public GameObject tutButton;
+
+    private void Start()
+    {
+        if (!tutScript.viewedTutorial)
+            tutButton.SetActive(false);
+    }
+
     void Update () {
         if (Input.touchCount > 0)
         {
