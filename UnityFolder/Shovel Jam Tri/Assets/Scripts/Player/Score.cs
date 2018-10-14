@@ -54,7 +54,8 @@ public class Score : MonoBehaviour {
         //if collide with collectable then add to score and combo, spawn the game feel particles, and destroy the collectable
         if (other.CompareTag("Collectable"))
         {
-            if (!other.GetComponent<Collectable>().fishOfLife)
+            Collectable collect = other.GetComponent<Collectable>();
+            if (collect && collect.fishOfLife)
             {
                 score += 1 * combo; //give points plus combo multiplier
                 combo++;
@@ -71,17 +72,12 @@ public class Score : MonoBehaviour {
             {
                 hScript.TakeDamage(-1);
             }
-           
 
             collectNoise.Play();
-           
             Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
 
-
-            if (!other.GetComponent<Collectable>().tutorialObj)           
+            if (!collect.tutorialObj)           
                 Destroy(other.gameObject); //kill the krill :)
-
-            
         }
     }
 

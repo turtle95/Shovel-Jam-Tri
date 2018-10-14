@@ -16,7 +16,7 @@ public class ButtonMain : MonoBehaviour {
 
     private void Start()
     {
-        if (!tutScript.viewedTutorial)
+        if (tutScript.viewedTutorial)
             tutButton.SetActive(false);
     }
 
