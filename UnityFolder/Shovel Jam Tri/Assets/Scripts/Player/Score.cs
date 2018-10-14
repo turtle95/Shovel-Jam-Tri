@@ -55,7 +55,7 @@ public class Score : MonoBehaviour {
         if (other.CompareTag("Collectable"))
         {
             Collectable collect = other.GetComponent<Collectable>();
-            if (collect && collect.fishOfLife)
+            if (!collect.fishOfLife)
             {
                 score += 1 * combo; //give points plus combo multiplier
                 combo++;

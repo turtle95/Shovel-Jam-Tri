@@ -11241,7 +11241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081e8773ac48d9a4d9e50468c0a6d704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  startHealth: 3
+  maxHealth: 3
   scoreMenu: {fileID: 962904611}
   deathSoundSource: {fileID: 232840112}
   damageSound: {fileID: 1311620838}
