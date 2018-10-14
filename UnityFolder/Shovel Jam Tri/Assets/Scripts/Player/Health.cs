@@ -2,7 +2,8 @@
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    public int startHealth;
+    public int maxHealth;
 
     public GameObject scoreMenu;
     public AudioSource deathSoundSource;
@@ -13,10 +14,21 @@ public class Health : MonoBehaviour
     public GameObject[] injured;
     public GameObject[] dyin;
 
+    private int health; //runtime health
+
+    void Start()
+    {
+        health = startHealth;
+    }
+
     public void TakeDamage(int damage)
     {
-        _health -= damage;
-        if (_health == 3)
+        health -= damage;
+
+        if (health > maxHealth)
+            health = maxHealth;
+
+        if (health == 3)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -25,7 +37,7 @@ public class Health : MonoBehaviour
                 dyin[i].SetActive(false);
             }
         }
-        else if (_health == 2)
+        else if (health == 2)
         {
             for(int i =0; i < 4; i++)
             {
@@ -34,7 +46,7 @@ public class Health : MonoBehaviour
                 dyin[i].SetActive(false);
             }
         }
-        else if (_health == 1)
+        else if (health == 1)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -46,7 +58,7 @@ public class Health : MonoBehaviour
 
         
         //TODO proper player dead handling
-        if (_health <= 0)
+        if (health <= 0)
         {
             Debug.Log("player died.");
             deathSoundSource.Play();
@@ -58,7 +70,7 @@ public class Health : MonoBehaviour
         {
             damageSound.Play();
             damageSound2.Play(); 
-            Debug.Log("Current Health = " + _health);
+            Debug.Log("Current Health = " + health);
         }
     }
 }
