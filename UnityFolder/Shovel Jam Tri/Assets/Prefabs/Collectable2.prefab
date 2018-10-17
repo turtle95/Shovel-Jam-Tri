@@ -832,7 +832,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1745954723407640}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5695887, y: 6.5869412, z: 17.49782}
+  m_LocalPosition: {x: -416.27106, y: 55.31658, z: 111.860954}
   m_LocalScale: {x: 1.7117034, y: 1.7117034, z: 1.711704}
   m_Children:
   - {fileID: 4412819078556274}
@@ -1592,8 +1592,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.0000000037252903, y: 0, z: -0.021407008}
-    m_Extent: {x: 0.003197831, y: 0.0073106005, z: 0.01622347}
+    m_Center: {x: 0, y: 0, z: -0.03816986}
+    m_Extent: {x: 0.005701638, y: 0.01303504, z: 0.028926939}
   m_DirtyAABB: 0
 --- !u!137 &137653224911262698
 SkinnedMeshRenderer:
@@ -1639,8 +1639,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: -0.021407068}
-    m_Extent: {x: 0.0031978318, y: 0.017113205, z: 0.020640701}
+    m_Center: {x: 0.0000019073486, y: -0.00000017881393, z: -0.038169146}
+    m_Extent: {x: 0.005701645, y: 0.030513436, z: 0.036803074}
   m_DirtyAABB: 0
 --- !u!137 &137952655850649628
 SkinnedMeshRenderer:
@@ -2534,7 +2534,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9
+      scalar: 11
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2703,7 +2703,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 1.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3666,9 +3666,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.82200813, b: 0.52205884, a: 0}
-        key1: {r: 1, g: 0.9632353, b: 0, a: 1}
-        key2: {r: 0.33088237, g: 0.25557813, b: 0.009731824, a: 0}
+        key0: {r: 0.801217, g: 1, b: 0.4852941, a: 0}
+        key1: {r: 0.0141652385, g: 0.9632353, b: 0.21706982, a: 1}
+        key2: {r: 0.047383975, g: 0.33088237, b: 0.009731844, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}

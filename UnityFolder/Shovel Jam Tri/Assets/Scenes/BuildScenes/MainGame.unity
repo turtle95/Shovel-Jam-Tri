@@ -1157,7 +1157,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5950,7 +5950,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10742,8 +10742,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314141080}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -5.2770424, y: 0, z: 2.1108167}
-  m_LocalScale: {x: 0.26385206, y: 0.26385212, z: 0.26385218}
+  m_LocalPosition: {x: -41.1, y: 0, z: -6.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1597659018}
   - {fileID: 1842725374}
@@ -10764,16 +10764,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obsListOne:
   - {fileID: 1723251667737530, guid: 3e95b6ec5e4b6e34dbca30e77702b971, type: 2}
-  - {fileID: 1723251667737530, guid: 3e95b6ec5e4b6e34dbca30e77702b971, type: 2}
-  - {fileID: 1275592194220822, guid: bca05bdcccbee664aa3df05eb87c3d37, type: 2}
+  - {fileID: 1027421097748636, guid: 66b9424f1b411314ca860110a5ec3a21, type: 2}
   obsListTwo:
-  - {fileID: 1723251667737530, guid: 3e95b6ec5e4b6e34dbca30e77702b971, type: 2}
+  - {fileID: 1027421097748636, guid: 66b9424f1b411314ca860110a5ec3a21, type: 2}
+  - {fileID: 112396, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 2}
   - {fileID: 1275592194220822, guid: bca05bdcccbee664aa3df05eb87c3d37, type: 2}
-  - {fileID: 1507098220626366, guid: ca2291477f99d224e9d0190e07410584, type: 2}
   obsListThree:
   - {fileID: 1507098220626366, guid: ca2291477f99d224e9d0190e07410584, type: 2}
-  - {fileID: 1723251667737530, guid: 3e95b6ec5e4b6e34dbca30e77702b971, type: 2}
-  - {fileID: 1507098220626366, guid: ca2291477f99d224e9d0190e07410584, type: 2}
+  - {fileID: 1418895334298486, guid: 22cfde83280f83746836923e3e5ac64a, type: 2}
+  - {fileID: 127272, guid: d37d5104f2717d34c84d3acbf55785fb, type: 2}
   spawnBox: {x: 0, y: 0, z: 0}
   topScreen: {fileID: 1842725374}
   bottomScreen: {fileID: 1597659018}
@@ -10783,7 +10782,7 @@ MonoBehaviour:
   area: 1
   curDist: 0
   goalDist: 500
-  distToSpawn: 450
+  distToSpawn: 500
   player: {fileID: 272641382}
   backgroundSpawner: 1
 --- !u!1 &408199497
@@ -10919,7 +10918,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -15457,7 +15456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &443857748
 Transform:
   m_ObjectHideFlags: 0
@@ -21276,6 +21275,81 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224473986965782662, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224473986965782662, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224473986965782662, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224473986965782662, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224473986965782662, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179831140816942, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179831140816942, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179831140816942, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179831140816942, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179831140816942, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370212221374126, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370212221374126, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370212221374126, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370212221374126, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370212221374126, guid: 07df673656c57b246ad7103d87e3b944,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07df673656c57b246ad7103d87e3b944, type: 2}
   m_IsPrefabAsset: 0
@@ -21568,7 +21642,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -26193,7 +26267,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -46179,7 +46253,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -50844,7 +50918,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -55382,7 +55456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1388597560
 Transform:
   m_ObjectHideFlags: 0
@@ -55647,7 +55721,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: d307eada6c835f24d91bd0e17573c650, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400036, guid: d307eada6c835f24d91bd0e17573c650, type: 3}
       propertyPath: m_RootOrder
@@ -56204,7 +56278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1498579870
 Transform:
   m_ObjectHideFlags: 0
@@ -56371,7 +56445,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -66902,7 +66976,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -71445,7 +71519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892661145}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 50, y: 0, z: 10}
+  m_LocalPosition: {x: 82, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443857748}

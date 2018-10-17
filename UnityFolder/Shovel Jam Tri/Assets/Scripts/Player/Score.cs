@@ -37,23 +37,29 @@ public class Score : MonoBehaviour {
         if (other.CompareTag("Collectable"))
         {
             Collectable collect = other.GetComponent<Collectable>();
-            if (!collect.fishOfLife)
-            {
-                score += 1 * combo; //give points plus combo multiplier
-                combo++;
-
-                scoreCounter.text = "Score: " + score.ToString();
-                comboCounter.text = "Combo: " + combo.ToString();
-
-                if (score > maxScores.score)
-                    maxScores.score = score;
-                if (combo > maxScores.combo)
-                    maxScores.combo = combo;
-            }
-            else
+            if (collect.fishOfLife)
             {
                 hScript.TakeDamage(-1);
             }
+            else
+            {
+                score += 1 * combo; //give points plus combo multiplier
+                scoreCounter.text = "Score: " + score.ToString();
+                if (score > maxScores.score)
+                    maxScores.score = score;
+            }
+
+
+               
+                combo++;
+
+               
+                comboCounter.text = "Combo: " + combo.ToString();
+
+                
+                if (combo > maxScores.combo)
+                    maxScores.combo = combo;
+           
 
             collectNoise.Play();
             Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
