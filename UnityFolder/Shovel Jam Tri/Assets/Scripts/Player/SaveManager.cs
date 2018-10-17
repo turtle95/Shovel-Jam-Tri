@@ -12,7 +12,8 @@ public class SaveManager : MonoBehaviour
         public int combo;
     }
 
-    public MaxScores maxScores;
+    public bool dontDestroyedOnLoad;
+    [HideInInspector] public MaxScores maxScores;
 
     public static SaveManager instance { get; private set; }
 
@@ -23,6 +24,9 @@ public class SaveManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+
+        if (dontDestroyedOnLoad)
+            DontDestroyOnLoad(gameObject);
 
         InitSaveGame();
         maxScores = LoadScores();
