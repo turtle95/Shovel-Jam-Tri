@@ -37,6 +37,12 @@ public class SaveManager : MonoBehaviour
         SaveScores();
     }
 
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+            SaveScores();
+    }
+
     private void OnApplicationQuit()
     {
         SaveScores();
