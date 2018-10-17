@@ -10,16 +10,11 @@ public class ButtonMain : MonoBehaviour {
     public ButtonFire play;
     public ButtonFire credits;
     public ButtonFire highScore;
-    public Tutorial tutScript;
+    public SaveManager saveManage;
 
     public GameObject tutButton;
 
-    private void Start()
-    {
-        if (tutScript.viewedTutorial)
-            tutButton.SetActive(false);
-    }
-
+   
     void Update () {
         if (Input.touchCount > 0)
         {
@@ -46,8 +41,7 @@ public class ButtonMain : MonoBehaviour {
                         credits.notPressed();
                     } else if (hit.collider.gameObject.CompareTag("Tutorial"))
                     {
-                        tutScript.enabled = true;
-                        tutScript.viewedTutorial = false;
+                        //SaveManager.instance.maxScores.tutorialViewed = false;
                         play.Pressed();
                     }
 

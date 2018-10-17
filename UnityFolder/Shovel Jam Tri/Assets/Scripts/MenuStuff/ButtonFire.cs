@@ -1,35 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonFire : MonoBehaviour {
 
     /// <summary>
-    /// Comments Comming Soon~ish! 
-    /// -Josh
+    /// If credits or highscore are pressed then switch things on and off
+    /// if play or playtutorial pressed then load the next scene
     /// </summary>
 
     public GameObject[] active;
     public GameObject[] inactive;
     public GameObject innerGlass;
 
-    //public Transform aimer;
-
+    
     public TexturePainterCopy paintScript;
 
-    //public bool playButton = false;
+    public bool playButton = false; //bool to tell if this button should load the next scene
     public AudioSource pressSound;
+
+
+    //play and play Tutorial stuff
+    public GameObject cam;
+    bool loading = false;
+    public float speed = 2f;
+    public Rigidbody seagullRB;
+    public AudioSource seagullCall;
+
+    private Vector3 vel;
+    private Vector3 angVel;
+   
+    public float flySpeed = 10.0f;
+    
+    public float rotSpeed = 10.0f;
+
+    private void Update()
+    {
+        if (loading)
+        {
+            cam.transform.Translate(-transform.forward * Time.deltaTime * speed);
+            
+        }
+            
+    }
 
 
     //turns things on and off depending on which state is called
     public void Pressed()
     {
-        paintScript.ClearTexture();
+        if (playButton)
+        {
+            //scene transition animations and whatnot
+            //load level while keeping loading scene set up
+            seagullCall.Play();
+            vel = vel.normalized * flySpeed;
+            angVel = Random.insideUnitSphere * rotSpeed;
+            seagullRB.AddForce(vel, ForceMode.Impulse);
+            seagullRB.AddTorque(angVel, ForceMode.Impulse);
+            loading = true;
+            StartCoroutine(LoadTheGame());
+        }
+        else
+        {
+            paintScript.ClearTexture(); 
+
+        }
+
         innerGlass.SetActive(false);
-        //if (playButton)
-        //   fadeScript.FadeAudio(1);
+
         pressSound.Play();
-        for (int i =0; i< active.Length; i++)
+        for (int i = 0; i < active.Length; i++)
         {
             active[i].SetActive(true);
         }
@@ -39,10 +80,6 @@ public class ButtonFire : MonoBehaviour {
             inactive[i].SetActive(false);
         }
 
-        
-
-       // Instantiate(bulletRock, aimer.position, aimer.rotation).GetComponent<Rigidbody>();
-       
     }
 
     public void notPressed()
@@ -57,4 +94,16 @@ public class ButtonFire : MonoBehaviour {
             inactive[i].SetActive(true);
         }
     }
+
+    IEnumerator LoadTheGame()
+    {
+        yield return new WaitForSeconds(2);
+        AsyncOperation async = SceneManager.LoadSceneAsync(1);
+
+        while (!async.isDone)
+        {
+            yield return null;
+        }
+    }
+
 }
