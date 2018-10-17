@@ -10,6 +10,7 @@ public class SaveManager : MonoBehaviour
         public const string identifier = "maxscore.dat";
         public int score;
         public int combo;
+        public bool viewedTutorial;
     }
 
     public bool dontDestroyedOnLoad;

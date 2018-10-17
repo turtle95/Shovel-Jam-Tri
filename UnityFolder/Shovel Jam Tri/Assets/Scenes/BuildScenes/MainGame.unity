@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.016223663, g: 0.014705494, b: 0.01387946, a: 1}
+  m_IndirectSpecularColor: {r: 0.015554532, g: 0.015063206, b: 0.014816795, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5716,7 +5716,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a47a44bc49e204f49b83b4b9825502b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 802fa009ba8928d4391c638c4e3fc396, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10568,7 +10568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1586c08e6b05da4bb25d0fc75368bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewedTutorial: 0
   playerScript: {fileID: 272641376}
   stageItems:
   - {fileID: 1015385971}
@@ -10814,7 +10813,7 @@ RectTransform:
   m_Children:
   - {fileID: 1216895372}
   m_Father: {fileID: 1462687832}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21384,7 +21383,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ccf553bdc1e347848926ebb5cf0e26e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: be6705462f8c49241b4a9a638198e76a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 0.4
@@ -30753,7 +30752,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ec8d0f717c4a2f445b91b1c01dd45363, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8db72de3455bd3b4c84217571a4857ea, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -45888,7 +45887,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b50c5019054dedc44ba50903cbbb7712, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c51f6d2d507a6b04a8438c3cc1117869, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -46046,7 +46045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.52375007, y: 0.88624483}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.000030517578, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1322393404
@@ -50732,6 +50731,7 @@ MonoBehaviour:
   maxScores:
     score: 0
     combo: 0
+    viewedTutorial: 0
 --- !u!4 &1371977282
 Transform:
   m_ObjectHideFlags: 0
@@ -66265,7 +66265,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 204d4612e394f214e9c5587b8dd210dd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1f79e73e3bb23cc49bf8e216f8eeb40e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

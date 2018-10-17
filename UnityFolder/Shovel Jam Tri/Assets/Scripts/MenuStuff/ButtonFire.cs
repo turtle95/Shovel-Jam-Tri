@@ -25,12 +25,12 @@ public class ButtonFire : MonoBehaviour {
     public GameObject cam;
     bool loading = false;
     public float speed = 2f;
-    public Rigidbody seagullRB;
+    public Transform seagull;
     public AudioSource seagullCall;
 
-    private Vector3 vel;
-    private Vector3 angVel;
-   
+    public Vector3 vel;
+    public Vector3 angVel;
+    public Animator seagullAnim;
     public float flySpeed = 10.0f;
     
     public float rotSpeed = 10.0f;
@@ -40,7 +40,8 @@ public class ButtonFire : MonoBehaviour {
         if (loading)
         {
             cam.transform.Translate(-transform.forward * Time.deltaTime * speed);
-            
+            seagull.position += vel * Time.fixedDeltaTime;
+            seagull.rotation *= Quaternion.Euler(angVel * Time.fixedDeltaTime);
         }
             
     }
@@ -53,11 +54,11 @@ public class ButtonFire : MonoBehaviour {
         {
             //scene transition animations and whatnot
             //load level while keeping loading scene set up
+            seagullAnim.speed = 60;
             seagullCall.Play();
             vel = vel.normalized * flySpeed;
             angVel = Random.insideUnitSphere * rotSpeed;
-            seagullRB.AddForce(vel, ForceMode.Impulse);
-            seagullRB.AddTorque(angVel, ForceMode.Impulse);
+            
             loading = true;
             StartCoroutine(LoadTheGame());
         }

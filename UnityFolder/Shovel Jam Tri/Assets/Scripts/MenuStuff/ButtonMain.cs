@@ -10,9 +10,9 @@ public class ButtonMain : MonoBehaviour {
     public ButtonFire play;
     public ButtonFire credits;
     public ButtonFire highScore;
-    public SaveManager saveManage;
+   // public SaveManager saveManage;
 
-    public GameObject tutButton;
+   // public GameObject tutButton;
 
    
     void Update () {
@@ -41,7 +41,7 @@ public class ButtonMain : MonoBehaviour {
                         credits.notPressed();
                     } else if (hit.collider.gameObject.CompareTag("Tutorial"))
                     {
-                        //SaveManager.instance.maxScores.tutorialViewed = false;
+                        SaveManager.instance.maxScores.viewedTutorial = false;
                         play.Pressed();
                     }
 

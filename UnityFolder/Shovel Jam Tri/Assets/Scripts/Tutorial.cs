@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour {
 
-    public bool viewedTutorial = false; //bool to determine if the tutorial has already been viewed
-
+   
     public TouchMovement playerScript; //ref to the player's movement script
 
     int stageOfTut = 0;
@@ -16,9 +15,11 @@ public class Tutorial : MonoBehaviour {
     public Camera cam;
     public ObstacleSpawner obsSpawnScript;
 
+    
+
     private void Start()
     {
-        if (viewedTutorial)
+        if (SaveManager.instance.maxScores.viewedTutorial)
             PlayTheDamnGame();
     }
 
@@ -75,7 +76,7 @@ public class Tutorial : MonoBehaviour {
     //turn off all tutorial objects, set viewed tutorial to true, turn on the obstacle spawner, and disable this script
     void PlayTheDamnGame()
     {
-        viewedTutorial = true;
+        SaveManager.instance.maxScores.viewedTutorial = true;
         obsSpawnScript.enabled = true;
         playerScript.maxSpeed = 10f;
         foreach (GameObject plop in stageItems)
