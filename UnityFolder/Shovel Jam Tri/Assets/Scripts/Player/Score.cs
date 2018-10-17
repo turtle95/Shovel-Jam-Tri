@@ -1,20 +1,9 @@
-﻿using BayatGames.SaveGameFree;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using MaxScores =  SaveManager.MaxScores;
 
 public class Score : MonoBehaviour {
-
-    [System.Serializable]
-    public struct MaxScores
-    {
-        public const string identifier = "maxscore.dat";
-        public int score;
-        public int combo;
-    }
-
-    public MaxScores maxScores;
-
+    
     public int score;
     [HideInInspector] public int combo = 1;
 
@@ -28,26 +17,19 @@ public class Score : MonoBehaviour {
 
     public Health hScript;
 
+    private MaxScores maxScores; //maxscores to get from Savemanager. 
+
     private void Start()
     {
         //hScript = GetComponent<Health>();
-        InitSaveGame();
-        maxScores = LoadScores();
         if (scoreCounter)
             scoreCounter.text = "Score: " + score.ToString();
         if (comboCounter)
             comboCounter.text = "Combo: " + combo.ToString();
+
+        maxScores = SaveManager.GetMaxScores(); //retrieve in Start to avoid method race. 
     }
 
-    private void OnDisable()
-    {
-        SaveScores();
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveScores();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -86,56 +68,4 @@ public class Score : MonoBehaviour {
         combo = 1;
         comboCounter.text = "Combo: " + combo.ToString();
     }
-
-    #region save/load MaxScores
-    private void InitSaveGame()
-    {
-        if (Debug.isDebugBuild)
-            SaveGame.SavePath = SaveGamePath.DataPath; //local path if debug build
-        else
-            SaveGame.SavePath = SaveGamePath.PersistentDataPath; //save to persistent location on release builds
-    }
-
-    private MaxScores LoadScores()
-    {
-        if (SaveGame.Exists(MaxScores.identifier))
-        {
-            try
-            {
-                MaxScores data;
-                if (Debug.isDebugBuild)
-                {
-                    data = SaveGame.Load(MaxScores.identifier, new MaxScores(), false);
-                }
-                else
-                {
-                    data = SaveGame.Load(MaxScores.identifier, new MaxScores(), true);
-                }
-                return data;
-            }
-            catch (Exception)
-            {
-                SaveGame.Delete(MaxScores.identifier);
-                return new MaxScores();
-            }
-        }
-        else
-            return new MaxScores();
-    }
-
-    public void SaveScores()
-    {
-        try
-        {
-            if (Debug.isDebugBuild)
-                SaveGame.Save(MaxScores.identifier, maxScores, false);
-            else
-                SaveGame.Save(MaxScores.identifier, maxScores, true);
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.Message);
-        }
-    }
-    #endregion
 }

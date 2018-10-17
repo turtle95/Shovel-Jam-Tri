@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MaxScores = SaveManager.MaxScores;
 
-//[RequireComponent(typeof(Score))]
 public class HighScoreCanvas : MonoBehaviour
 {
     public Text scoreText;
     public Text comboText;
-    public Score score;
+
+    private MaxScores maxScores;
+
     // Use this for initialization
     void Start ()
     {
-       // var score = GetComponent<Score>();
-        scoreText.text = "Score: " + score.maxScores.score;
-        comboText.text = "Combo: " + score.maxScores.combo;
+        maxScores = SaveManager.GetMaxScores();
+
+        scoreText.text = "Score: " + maxScores.score;
+        comboText.text = "Combo: " + maxScores.combo;
     }
 }
