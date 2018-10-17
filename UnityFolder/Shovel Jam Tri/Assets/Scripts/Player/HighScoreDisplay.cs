@@ -12,28 +12,32 @@ public class HighScoreDisplay : MonoBehaviour {
     public AudioSource looserSound;
     public AudioSource winnerSound;
 
+    private SaveManager.MaxScores maxScores; 
+
     private void OnEnable()
     {
-        savedScore.text = "High Score\nKrill: " + scoreScript.maxScores.score + "\nCombo: " + scoreScript.maxScores.combo;
+        maxScores = SaveManager.GetMaxScores();
+
+        savedScore.text = "High Score\nKrill: " + maxScores.score + "\nCombo: " + maxScores.combo;
         if (currentScore != null)
         {
             currentScore.text = "\n\nCurrent Score\nKrill: " + scoreScript.score + "\nCombo: " + scoreScript.combo;
 
-            if (scoreScript.score > scoreScript.maxScores.score)
+            if (scoreScript.score > maxScores.score)
             {
-                scoreScript.maxScores.score = scoreScript.score;
+                maxScores.score = scoreScript.score;
                 winnerSound.Play();
             }
 
-            if (scoreScript.combo > scoreScript.maxScores.combo)
+            if (scoreScript.combo > maxScores.combo)
             {
-                scoreScript.maxScores.combo = scoreScript.combo;
+                maxScores.combo = scoreScript.combo;
                 winnerSound.Play();
             }
-            else if (scoreScript.score < scoreScript.maxScores.score)
+            else if (scoreScript.score < maxScores.score)
                 looserSound.Play();
 
-            scoreScript.SaveScores();
+            //SaveScores(); ?
         }
     }
 }
