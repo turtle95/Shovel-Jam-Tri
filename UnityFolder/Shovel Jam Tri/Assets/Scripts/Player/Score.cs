@@ -26,11 +26,11 @@ public class Score : MonoBehaviour {
 
     public AudioSource collectNoise;
 
-    Health hScript;
+    public Health hScript;
 
     private void Start()
     {
-        hScript = GetComponent<Health>();
+        //hScript = GetComponent<Health>();
         InitSaveGame();
         maxScores = LoadScores();
         if (scoreCounter)
