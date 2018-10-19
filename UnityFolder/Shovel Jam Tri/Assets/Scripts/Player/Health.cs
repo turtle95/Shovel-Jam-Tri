@@ -14,11 +14,23 @@ public class Health : MonoBehaviour
     public GameObject[] injured;
     public GameObject[] dyin;
 
+
+    public Material[] whaleMats;
+    public Color[] fHealthColors;
+    public Color[] injuredColors;
+    public Color[] dyinColors;
+
     private int health; //runtime health
+
+
 
     void Start()
     {
         health = startHealth;
+        for (int j = 0; j < whaleMats.Length; j++)
+        {
+            whaleMats[j].color = fHealthColors[j];
+        }
     }
 
     public void TakeDamage(int damage)
@@ -30,6 +42,10 @@ public class Health : MonoBehaviour
 
         if (health == 3)
         {
+            for(int j = 0; j<whaleMats.Length; j++)
+            {
+                whaleMats[j].color = fHealthColors[j];
+            }
             for (int i = 0; i < 4; i++)
             {
                 fullHealth[i].SetActive(true);
@@ -39,7 +55,11 @@ public class Health : MonoBehaviour
         }
         else if (health == 2)
         {
-            for(int i =0; i < 4; i++)
+            for (int j = 0; j < whaleMats.Length; j++)
+            {
+                whaleMats[j].color = injuredColors[j];
+            }
+            for (int i =0; i < 4; i++)
             {
                 fullHealth[i].SetActive(false);
                 injured[i].SetActive(true);
@@ -48,6 +68,10 @@ public class Health : MonoBehaviour
         }
         else if (health == 1)
         {
+            for (int j = 0; j < whaleMats.Length; j++)
+            {
+                whaleMats[j].color = dyinColors[j];
+            }
             for (int i = 0; i < 4; i++)
             {
                 fullHealth[i].SetActive(false);

@@ -1157,7 +1157,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5950,7 +5950,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10545,6 +10545,22 @@ MonoBehaviour:
   - {fileID: 436417615}
   - {fileID: 877656988}
   - {fileID: 1204009221}
+  whaleMats:
+  - {fileID: 2100000, guid: 15f5ca4ae34dff644939dd47afa1cadf, type: 2}
+  - {fileID: 2100000, guid: 9d43c76fb00d9914bbeb7625cf22f302, type: 2}
+  - {fileID: 2100000, guid: fc41e584432ff14498331aabe8fe176a, type: 2}
+  fHealthColors:
+  - {r: 0.101960786, g: 0.105882354, b: 0.20392157, a: 1}
+  - {r: 0.101960786, g: 0.105882354, b: 0.20392157, a: 1}
+  - {r: 0.09803922, g: 0.23137255, b: 0.52156866, a: 1}
+  injuredColors:
+  - {r: 0.13768244, g: 0.19686277, b: 0.24528301, a: 1}
+  - {r: 0.2735849, g: 0.26383945, b: 0.17937878, a: 1}
+  - {r: 0.509434, g: 0.4932945, b: 0.3292097, a: 1}
+  dyinColors:
+  - {r: 0.5283019, g: 0.27896315, b: 0.27661088, a: 1}
+  - {r: 0.3962264, g: 0.38843307, b: 0.36445352, a: 1}
+  - {r: 0.6132076, g: 0.21349822, b: 0.1533019, a: 1}
 --- !u!65 &272641378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10918,7 +10934,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -21642,7 +21658,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -26267,7 +26283,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -46253,7 +46269,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -50918,7 +50934,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -56445,7 +56461,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -66976,7 +66992,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
