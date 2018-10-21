@@ -10650,6 +10650,8 @@ MonoBehaviour:
   comboCounter: {fileID: 1319199708}
   collectNoise: {fileID: 1765292065}
   hScript: {fileID: 272641377}
+  pointEffect: {fileID: 1010782671367452, guid: bbf82ee7794b66748bb59d461aa23de9,
+    type: 2}
 --- !u!1 &273109191
 GameObject:
   m_ObjectHideFlags: 0

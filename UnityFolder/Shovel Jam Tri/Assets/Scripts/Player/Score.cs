@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using MaxScores =  SaveManager.MaxScores;
+using TMPro;
 
 public class Score : MonoBehaviour {
     
@@ -19,6 +20,8 @@ public class Score : MonoBehaviour {
 
     private MaxScores maxScores; //maxscores to get from Savemanager. 
 
+	public GameObject pointEffect; //spawns when collectible is hit
+
     private void Start()
     {
         //hScript = GetComponent<Health>();
@@ -36,14 +39,19 @@ public class Score : MonoBehaviour {
         //if collide with collectable then add to score and combo, spawn the game feel particles, and destroy the collectable
         if (other.CompareTag("Collectable"))
         {
+			TextMeshPro effectText = Instantiate (pointEffect, other.transform.position, other.transform.rotation).GetComponent<TextMeshPro> ();
+
             Collectable collect = other.GetComponent<Collectable>();
             if (collect.fishOfLife)
             {
+				effectText.text = "X" + combo.ToString();
                 hScript.TakeDamage(-1);
             }
             else
             {
-                score += 1 * combo; //give points plus combo multiplier
+				int adjustedCombo = 1 * combo;
+				effectText.text = adjustedCombo.ToString();
+				score += adjustedCombo; //give points plus combo multiplier
                 scoreCounter.text = "Score: " + score.ToString();
                 if (score > maxScores.score)
                     maxScores.score = score;
