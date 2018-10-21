@@ -27,7 +27,7 @@ public class AreaTransition : MonoBehaviour {
 		if(spawnScript.curDist < goalDist)
         {
             fadeScript.FadeAudio(Random.Range(1, 10));
-            spawnScript.area = Random.Range(0, 2);
+            spawnScript.area = Random.Range(1, 3);
             goalDist = spawnScript.curDist - Random.Range(minDist, maxDist);
 
             //9 stages. at each stage decrease the distToSpawn so we see more obstacles
