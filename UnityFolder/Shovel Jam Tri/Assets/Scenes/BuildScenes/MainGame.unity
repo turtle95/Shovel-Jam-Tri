@@ -72325,6 +72325,7 @@ MonoBehaviour:
   xOffset: 7
   zOffset: 10
   target: {fileID: 272641382}
+  smoothSpeed: 0.5
 --- !u!114 &2073064703
 MonoBehaviour:
   m_ObjectHideFlags: 0
