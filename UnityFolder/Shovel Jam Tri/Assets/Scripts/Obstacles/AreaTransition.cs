@@ -18,6 +18,9 @@ public class AreaTransition : MonoBehaviour {
 
     float goalDist = 0f;
 
+    public bool randAreas = false;
+    int area = 1;
+
 	void Start () {
         goalDist -= Random.Range(minDist, maxDist);
     }
@@ -26,15 +29,24 @@ public class AreaTransition : MonoBehaviour {
     void Update () {
 		if(spawnScript.curDist < goalDist)
         {
-            fadeScript.FadeAudio(Random.Range(1, 10));
-            spawnScript.area = Random.Range(1, 3);
+            if (randAreas)
+            {
+                area = Random.Range(1, 7);
+            } else
+                area++;
+
+            fadeScript.FadeAudio(area);
+            spawnScript.area = area;
+
             goalDist = spawnScript.curDist - Random.Range(minDist, maxDist);
 
-            //9 stages. at each stage decrease the distToSpawn so we see more obstacles
+            //7 stages. at each stage decrease the distToSpawn so we see more obstacles
             //minimum is 3 ... for now.
-            spawnScript.distToSpawn -= 1.5f;
-            if (spawnScript.distToSpawn < 3)
-                spawnScript.distToSpawn = 3;
+            if(spawnScript.minDist > 3)
+            {
+                spawnScript.minDist -= 1.5f;
+                spawnScript.maxDist -= 1.5f;
+            }
         }
 	}
 }
