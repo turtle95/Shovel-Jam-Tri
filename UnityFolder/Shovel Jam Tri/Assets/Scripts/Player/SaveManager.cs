@@ -86,8 +86,9 @@ public class SaveManager : MonoBehaviour
                 }
                 return data;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Debug.Log(e.Message);
                 SaveGame.Delete(MaxScores.identifier);
                 return new MaxScores();
             }
