@@ -29,11 +29,17 @@ public class AreaTransition : MonoBehaviour {
     void Update () {
 		if(spawnScript.curDist < goalDist)
         {
-            if (randAreas)
-            {
-                area = Random.Range(1, 7);
-            } else
-                area++;
+			//switches randomly between the areas
+			if (randAreas) 
+			{
+				area = Random.Range (0, 6);
+			} else 
+			{ //switches between the areas in order
+				area++;
+				if (area > 6)
+					randAreas = true;
+			}
+
 
             fadeScript.FadeAudio(area);
             spawnScript.area = area;

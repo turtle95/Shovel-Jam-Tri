@@ -167,11 +167,11 @@ public class ObstacleSpawner : MonoBehaviour {
             //spawns an object from the current area's list based on thier spawn rates
             weightSum = 0;
             GameObject newObject = null;
-            randNumInt = Random.Range(0, 101);
+            randNumInt = Random.Range(0, 101); //random number out of 100 to determine what object to spawn
             switch (area)
             {
                 case 0:
-                    for(int j =0; j<7; j++)
+				for(int j =0; j < areas[0].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[0].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum )
@@ -182,67 +182,67 @@ public class ObstacleSpawner : MonoBehaviour {
                     }
                     break;
                 case 1:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[1].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[1].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[1].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
                     break;
                 case 2:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[2].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[2].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[2].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
                     break;
                 case 3:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[3].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[3].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[3].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
                     break;
                 case 4:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[4].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[4].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[4].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
                     break;
                 case 5:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[5].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[5].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[5].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
                     break;
                 case 6:
-                    for (int j = 0; j < 7; j++)
+				for (int j = 0; j < areas[6].obstaclesToSpawn.Length; j++)
                     {
                         weightSum += areas[6].obstaclesToSpawn[j].spawnRate;
                         if (randNumInt < weightSum)
                         {
-                            newObject = Instantiate(areas[0].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
+                            newObject = Instantiate(areas[6].obstaclesToSpawn[j].obstacle, spawnPos, Random.rotation);
                             break;
                         }
                     }
