@@ -15,7 +15,7 @@ public class ObstacleCollision : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Health healthComp = collision.gameObject.GetComponent<Health>();
-            healthComp.TakeDamage(_damage);
+            healthComp.TakeDamage(_damage, true);
 
             Rigidbody playerRigid = collision.gameObject.GetComponent<Rigidbody>();
             playerRigid.velocity = Vector3.zero;

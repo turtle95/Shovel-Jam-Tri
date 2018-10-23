@@ -45,7 +45,7 @@ public class Score : MonoBehaviour {
             if (collect.fishOfLife)
             {
 				effectText.text = "X" + combo.ToString();
-                hScript.TakeDamage(-1);
+                hScript.TakeDamage(-1, false);
             }
             else
             {

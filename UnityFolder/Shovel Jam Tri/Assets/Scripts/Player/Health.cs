@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+	public void TakeDamage(int damage, bool playSounds)
     {
         health -= damage;
 
@@ -90,7 +90,7 @@ public class Health : MonoBehaviour
             scoreMenu.SetActive(true);
             gameObject.SetActive(false);
         }
-        else
+		else if(playSounds)
         {
             damageSound.Play();
             damageSound2.Play(); 
