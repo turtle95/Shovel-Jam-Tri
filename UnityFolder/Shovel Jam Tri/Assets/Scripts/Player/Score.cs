@@ -26,9 +26,9 @@ public class Score : MonoBehaviour {
     {
         //hScript = GetComponent<Health>();
         if (scoreCounter)
-            scoreCounter.text = "Score: " + score.ToString();
+            scoreCounter.text = "" + score.ToString();
         if (comboCounter)
-            comboCounter.text = "Combo: " + combo.ToString();
+            comboCounter.text = "" + combo.ToString();
 
         maxScores = SaveManager.GetMaxScores(); //retrieve in Start to avoid method race. 
     }
@@ -52,7 +52,7 @@ public class Score : MonoBehaviour {
 				int adjustedCombo = 1 * combo;
 				effectText.text = adjustedCombo.ToString();
 				score += adjustedCombo; //give points plus combo multiplier
-                scoreCounter.text = "Score: " + score.ToString();
+                scoreCounter.text = "" + score.ToString();
                 if (score > maxScores.score)
                     maxScores.score = score;
             }
@@ -62,7 +62,7 @@ public class Score : MonoBehaviour {
                 combo++;
 
                
-                comboCounter.text = "Combo: " + combo.ToString();
+                comboCounter.text = "" + combo.ToString();
 
                 
                 if (combo > maxScores.combo)
@@ -80,6 +80,6 @@ public class Score : MonoBehaviour {
     public void ResetCombo()
     {
         combo = 1;
-        comboCounter.text = "Combo: " + combo.ToString();
+        comboCounter.text = "" + combo.ToString();
     }
 }
