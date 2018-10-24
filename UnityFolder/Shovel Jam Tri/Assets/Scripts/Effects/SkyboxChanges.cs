@@ -11,11 +11,21 @@ public class SkyboxChanges : MonoBehaviour {
 
 	public float speedMult = 2;
 
-	
+	public Skybox[] skyboxes;
 
 	void Update () {
 		
 		RenderSettings.skybox.SetFloat ("_Rotation", Time.time  *speedMult);
 		
+	}
+
+	public void SwitchSkybox(int area)
+	{
+		switch (area) {
+		case 0:
+			//RenderSettings.skybox = skyboxes [area];
+			break;
+		}
+
 	}
 }
