@@ -21,7 +21,7 @@ public class Meteor : MonoBehaviour {
         if (target && target.activeSelf)
         {
             //shift actually target a bit so the meteor can get in the way of player
-            Vector3 direction = (target.transform.position - Vector3.right*5f) - transform.position;
+            Vector3 direction = (target.transform.position - Vector3.right*50f) - transform.position;
 
             rigid = GetComponent<Rigidbody>();
             rigid.velocity = direction.normalized * Random.Range(minSpeed, maxSpeed);
