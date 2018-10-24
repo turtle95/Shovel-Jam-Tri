@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
         public int score;
         public int combo;
         public bool viewedTutorial;
+		public bool randAreas;
     }
 
     public bool dontDestroyedOnLoad;

@@ -18,11 +18,15 @@ public class AreaTransition : MonoBehaviour {
 
     float goalDist = 0f;
 
-    public bool randAreas = false;
+   
     int area = 1;
+
+	private SaveManager.MaxScores maxScores; 
+
 
 	void Start () {
         goalDist -= Random.Range(minDist, maxDist);
+		maxScores = SaveManager.GetMaxScores();
     }
 
 
@@ -30,14 +34,14 @@ public class AreaTransition : MonoBehaviour {
 		if(spawnScript.curDist < goalDist)
         {
 			//switches randomly between the areas
-			if (randAreas) 
+			if (maxScores.randAreas) 
 			{
 				area = Random.Range (0, 6);
 			} else 
 			{ //switches between the areas in order
 				area++;
 				if (area > 6)
-					randAreas = true;
+					maxScores.randAreas = true;
 			}
 
 
