@@ -74,4 +74,20 @@ public class UISettingsSlider : MonoBehaviour
     {
         _shouldShowUp = !_shouldShowUp;
     }
+
+    public void ToggleHard()
+    {
+        _shouldShowUp = !_shouldShowUp;
+
+        if (_shouldShowUp)
+        {
+            _scrollView.sizeDelta = new Vector2(_scrollView.sizeDelta.x, _maxHeight);
+            _scrollView.localPosition = new Vector3(_scrollView.localPosition.x, _topPos, _scrollView.localPosition.z);
+        }
+        else
+        {
+            _scrollView.sizeDelta = new Vector2(_scrollView.sizeDelta.x, _minSize);
+            _scrollView.localPosition = new Vector3(_scrollView.localPosition.x, 0, _scrollView.localPosition.z);
+        }
+    }
 }
