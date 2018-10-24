@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.016223663, g: 0.014705494, b: 0.01387946, a: 1}
+  m_IndirectSpecularColor: {r: 0.011647278, g: 0.011656993, b: 0.012062821, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5898,6 +5898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237974871}
   - component: {fileID: 237974872}
+  - component: {fileID: 237974873}
   m_Layer: 0
   m_Name: MainGame
   m_TagString: Untagged
@@ -5938,7 +5939,18 @@ MonoBehaviour:
   fadeScript: {fileID: 1624184957}
   minDist: 1000
   maxDist: 1500
-  randAreas: 0
+--- !u!114 &237974873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 237974870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725ede1b06c0c354b84e41b280b5a3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMult: 2
 --- !u!1 &242117975
 GameObject:
   m_ObjectHideFlags: 0
@@ -51801,6 +51813,7 @@ MonoBehaviour:
     score: 0
     combo: 0
     viewedTutorial: 0
+    randAreas: 0
 --- !u!4 &1371977282
 Transform:
   m_ObjectHideFlags: 0
