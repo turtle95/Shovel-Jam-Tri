@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class RestartScene : MonoBehaviour {
 
-	public void Restart()
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Menu()
     {
         SceneManager.LoadScene(0);
     }

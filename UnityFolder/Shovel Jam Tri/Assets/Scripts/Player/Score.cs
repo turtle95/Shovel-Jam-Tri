@@ -11,8 +11,8 @@ public class Score : MonoBehaviour {
     public GameObject gameFeel; //cool particle effect to spawn when collectable is grabbed
     public GameObject comboGameFeel;
 
-    public Text scoreCounter;
-    public Text comboCounter;
+    public TextMeshProUGUI scoreCounter;
+    public TextMeshProUGUI comboCounter;
 
     public AudioSource collectNoise;
 
@@ -39,41 +39,43 @@ public class Score : MonoBehaviour {
         //if collide with collectable then add to score and combo, spawn the game feel particles, and destroy the collectable
         if (other.CompareTag("Collectable"))
         {
-			TextMeshPro effectText = Instantiate (pointEffect, other.transform.position, other.transform.rotation).GetComponent<TextMeshPro> ();
-
             Collectable collect = other.GetComponent<Collectable>();
-            if (collect.fishOfLife)
+            if (!collect.tutorialObj)
             {
-				effectText.text = "X" + combo.ToString();
-                hScript.TakeDamage(-1, false);
-            }
-            else
-            {
-				int adjustedCombo = 1 * combo;
-				effectText.text = adjustedCombo.ToString();
-				score += adjustedCombo; //give points plus combo multiplier
-                scoreCounter.text = "" + score.ToString();
-                if (score > maxScores.score)
-                    maxScores.score = score;
-            }
+                TextMeshPro effectText = Instantiate(pointEffect, other.transform.position, other.transform.rotation).GetComponent<TextMeshPro>();
+
+                if (collect.fishOfLife)
+                {
+                    effectText.text = "X" + combo.ToString();
+                    hScript.TakeDamage(-1, false);
+                }
+                else
+                {
+                    int adjustedCombo = 1 * combo;
+                    effectText.text = adjustedCombo.ToString();
+                    score += adjustedCombo; //give points plus combo multiplier
+                    scoreCounter.text = "" + score.ToString();
+                    if (score > maxScores.score)
+                        maxScores.score = score;
+                }
 
 
-               
+
                 combo++;
 
-               
+
                 comboCounter.text = "" + combo.ToString();
 
-                
+
                 if (combo > maxScores.combo)
                     maxScores.combo = combo;
-           
 
-            collectNoise.Play();
-            Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
 
-            if (!collect.tutorialObj)           
-                Destroy(other.gameObject); //kill the krill :)
+                collectNoise.Play();
+                Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            }
+               
+            Destroy(other.gameObject); //kill the krill :)
         }
     }
 

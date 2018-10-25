@@ -11,15 +11,18 @@ public class AreaTransition : MonoBehaviour {
     /// </summary>
 
     public ObstacleSpawner spawnScript;
+    public ObstacleSpawner backdropSpawner;
     public AudioFade fadeScript;
 
     public float minDist = 100f;
     public float maxDist = 250f;
 
-    float goalDist = 0f;
+    SkyboxChanges skyChangeScript; //script to fade between skyboxes
+
+    float goalDist = 0f; //distance at which the area will change
 
    
-    int area = 1;
+    public int area = 0;
 
 	private SaveManager.MaxScores maxScores; 
 
@@ -27,10 +30,20 @@ public class AreaTransition : MonoBehaviour {
 	void Start () {
         goalDist -= Random.Range(minDist, maxDist);
 		maxScores = SaveManager.GetMaxScores();
+        skyChangeScript = GetComponent<SkyboxChanges>();
     }
 
 
     void Update () {
+
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+            
+        //    Debug.LogError("SkippedLevel");
+        //    spawnScript.curDist = goalDist;
+        //}
+            
+
 		if(spawnScript.curDist < goalDist)
         {
 			//switches randomly between the areas
@@ -45,10 +58,13 @@ public class AreaTransition : MonoBehaviour {
 			}
 
 
-            fadeScript.FadeAudio(area);
-            spawnScript.area = area;
+            fadeScript.FadeAudio(area); //fades audio based on area
+            spawnScript.area = area; //swaps out obstacles being spawned
+            backdropSpawner.area = area; //swaps out backdrops being spawned
+            skyChangeScript.SwitchSkybox(area); //fades between skyboxes
 
-            goalDist = spawnScript.curDist - Random.Range(minDist, maxDist);
+        
+            goalDist = spawnScript.curDist - Random.Range(minDist, maxDist); //calculates a new distance goal
 
             //7 stages. at each stage decrease the distToSpawn so we see more obstacles
             //minimum is 3 ... for now.

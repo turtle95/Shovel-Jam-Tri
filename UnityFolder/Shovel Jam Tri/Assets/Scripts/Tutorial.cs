@@ -10,12 +10,12 @@ public class Tutorial : MonoBehaviour {
     int stageOfTut = 0;
 
 
-    public GameObject[] stageItems;
+    public GameObject[] stageItems; //things to toggle for the tutorial stages
 
     public Camera cam;
     public ObstacleSpawner obsSpawnScript;
 
-    
+    public GameObject pauseUI; //turn back on the pause ui after tutorial is finished
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class Tutorial : MonoBehaviour {
                 
             }
         }
-        SkipTutorial();
+       // SkipTutorial();
     }
 
     IEnumerator WaitForSomething(int goal)
@@ -74,11 +74,12 @@ public class Tutorial : MonoBehaviour {
     }
 
     //turn off all tutorial objects, set viewed tutorial to true, turn on the obstacle spawner, and disable this script
-    void PlayTheDamnGame()
+    public void PlayTheDamnGame()
     {
         SaveManager.instance.maxScores.viewedTutorial = true;
         obsSpawnScript.enabled = true;
         playerScript.maxSpeed = 10f;
+        pauseUI.SetActive(true);
         foreach (GameObject plop in stageItems)
         {
             plop.SetActive(false);
@@ -86,23 +87,23 @@ public class Tutorial : MonoBehaviour {
         this.enabled = false;
     }
 
-    void SkipTutorial()
-    {
-        if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(0).phase != TouchPhase.Ended) //stores the position of the touch
-            {
-                //sens ray from touch position and activates button that was touched
-                Ray ray = cam.ScreenPointToRay(Input.GetTouch(0).position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 1000))
-                {
-                    if (hit.collider.gameObject.CompareTag("Tutorial"))
-                    {
-                        PlayTheDamnGame();
-                    }
-                }
-            }
-        }
-    }
+    //public void SkipTutorial()
+    //{
+    //    //if (Input.touchCount > 0)
+    //    //{
+    //    //    if (Input.GetTouch(0).phase != TouchPhase.Ended) //stores the position of the touch
+    //    //    {
+    //            //sens ray from touch position and activates button that was touched
+    //            Ray ray = cam.ScreenPointToRay(Input.GetTouch(0).position);
+    //            RaycastHit hit;
+    //            if (Physics.Raycast(ray, out hit, 1000))
+    //            {
+    //                if (hit.collider.gameObject.CompareTag("Tutorial"))
+    //                {
+    //                    PlayTheDamnGame();
+    //                }
+    //            }
+    //    //    }
+    //    //}
+    //}
 }
