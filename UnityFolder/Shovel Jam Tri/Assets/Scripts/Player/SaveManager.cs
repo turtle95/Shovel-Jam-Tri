@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     [System.Serializable]
-    public struct MaxScores
+    public class MaxScores
     {
         public const string identifier = "maxscore.dat";
         public int score;
@@ -23,15 +23,16 @@ public class SaveManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            InitSaveGame();
+            maxScores = LoadScores();
+
+            if (dontDestroyedOnLoad)
+                DontDestroyOnLoad(gameObject);
+        }
         else if (instance != this)
             Destroy(gameObject);
-
-        if (dontDestroyedOnLoad)
-            DontDestroyOnLoad(gameObject);
-
-        InitSaveGame();
-        maxScores = LoadScores();
     }
 
     private void OnDisable()
