@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
     public int startHealth;
     public int maxHealth;
 
+    
     public GameObject scoreMenu;
     public AudioSource deathSoundSource;
     public AudioSource damageSound;

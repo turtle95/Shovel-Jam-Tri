@@ -2,6 +2,7 @@
 {
 	Properties
 	{
+		_Rotation("Rotation", Range(0.000000,360.000000)) = 0.000000
 		_Blend ("Blend", Range(0.0,1.0)) = 0.5
 		_Skybox1 ("Skybox one", Cube) = ""
 		_Skybox2 ("Skybox two", Cube) = ""

@@ -22,6 +22,7 @@ public class LargeEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player");
         playerTrans = player.GetComponent<Transform>();
         playerRb = player.GetComponent<Rigidbody>();
         StartCoroutine(ShootStuff());

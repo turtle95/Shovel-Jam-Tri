@@ -13,6 +13,7 @@ public class AreaTransition : MonoBehaviour {
     public ObstacleSpawner spawnScript;
     public ObstacleSpawner backdropSpawner;
     public AudioFade fadeScript;
+    public CameraSwitch camScript;
 
     public float minDist = 100f;
     public float maxDist = 250f;
@@ -27,6 +28,12 @@ public class AreaTransition : MonoBehaviour {
 	private SaveManager.MaxScores maxScores; 
 
 
+    public void SkipArea()
+    {
+        goalDist = spawnScript.curDist + 1;
+    }
+
+
 	void Start () {
         goalDist -= Random.Range(minDist, maxDist);
 		maxScores = SaveManager.GetMaxScores();
@@ -36,13 +43,7 @@ public class AreaTransition : MonoBehaviour {
 
     void Update () {
 
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-            
-        //    Debug.LogError("SkippedLevel");
-        //    spawnScript.curDist = goalDist;
-        //}
-            
+      
 
 		if(spawnScript.curDist < goalDist)
         {
@@ -62,7 +63,7 @@ public class AreaTransition : MonoBehaviour {
             spawnScript.area = area; //swaps out obstacles being spawned
             backdropSpawner.area = area; //swaps out backdrops being spawned
             skyChangeScript.SwitchSkybox(area); //fades between skyboxes
-
+            camScript.SwitchArea(area);
         
             goalDist = spawnScript.curDist - Random.Range(minDist, maxDist); //calculates a new distance goal
 

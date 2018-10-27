@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114588285701770114}
   - component: {fileID: 114811168358319938}
   - component: {fileID: 54383969237459880}
+  - component: {fileID: 114029603859875646}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -102,6 +103,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114029603859875646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871992180082104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e036309ae52ee4047bd239e82cf133e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 2
 --- !u!114 &114588285701770114
 MonoBehaviour:
   m_ObjectHideFlags: 1
