@@ -73534,7 +73534,7 @@ MonoBehaviour:
         type: 2}
       spawnRate: 15
   - obstaclesToSpawn:
-    - obstacle: {fileID: 1747430769322174, guid: 8bb3bc6f92b7ad849a0f5ada7e1a9499,
+    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
         type: 2}
       spawnRate: 30
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
@@ -73573,7 +73573,7 @@ MonoBehaviour:
         type: 2}
       spawnRate: 10
   - obstaclesToSpawn:
-    - obstacle: {fileID: 1747430769322174, guid: 8bb3bc6f92b7ad849a0f5ada7e1a9499,
+    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
         type: 2}
       spawnRate: 20
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,

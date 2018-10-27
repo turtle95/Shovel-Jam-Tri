@@ -24,6 +24,7 @@ public class LargeEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerTrans = player.GetComponent<Transform>();
         playerRb = player.GetComponent<Rigidbody>();
+        StartCoroutine(ShootStuff());
     }
 
     // Update is called once per frame
@@ -41,9 +42,10 @@ public class LargeEnemy : MonoBehaviour
     //wait a random amount of time then shoot something
     IEnumerator ShootStuff()
     {
-        randNum = Random.Range(0, 3);
+        randNum = Random.Range(2, 4);
         yield return new WaitForSeconds(randNum);
         Instantiate(bullet, cannon.position, cannon.rotation);
+        StartCoroutine(ShootStuff());
     }
 
     //spawns an explosion and sends ship downwards, then waits and deletes it

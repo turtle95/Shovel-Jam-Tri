@@ -18,6 +18,7 @@ public class smallEnemy : MonoBehaviour {
     //get shoot stuff started
     private void Start()
     {
+        playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         StartCoroutine(ShootStuff());
     }
 
@@ -28,14 +29,14 @@ public class smallEnemy : MonoBehaviour {
 
         transform.LookAt(playerTrans.position); //look at the player
 
-        transform.Translate(transform.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
     }
 
     //wait a random amount of time then shoot something
     IEnumerator ShootStuff()
     {
-        randNum = Random.Range(0, 3);
+        randNum = Random.Range(2, 4);
         yield return new WaitForSeconds(randNum);
         Instantiate(bullet, cannon.position, cannon.rotation);
         StartCoroutine(ShootStuff());
