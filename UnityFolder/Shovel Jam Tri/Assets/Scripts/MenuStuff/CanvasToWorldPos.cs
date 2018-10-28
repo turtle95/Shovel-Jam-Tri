@@ -10,6 +10,7 @@ public class CanvasToWorldPos : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.position = cam.ScreenToWorldPoint(new Vector3(UiObject.position.x, UiObject.position.y, cam.nearClipPlane));
+        transform.position = cam.ScreenToWorldPoint(new Vector3(UiObject.position.x, UiObject.position.y, cam.nearClipPlane+2));
+		//transform.position = new Vector3 (0, transform.position.y, transform.position.z);
 	}
 }

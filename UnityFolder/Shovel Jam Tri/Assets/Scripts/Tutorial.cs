@@ -17,6 +17,11 @@ public class Tutorial : MonoBehaviour {
 
     public GameObject pauseUI; //turn back on the pause ui after tutorial is finished
 
+	//animated touch ui objects
+	public GameObject touchSwipe;
+	public GameObject touchTap;
+	public GameObject touchParticles;
+
     private void Start()
     {
         if (SaveManager.instance.maxScores.viewedTutorial)
@@ -35,11 +40,14 @@ public class Tutorial : MonoBehaviour {
                 if(stageOfTut == 0)
                 {
                     //stageItems[0].SetActive(false);
-                    
+					Destroy(touchSwipe);
+					Destroy (touchParticles);
+					touchTap.SetActive (true);
                     StartCoroutine(WaitForSomething(1));
                 }
                 if(stageOfTut == 1)
                 {
+					Destroy (touchTap);
                     playerScript.maxSpeed = 5f;
                     StartCoroutine(WaitForSomething(2));
                 }
