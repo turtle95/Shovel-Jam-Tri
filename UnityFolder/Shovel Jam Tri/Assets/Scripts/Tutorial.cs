@@ -40,14 +40,14 @@ public class Tutorial : MonoBehaviour {
                 if(stageOfTut == 0)
                 {
                     //stageItems[0].SetActive(false);
-					Destroy(touchSwipe);
-					Destroy (touchParticles);
+					touchSwipe.SetActive(false);
+					touchParticles.SetActive (false);
 					touchTap.SetActive (true);
                     StartCoroutine(WaitForSomething(1));
                 }
                 if(stageOfTut == 1)
                 {
-					Destroy (touchTap);
+					touchTap.SetActive (false);
                     playerScript.maxSpeed = 5f;
                     StartCoroutine(WaitForSomething(2));
                 }
@@ -84,6 +84,9 @@ public class Tutorial : MonoBehaviour {
     //turn off all tutorial objects, set viewed tutorial to true, turn on the obstacle spawner, and disable this script
     public void PlayTheDamnGame()
     {
+		Destroy (touchTap);
+		Destroy (touchSwipe);
+		Destroy (touchParticles);
         SaveManager.instance.maxScores.viewedTutorial = true;
         obsSpawnScript.enabled = true;
         playerScript.maxSpeed = 10f;

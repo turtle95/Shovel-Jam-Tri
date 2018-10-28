@@ -20,10 +20,11 @@ public class CameraSwitch : MonoBehaviour {
             spawnedShip = Instantiate(largeShip, spawnPoint.position, spawnPoint.rotation);
         } else
         {
+			spawnedShip = GameObject.FindGameObjectWithTag ("LargeEnemy");
             if(spawnedShip != null)
             {
                 StartCoroutine(spawnedShip.GetComponent<LargeEnemy>().DestroyShip());
-            }
+			}
             camScript.xOffset = Mathf.Lerp(camScript.xOffset, 7, camMoveTime * Time.deltaTime);
         }
 	}

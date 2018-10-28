@@ -10,6 +10,7 @@ TagManager:
   - HighScore
   - Helmet
   - Tutorial
+  - LargeEnemy
   layers:
   - Default
   - TransparentFX

@@ -85,7 +85,7 @@ public class Health : MonoBehaviour
         //TODO proper player dead handling
         if (health <= 0)
         {
-            Debug.Log("player died.");
+          //  Debug.Log("player died.");
             deathSoundSource.Play();
             
             scoreMenu.SetActive(true);
@@ -95,7 +95,7 @@ public class Health : MonoBehaviour
         {
             damageSound.Play();
             damageSound2.Play(); 
-            Debug.Log("Current Health = " + health);
+          //  Debug.Log("Current Health = " + health);
         }
     }
 }

@@ -5928,12 +5928,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnScript: {fileID: 2073064703}
-  backdropSpawner: {fileID: 0}
+  backdropSpawner: {fileID: 314141082}
   fadeScript: {fileID: 1624184957}
-  camScript: {fileID: 0}
+  camScript: {fileID: 237974874}
   minDist: 800
   maxDist: 1200
-  area: 1
+  area: 0
 --- !u!114 &237974873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5947,13 +5947,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMult: 2
   skyboxes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8900000, guid: 81b388414b17d5447a9c3b139f79957d, type: 3}
+  - {fileID: 8900000, guid: a10a9a09e3ed6f24dbff7169ff93df66, type: 3}
+  - {fileID: 8900000, guid: 7a969b243e2a23343a3afa4d30dec8cb, type: 3}
+  - {fileID: 8900000, guid: fa2edfba62679284db72e4851917499d, type: 3}
+  - {fileID: 8900000, guid: a10a9a09e3ed6f24dbff7169ff93df66, type: 3}
+  - {fileID: 8900000, guid: 7a969b243e2a23343a3afa4d30dec8cb, type: 3}
+  - {fileID: 8900000, guid: fa2edfba62679284db72e4851917499d, type: 3}
 --- !u!114 &237974874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10610,7 +10610,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268069329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.803}
+  m_LocalPosition: {x: 0, y: 0, z: -2.687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 272641382}
@@ -10740,7 +10740,7 @@ MonoBehaviour:
   - {fileID: 460031700}
   cam: {fileID: 2073064701}
   obsSpawnScript: {fileID: 2073064703}
-  pauseUI: {fileID: 1703167932}
+  pauseUI: {fileID: 183495638}
   touchSwipe: {fileID: 1218218587}
   touchTap: {fileID: 1567747671}
   touchParticles: {fileID: 736220276}
@@ -17134,7 +17134,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 46.85
+  m_fontSize: 51.3
   m_fontSizeBase: 44.7
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -21988,7 +21988,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705210569}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -5.35, y: 4.33, z: 10}
+  m_LocalPosition: {x: -5.38, y: 4.84, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 561554660}
@@ -36818,7 +36818,7 @@ MonoBehaviour:
   scoreScript: {fileID: 272641383}
   looserSound: {fileID: 1409546224}
   winnerSound: {fileID: 1653496662}
-  scoreComboBox: {fileID: 0}
+  scoreComboBox: {fileID: 1503130264}
 --- !u!1 &980645950
 GameObject:
   m_ObjectHideFlags: 0
@@ -62395,7 +62395,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1480484651}
   m_LocalRotation: {x: -0, y: 0.00000026822087, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27993998, y: 0.27993998, z: 0.27993998}
   m_Children:
   - {fileID: 1941727615}
@@ -62404,7 +62404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.11, y: -1.54}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1484335402 stripped
@@ -67630,7 +67630,7 @@ MonoBehaviour:
   - {fileID: 2029259458}
   - {fileID: 599859772}
   - {fileID: 31608872}
-  fadeTime: 2
+  fadeTime: 20
   seconds: 3
 --- !u!4 &1624184958
 Transform:
@@ -77718,7 +77718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1900780194
 AudioSource:
   m_ObjectHideFlags: 0

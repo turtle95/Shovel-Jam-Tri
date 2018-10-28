@@ -30,8 +30,9 @@ public class AudioFade : MonoBehaviour {
         for(int i = 0; i< fadeTime; i++)
         {
             music[lastChosen].volume -= volumeInterval;
+			Debug.Log (music [lastChosen].volume + "last chosen");
             music[chosenOne].volume += volumeInterval;
-
+			Debug.Log (music [chosenOne].volume + "current");
             yield return new WaitForSeconds(stepInterval);
         }
         

@@ -20,7 +20,7 @@ public class SkyboxChanges : MonoBehaviour {
 	void Update () {
 		
         //slowly rotates the skybox
-		RenderSettings.skybox.SetFloat ("_Rotation", Time.time  *speedMult);
+		//RenderSettings.skybox.SetFloat ("_Rotation", Time.time  *speedMult);
 
 
 
