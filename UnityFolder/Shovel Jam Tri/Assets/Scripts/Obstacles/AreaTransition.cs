@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AreaTransition : MonoBehaviour {
@@ -31,6 +32,10 @@ public class AreaTransition : MonoBehaviour {
     public void SkipArea()
     {
         goalDist = spawnScript.curDist + 1;
+
+        //----Remove this when done------
+        var text = GameObject.Find("MainGame/Canvas/AreaID").GetComponent<TextMeshProUGUI>();
+        text.text = area.ToString();
     }
 
 
