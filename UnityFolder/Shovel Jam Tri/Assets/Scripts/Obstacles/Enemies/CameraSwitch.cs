@@ -16,7 +16,14 @@ public class CameraSwitch : MonoBehaviour {
 	public void SwitchArea (float area) {
 		if (area == 3 || area == 5)
         {
-            camScript.xOffset = Mathf.Lerp(camScript.xOffset, -2f, camMoveTime * Time.deltaTime);
+            float i = 0;
+            while (i < camMoveTime)
+            {
+                camScript.xOffset = Mathf.Lerp(camScript.xOffset, -3f, camMoveTime * Time.deltaTime);
+                Debug.Log(Time.deltaTime + " Time");
+                i += Time.deltaTime;
+            }
+            
             spawnedShip = Instantiate(largeShip, spawnPoint.position, spawnPoint.rotation);
         } else
         {
@@ -25,7 +32,13 @@ public class CameraSwitch : MonoBehaviour {
             {
                 StartCoroutine(spawnedShip.GetComponent<LargeEnemy>().DestroyShip());
 			}
-            camScript.xOffset = Mathf.Lerp(camScript.xOffset, 7, camMoveTime * Time.deltaTime);
+            float i = 0;
+            while (i < camMoveTime)
+            {
+                camScript.xOffset = Mathf.Lerp(camScript.xOffset, 7, camMoveTime * Time.deltaTime);
+                i += Time.deltaTime;
+            }
+            
         }
 	}
 }

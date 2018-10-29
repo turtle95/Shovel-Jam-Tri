@@ -11,7 +11,7 @@ public class AudioFade : MonoBehaviour {
         seconds = 3f; //how smooth the fade is, time between volume steps
 
     
-    int lastChosen = 0; //the audio source to fade out
+    int lastChosen = 5; //the audio source to fade out
 
 
     public void FadeAudio(int chosenOne)
@@ -30,9 +30,9 @@ public class AudioFade : MonoBehaviour {
         for(int i = 0; i< fadeTime; i++)
         {
             music[lastChosen].volume -= volumeInterval;
-			Debug.Log (music [lastChosen].volume + "last chosen");
+			//Debug.Log (music [lastChosen].volume + "last chosen");
             music[chosenOne].volume += volumeInterval;
-			Debug.Log (music [chosenOne].volume + "current");
+			//Debug.Log (music [chosenOne].volume + "current");
             yield return new WaitForSeconds(stepInterval);
         }
         

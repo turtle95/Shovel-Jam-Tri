@@ -6,7 +6,7 @@ public class LargeEnemy : MonoBehaviour
 {
 
     public GameObject bullet;
-    public float speed = 5;
+    public float speed = 2;
     public Transform cannon;
     public GameObject player;
     public GameObject explosion;
@@ -25,6 +25,7 @@ public class LargeEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerTrans = player.GetComponent<Transform>();
         playerRb = player.GetComponent<Rigidbody>();
+        
         StartCoroutine(ShootStuff());
     }
 
@@ -33,17 +34,19 @@ public class LargeEnemy : MonoBehaviour
     {
 
         transform.LookAt(playerTrans.position); //look at the player
-
+        rb.velocity = transform.forward * speed;
+        Debug.Log("magnitude " + playerRb.velocity.magnitude);
+        Debug.Log("normalized " + rb.velocity.normalized);
         //if you're going slower than the player than set your speed to the player's speed
         if (rb.velocity.magnitude < playerRb.velocity.magnitude)
-            rb.velocity = playerRb.velocity;
+            rb.velocity = new Vector3(playerRb.velocity.x, rb.velocity.y, 0);
 
     }
 
     //wait a random amount of time then shoot something
     IEnumerator ShootStuff()
     {
-        randNum = Random.Range(2, 4);
+        randNum = Random.Range(4, 6);
         yield return new WaitForSeconds(randNum);
         Instantiate(bullet, cannon.position, cannon.rotation);
         StartCoroutine(ShootStuff());

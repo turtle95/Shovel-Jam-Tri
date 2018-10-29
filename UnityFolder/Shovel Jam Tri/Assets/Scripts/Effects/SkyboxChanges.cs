@@ -53,11 +53,11 @@ public class SkyboxChanges : MonoBehaviour {
         //switches out the innactive slot with the new skybox texture
         if (slotOne)
         {
-            RenderSettings.skybox.SetTexture("_Skybox2", skyboxes[area]);
+            RenderSettings.skybox.SetTexture("_Skybox1", skyboxes[area]);
             slotOne = false;
         } else
         {
-            RenderSettings.skybox.SetTexture("_Skybox1", skyboxes[area]);
+            RenderSettings.skybox.SetTexture("_Skybox2", skyboxes[area]);
             slotOne = true;
         }
 

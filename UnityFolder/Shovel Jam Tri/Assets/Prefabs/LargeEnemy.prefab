@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235117344329408}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 210.84592, y: 432.80365, z: -502.2108}
+  m_LocalPosition: {x: -22.986763, y: -1.0382336, z: 22.746128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4123227641522932}
@@ -281,7 +281,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 56
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!65 &65212721265888408
 BoxCollider:
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bda8b6763ff8d4c98b45b4b0050abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1871992180082104, guid: b6a7fa408d6b0fb4caa3ad2b3f8fc495, type: 2}
+  bullet: {fileID: 1158363599204130, guid: 1a58e11e442b8084283e5a2e194b4718, type: 2}
   speed: 5
   cannon: {fileID: 4696667901774152}
   player: {fileID: 0}
@@ -378,8 +378,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.016326904, y: 0, z: 0}
-    m_Extent: {x: 0.016327891, y: 0.94506836, z: 0.9450685}
+    m_Center: {x: -0.016338348, y: 0, z: 0.0000019073486}
+    m_Extent: {x: 0.016341243, y: 0.945071, z: 0.9450723}
   m_DirtyAABB: 0
 --- !u!137 &137528736251971200
 SkinnedMeshRenderer:
@@ -425,8 +425,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.021850586, y: 0, z: 0}
-    m_Extent: {x: 0.021853432, y: 2.7267456, z: 2.7267306}
+    m_Center: {x: -0.021860123, y: 0, z: 0.0000019073486}
+    m_Extent: {x: 0.02186869, y: 2.7267325, z: 2.7267344}
   m_DirtyAABB: 0
 --- !u!137 &137964541136638192
 SkinnedMeshRenderer:
@@ -472,8 +472,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.016967773, y: 0, z: 0.000015258789}
-    m_Extent: {x: 0.016969983, y: 2.1156921, z: 2.1156924}
+    m_Center: {x: -0.016963959, y: 0, z: 0.0000019073486}
+    m_Extent: {x: 0.016968075, y: 2.1156929, z: 2.1156943}
   m_DirtyAABB: 0
 --- !u!183 &183060918050411144
 Cloth:

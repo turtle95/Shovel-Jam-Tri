@@ -24,7 +24,7 @@ public class AreaTransition : MonoBehaviour {
     float goalDist = 0f; //distance at which the area will change
 
    
-    public int area = 0;
+    public int area = -1;
 
 	private SaveManager.MaxScores maxScores; 
 
@@ -33,9 +33,7 @@ public class AreaTransition : MonoBehaviour {
     {
         goalDist = spawnScript.curDist + 1;
 
-        //----Remove this when done------
-        var text = GameObject.Find("MainGame/Canvas/AreaID").GetComponent<TextMeshProUGUI>();
-        text.text = area.ToString();
+       
     }
 
 
@@ -43,25 +41,36 @@ public class AreaTransition : MonoBehaviour {
         goalDist -= Random.Range(minDist, maxDist);
 		maxScores = SaveManager.GetMaxScores();
         skyChangeScript = GetComponent<SkyboxChanges>();
+        SwitchAreas();
+       // maxScores.randAreas = false;
+        
     }
 
 
-    void Update () {
+    void Update()
+    {
 
-      
-
-		if(spawnScript.curDist < goalDist)
+        if (spawnScript.curDist < goalDist)
         {
-			//switches randomly between the areas
-			if (maxScores.randAreas) 
-			{
-				area = Random.Range (0, 6);
-			} else 
-			{ //switches between the areas in order
-				area++;
-				if (area > 6)
-					maxScores.randAreas = true;
-			}
+
+            SwitchAreas();
+
+        }
+    }
+    void SwitchAreas()
+    {
+        Debug.Log("Random areas bool = " + maxScores.randAreas);
+        //switches randomly between the areas
+        if (maxScores.randAreas)
+            {
+                area = Random.Range(0, 7);
+            }
+            else
+            { //switches between the areas in order
+                area++;
+                if (area > 7)
+                    maxScores.randAreas = true;
+            }
 
 
             fadeScript.FadeAudio(area); //fades audio based on area
@@ -69,16 +78,21 @@ public class AreaTransition : MonoBehaviour {
             backdropSpawner.area = area; //swaps out backdrops being spawned
             skyChangeScript.SwitchSkybox(area); //fades between skyboxes
             camScript.SwitchArea(area);
-        
+
             goalDist = spawnScript.curDist - Random.Range(minDist, maxDist); //calculates a new distance goal
 
-            //7 stages. at each stage decrease the distToSpawn so we see more obstacles
+            //8 stages. at each stage decrease the distToSpawn so we see more obstacles
             //minimum is 3 ... for now.
-            if(spawnScript.minDist > 3)
+            if (spawnScript.minDist > 3)
             {
                 spawnScript.minDist -= 1.5f;
                 spawnScript.maxDist -= 1.5f;
             }
-        }
-	}
+
+
+        //----Remove this when done------
+        var text = GameObject.Find("MainGame/Canvas/AreaID").GetComponent<TextMeshProUGUI>();
+        text.text = area.ToString();
+
+    }
 }
