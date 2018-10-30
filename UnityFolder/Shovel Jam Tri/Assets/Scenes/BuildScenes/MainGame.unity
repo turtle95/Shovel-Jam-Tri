@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19850627, g: 0.10197041, b: 0.120302565, a: 1}
+  m_IndirectSpecularColor: {r: 0.015798314, g: 0.016830815, b: 0.015938671, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -78833,81 +78833,96 @@ MonoBehaviour:
   - obstaclesToSpawn:
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
-      spawnRate: 25
-    - obstacle: {fileID: 1568219085161574, guid: 0d619565b49190d4a977a3f950f1a7cd,
+      spawnRate: 35
+    - obstacle: {fileID: 1430357071089140, guid: c28cd54e79eec194c9a2dcad653695c8,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
+        type: 2}
+      spawnRate: 15
+    - obstacle: {fileID: 1928090126897782, guid: 5ff6c110dd029914caaf7601af691805,
+        type: 2}
+      spawnRate: 15
+    - obstacle: {fileID: 1445003460066274, guid: b6d3bd14bd443e0469bbf793fee828e4,
+        type: 2}
+      spawnRate: 5
+  - obstaclesToSpawn:
+    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1579841123925208, guid: 653c4a4acf4580a4ca21e2b2423dfba5,
+        type: 2}
+      spawnRate: 5
+    - obstacle: {fileID: 1550982348976188, guid: 37cb1f629adc1e44ea0d869acf9d5df3,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
+        type: 2}
+      spawnRate: 15
+    - obstacle: {fileID: 1935061714870910, guid: 948986fbd6a46054e856db0164d4d6e9,
+        type: 2}
+      spawnRate: 5
+  - obstaclesToSpawn:
+    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
+        type: 2}
+      spawnRate: 30
+    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
+        type: 2}
+      spawnRate: 30
+    - obstacle: {fileID: 1429013795852094, guid: a1e58e58d9d2d754692c749961cb58bd,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1915460918701840, guid: 43deafad5913130479d95c2dfd00c29c,
+        type: 2}
+      spawnRate: 10
+  - obstaclesToSpawn:
+    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
+        type: 2}
+      spawnRate: 30
+  - obstaclesToSpawn:
+    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
+        type: 2}
+      spawnRate: 30
+    - obstacle: {fileID: 1579841123925208, guid: 653c4a4acf4580a4ca21e2b2423dfba5,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1430357071089140, guid: c28cd54e79eec194c9a2dcad653695c8,
+        type: 2}
+      spawnRate: 20
+    - obstacle: {fileID: 1550982348976188, guid: 37cb1f629adc1e44ea0d869acf9d5df3,
+        type: 2}
+      spawnRate: 10
+  - obstaclesToSpawn:
+    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
+        type: 2}
+      spawnRate: 10
+    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
+        type: 2}
+      spawnRate: 30
+    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
       spawnRate: 40
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
         type: 2}
-      spawnRate: 10
-    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
-        type: 2}
-      spawnRate: 15
-  - obstaclesToSpawn:
-    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1485228396310728, guid: ec29718178b7a1a428931d9feec70dba,
-        type: 2}
-      spawnRate: 5
-    - obstacle: {fileID: 1391372430618520, guid: e96b6f9718c722f4ea3febe0c4031828,
-        type: 2}
-      spawnRate: 10
-    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
-        type: 2}
-      spawnRate: 15
-  - obstaclesToSpawn:
-    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1568219085161574, guid: 0d619565b49190d4a977a3f950f1a7cd,
-        type: 2}
-      spawnRate: 20
-    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
-        type: 2}
-      spawnRate: 10
-    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
-        type: 2}
-      spawnRate: 10
-  - obstaclesToSpawn:
-    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
-        type: 2}
-      spawnRate: 20
-    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
-        type: 2}
-      spawnRate: 30
-  - obstaclesToSpawn:
-    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
-        type: 2}
-      spawnRate: 20
-    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
-        type: 2}
-      spawnRate: 10
-    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1391372430618520, guid: e96b6f9718c722f4ea3febe0c4031828,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1485228396310728, guid: ec29718178b7a1a428931d9feec70dba,
-        type: 2}
-      spawnRate: 10
-  - obstaclesToSpawn:
-    - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
-        type: 2}
-      spawnRate: 10
-    - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
-        type: 2}
-      spawnRate: 15
-    - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
-        type: 2}
-      spawnRate: 30
-    - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
-        type: 2}
-      spawnRate: 5
+      spawnRate: 2
   - obstaclesToSpawn:
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
@@ -78915,10 +78930,10 @@ MonoBehaviour:
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
         type: 2}
       spawnRate: 5
-    - obstacle: {fileID: 1391372430618520, guid: e96b6f9718c722f4ea3febe0c4031828,
+    - obstacle: {fileID: 1429013795852094, guid: a1e58e58d9d2d754692c749961cb58bd,
         type: 2}
       spawnRate: 5
-    - obstacle: {fileID: 1568219085161574, guid: 0d619565b49190d4a977a3f950f1a7cd,
+    - obstacle: {fileID: 1935061714870910, guid: 948986fbd6a46054e856db0164d4d6e9,
         type: 2}
       spawnRate: 30
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
@@ -78931,10 +78946,10 @@ MonoBehaviour:
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
         type: 2}
       spawnRate: 10
-    - obstacle: {fileID: 1391372430618520, guid: e96b6f9718c722f4ea3febe0c4031828,
+    - obstacle: {fileID: 1579841123925208, guid: 653c4a4acf4580a4ca21e2b2423dfba5,
         type: 2}
       spawnRate: 5
-    - obstacle: {fileID: 1568219085161574, guid: 0d619565b49190d4a977a3f950f1a7cd,
+    - obstacle: {fileID: 1429013795852094, guid: a1e58e58d9d2d754692c749961cb58bd,
         type: 2}
       spawnRate: 25
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
