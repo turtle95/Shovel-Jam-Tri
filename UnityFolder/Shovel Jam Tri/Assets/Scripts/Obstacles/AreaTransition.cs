@@ -42,8 +42,7 @@ public class AreaTransition : MonoBehaviour {
 		maxScores = SaveManager.GetMaxScores();
         skyChangeScript = GetComponent<SkyboxChanges>();
         SwitchAreas();
-       // maxScores.randAreas = false;
-        
+        maxScores.randAreas = false;       
     }
 
 

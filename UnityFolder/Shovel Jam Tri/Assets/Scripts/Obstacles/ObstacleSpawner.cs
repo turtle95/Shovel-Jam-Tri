@@ -57,10 +57,11 @@ public class ObstacleSpawner : MonoBehaviour {
     public int area = 0;
    
     public float curDist = 0;
-    public float goalDist = 5;
-    float distToSpawn = 5f;
-    public float maxDist = 13f;
-    public float minDist = 10f;
+    public float goalDist;
+    
+
+    public float maxDist = 13f; //max and min distance that objects can be spawned at
+    public float minDist = 10f; //influenced by area transition script
 
 
     public Transform player;
@@ -71,12 +72,13 @@ public class ObstacleSpawner : MonoBehaviour {
 
     int weightSum = 0;
 
-
+    Vector3 lastSpot = Vector3.zero;
 
 
 	void Start () {
         spawnedObjects = new List<Transform>();
-        distToSpawn = Random.Range(minDist, maxDist);
+        goalDist = Random.Range(minDist, maxDist);
+        lastSpot = player.position;
       //  StartCoroutine(WhenToSpawn()); //spawns something based on time
     }
 
@@ -85,13 +87,15 @@ public class ObstacleSpawner : MonoBehaviour {
 
     private void Update()
     {
-        //spawns based on distance
-        curDist = player.position.x; 
-        if(curDist < goalDist)
+        //spawns based on distance, now uses a vector3 distance rather than just x distance      
+        curDist = Vector3.Distance(player.position, lastSpot);
+
+        if(curDist > goalDist)
         {
             SpawnSomething();
-            goalDist = curDist -(distToSpawn);
-            distToSpawn = Random.Range(minDist, maxDist);
+            lastSpot = player.position;
+            goalDist = Random.Range(minDist, maxDist);
+            
         }
 
 
