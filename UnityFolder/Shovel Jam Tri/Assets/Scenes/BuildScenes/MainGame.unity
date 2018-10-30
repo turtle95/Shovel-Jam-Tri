@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.015569288, g: 0.013893131, b: 0.013877675, a: 1}
+  m_IndirectSpecularColor: {r: 0.19102854, g: 0.14443818, b: 0.15260497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36838,6 +36838,7 @@ MonoBehaviour:
   looserSound: {fileID: 1409546224}
   winnerSound: {fileID: 1653496662}
   scoreComboBox: {fileID: 1503130264}
+  pauseButton: {fileID: 183495638}
 --- !u!1 &980645950
 GameObject:
   m_ObjectHideFlags: 0
@@ -77822,7 +77823,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

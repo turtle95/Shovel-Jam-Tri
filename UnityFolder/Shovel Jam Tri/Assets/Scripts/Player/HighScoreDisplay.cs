@@ -16,10 +16,13 @@ public class HighScoreDisplay : MonoBehaviour {
     private SaveManager.MaxScores maxScores;
 
     public GameObject scoreComboBox; //hide the score/combo stuff when this pops up
+    public GameObject pauseButton;
+
 
     private void OnEnable()
     {
         scoreComboBox.SetActive(false);
+        pauseButton.SetActive(false);
         maxScores = SaveManager.GetMaxScores();
 
         savedScore.text = "High Score\nKrill: " + maxScores.score + "\nCombo: " + maxScores.combo;

@@ -35,8 +35,8 @@ public class LargeEnemy : MonoBehaviour
 
         transform.LookAt(playerTrans.position); //look at the player
         rb.velocity = transform.forward * speed;
-        Debug.Log("magnitude " + playerRb.velocity.magnitude);
-        Debug.Log("normalized " + rb.velocity.normalized);
+       // Debug.Log("magnitude " + playerRb.velocity.magnitude);
+       // Debug.Log("normalized " + rb.velocity.normalized);
         //if you're going slower than the player than set your speed to the player's speed
         if (rb.velocity.magnitude < playerRb.velocity.magnitude)
             rb.velocity = new Vector3(playerRb.velocity.x, rb.velocity.y, 0);
