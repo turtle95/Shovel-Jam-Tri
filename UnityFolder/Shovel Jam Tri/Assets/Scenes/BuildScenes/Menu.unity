@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 4
+  m_AmbientIntensity: 6
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
@@ -2406,7 +2406,7 @@ Prefab:
     - target: {fileID: 2300000, guid: ec3b6717847cee842a050fde1c3457fc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5ae5e78797e147c479b0c60b193915b6, type: 2}
+      objectReference: {fileID: 2100000, guid: 0dc091136b6d08647825c270649580ef, type: 2}
     - target: {fileID: 100000, guid: ec3b6717847cee842a050fde1c3457fc, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -3433,6 +3433,7 @@ MonoBehaviour:
   - {fileID: 522329069}
   innerGlass: {fileID: 1010841637}
   paintScript: {fileID: 1401866901}
+  hsRend: {fileID: 8400000, guid: 95890c8782abf23499c41d2254d82a33, type: 2}
   playButton: 0
   pressSound: {fileID: 915624856}
   cam: {fileID: 0}
@@ -5909,6 +5910,7 @@ MonoBehaviour:
   - {fileID: 72442835}
   innerGlass: {fileID: 1010841637}
   paintScript: {fileID: 1401866901}
+  hsRend: {fileID: 0}
   playButton: 1
   pressSound: {fileID: 915624856}
   cam: {fileID: 1051991960}
@@ -6046,6 +6048,7 @@ MonoBehaviour:
   - {fileID: 650442984}
   innerGlass: {fileID: 1010841637}
   paintScript: {fileID: 1401866901}
+  hsRend: {fileID: 8400000, guid: 95890c8782abf23499c41d2254d82a33, type: 2}
   playButton: 0
   pressSound: {fileID: 915624856}
   cam: {fileID: 0}

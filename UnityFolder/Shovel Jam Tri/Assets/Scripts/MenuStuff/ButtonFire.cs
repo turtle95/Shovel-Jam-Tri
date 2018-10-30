@@ -16,6 +16,8 @@ public class ButtonFire : MonoBehaviour {
 
     
     public TexturePainterCopy paintScript;
+    public RenderTexture hsRend;
+
 
     public bool playButton = false; //bool to tell if this button should load the next scene
     public AudioSource pressSound;
@@ -34,6 +36,15 @@ public class ButtonFire : MonoBehaviour {
     public float flySpeed = 10.0f;
     
     public float rotSpeed = 10.0f;
+
+
+    private void Start()
+    {
+        if (!playButton)
+        {
+            ClearHighScore();
+        }
+    }
 
     private void Update()
     {
@@ -64,8 +75,8 @@ public class ButtonFire : MonoBehaviour {
         }
         else
         {
-            paintScript.ClearTexture(); 
-
+            paintScript.ClearTexture();
+            ClearHighScore();
         }
 
         innerGlass.SetActive(false);
@@ -105,6 +116,12 @@ public class ButtonFire : MonoBehaviour {
         {
             yield return null;
         }
+    }
+
+
+    void ClearHighScore()
+    {
+        hsRend.Release();
     }
 
 }
