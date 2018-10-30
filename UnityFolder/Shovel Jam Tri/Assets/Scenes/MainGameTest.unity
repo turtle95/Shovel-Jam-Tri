@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &170797741
 GameObject:
@@ -293,7 +293,7 @@ Transform:
   - {fileID: 368237342}
   - {fileID: 1914768216}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368237341
 GameObject:
@@ -676,8 +676,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 3.9, y: 3.411, z: 5.39}
+  m_LocalRotation: {x: -0.032120295, y: -0.38495356, z: 0.013406004, w: -0.9222794}
+  m_LocalPosition: {x: -28.784628, y: -24.201626, z: -86.30354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1051,7 +1051,7 @@ Transform:
   m_Children:
   - {fileID: 1359112988}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1645819602
 GameObject:
@@ -1145,6 +1145,67 @@ Transform:
   m_Father: {fileID: 1234953044}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1733531159
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -26.270226
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -24.039791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -83.5833
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.40754694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9131842
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594645308678372, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391372430618520, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+      propertyPath: m_Name
+      value: MagicalPlanetREDUX
+      objectReference: {fileID: 0}
+    - target: {fileID: 23581542281556884, guid: bdc485e3f724af54eb877d3c4894bd58,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 274409241786b2b4f80483e25fc59a66, type: 2}
+    - target: {fileID: 23266297022497132, guid: bdc485e3f724af54eb877d3c4894bd58,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2aeb25f837d7e82488601fe69f8bb649, type: 2}
+    - target: {fileID: 23609084732097390, guid: bdc485e3f724af54eb877d3c4894bd58,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8512052e7c6bb634e9c8b863cada50ba, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdc485e3f724af54eb877d3c4894bd58, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1824231737
 Prefab:
   m_ObjectHideFlags: 0
@@ -1182,7 +1243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e5c2a5132e315944480c66abd793ca61, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: e5c2a5132e315944480c66abd793ca61, type: 3}
       propertyPath: m_Materials.Array.data[0]
