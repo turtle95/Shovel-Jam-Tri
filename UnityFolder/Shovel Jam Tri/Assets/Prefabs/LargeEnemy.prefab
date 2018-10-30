@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 4307909826552978}
   - component: {fileID: 114268256209253084}
   - component: {fileID: 54610420332577472}
+  - component: {fileID: 114640820839663140}
   m_Layer: 11
   m_Name: LargeEnemy
   m_TagString: LargeEnemy
@@ -330,10 +331,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1158363599204130, guid: 1a58e11e442b8084283e5a2e194b4718, type: 2}
-  speed: 5
   cannon: {fileID: 4696667901774152}
   player: {fileID: 0}
   explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
+--- !u!114 &114640820839663140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235117344329408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a4d1b2fa1d294bb3ddeca1f3f1598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: -8
+  zOffset: 0
+  target: {fileID: 0}
+  smoothSpeed: 2
 --- !u!137 &137411003472027014
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

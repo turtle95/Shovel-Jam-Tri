@@ -99,7 +99,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Skybox2:
-        m_Texture: {fileID: 8900000, guid: a10a9a09e3ed6f24dbff7169ff93df66, type: 3}
+        m_Texture: {fileID: 8900000, guid: fa2edfba62679284db72e4851917499d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
@@ -111,7 +111,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blend: -0.021126548
+    - _Blend: 1.0156032
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1

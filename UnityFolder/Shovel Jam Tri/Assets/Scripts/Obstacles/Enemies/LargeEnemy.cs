@@ -6,14 +6,18 @@ public class LargeEnemy : MonoBehaviour
 {
 
     public GameObject bullet;
-    public float speed = 2;
+    float speed = 2;
     public Transform cannon;
     public GameObject player;
     public GameObject explosion;
-    
 
+
+    int maxDist = 5;
+    int minDist = 4;
     Transform playerTrans;
     Rigidbody playerRb;
+    Transform target;
+
     float randNum = 0;
     Rigidbody rb;
 
@@ -23,9 +27,11 @@ public class LargeEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("LargeEnemyTarget").GetComponent<Transform>(); //this is what you will add force towards
         playerTrans = player.GetComponent<Transform>();
         playerRb = player.GetComponent<Rigidbody>();
-        
+       // rb.velocity = transform.forward * speed;
+       // rb.velocity = new Vector3(playerRb.velocity.x, rb.velocity.y, 0);
         StartCoroutine(ShootStuff());
     }
 
@@ -33,14 +39,38 @@ public class LargeEnemy : MonoBehaviour
     void Update()
     {
 
-        transform.LookAt(playerTrans.position); //look at the player
-        rb.velocity = transform.forward * speed;
-       // Debug.Log("magnitude " + playerRb.velocity.magnitude);
-       // Debug.Log("normalized " + rb.velocity.normalized);
-        //if you're going slower than the player than set your speed to the player's speed
-        if (rb.velocity.magnitude < playerRb.velocity.magnitude)
-            rb.velocity = new Vector3(playerRb.velocity.x, rb.velocity.y, 0);
+        
+        
 
+        transform.LookAt(playerTrans.position); //look at the player
+                                                // rb.velocity = transform.forward * speed;
+                                                // Debug.Log("magnitude " + playerRb.velocity.magnitude);
+                                                // Debug.Log("normalized " + rb.velocity.normalized);
+                                                //if you're going slower than the player than set your speed to the player's speed
+        //if (rb.velocity.magnitude < playerRb.velocity.magnitude)
+        //    rb.velocity = new Vector3(playerRb.velocity.x, rb.velocity.y, 0);
+        // float dist =  Vector3.Distance(transform.position, target.position);
+
+        //if(dist > maxDist)
+        //{
+        //    rb.velocity = playerRb.velocity * 1.5f;
+        //} else if (playerRb.velocity.magnitude > 0)
+        //{
+        //    rb.velocity = playerRb.velocity;
+        //}
+
+        //if (Vector3.Distance(transform.position, target.position) > maxDist)
+        //{
+        //    rb.velocity = transform.forward * speed * 8;
+        //}
+        //else if (Vector3.Distance(transform.position, target.position) < minDist)
+        //{
+        //    rb.velocity = -transform.forward * speed * 8;
+        //} else
+        //{
+        //    rb.velocity = playerRb.velocity;
+        //}
+        //Debug.Log(dist + " Distance");
     }
 
     //wait a random amount of time then shoot something

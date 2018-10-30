@@ -9,8 +9,14 @@ public class CameraFollow : MonoBehaviour {
     Vector3 targetPos, smoothedPos;
 	public float smoothSpeed = 0.125f;
 	Vector3 velocity = Vector3.one;
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         targetPos = new Vector3(target.position.x - xOffset, target.position.y, zOffset);
         
 		smoothedPos = Vector3.SmoothDamp (transform.position, targetPos, ref velocity, smoothSpeed);

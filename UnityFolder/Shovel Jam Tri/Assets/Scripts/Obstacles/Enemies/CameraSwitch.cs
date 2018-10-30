@@ -29,7 +29,7 @@ public class CameraSwitch : MonoBehaviour {
                 if (currentTime <= camMoveTime)
                 {
                     currentTime += Time.deltaTime / camMoveTime;
-                    Debug.Log("Current Time " + currentTime);
+                    //Debug.Log("Current Time " + currentTime);
                     camScript.xOffset = Mathf.Lerp(7f, -3f, currentTime);
                 }
                 else
