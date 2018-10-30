@@ -99,22 +99,43 @@ public class ObstacleSpawner : MonoBehaviour {
         }
 
 
-
-        //remove stuff if it is behind and far enough from player
-        for (int i = spawnedObjects.Count - 1; i >= 0; i--)
+        if (!backgroundSpawner)
         {
-            var objTransform = spawnedObjects[i];
-            if (objTransform == null)
+            //remove stuff if it is behind and far enough from player
+            for (int i = spawnedObjects.Count - 1; i >= 0; i--)
             {
-                spawnedObjects.RemoveAt(i);
-                continue;
-            }
+                var objTransform = spawnedObjects[i];
+                if (objTransform == null)
+                {
+                    spawnedObjects.RemoveAt(i);
+                    continue;
+                }
 
-            if (objTransform.position.x > player.position.x
-            && Mathf.Abs(objTransform.position.x - player.position.x) > 50f)
+                if (objTransform.position.x > player.position.x
+                && Mathf.Abs(objTransform.position.x - player.position.x) > 50f)
+                {
+                    Destroy(objTransform.gameObject);
+                    spawnedObjects.RemoveAt(i);
+                }
+            }
+        } else
+        {
+            //remove stuff if it is behind and far enough from player
+            for (int i = spawnedObjects.Count - 1; i >= 0; i--)
             {
-                Destroy(objTransform.gameObject);
-                spawnedObjects.RemoveAt(i);
+                var objTransform = spawnedObjects[i];
+                if (objTransform == null)
+                {
+                    spawnedObjects.RemoveAt(i);
+                    continue;
+                }
+
+                if (objTransform.position.x > player.position.x
+                && Mathf.Abs(objTransform.position.x - player.position.x) > 500f)
+                {
+                    Destroy(objTransform.gameObject);
+                    spawnedObjects.RemoveAt(i);
+                }
             }
         }
     }
@@ -142,7 +163,7 @@ public class ObstacleSpawner : MonoBehaviour {
         {
             //if using the background spawner then only spawn from one of the spawnpoints
             if (backgroundSpawner)
-                i = Random.Range(0, 2);
+                i = Random.Range(0, 6);
             
             //sets the spawn position to either the top, right, or bottom spawner, runs through all three for regular obstacle spawns 
             switch (i)
@@ -158,6 +179,9 @@ public class ObstacleSpawner : MonoBehaviour {
                     spawnPos = new Vector3(chosenSpawner.x + randNum, chosenSpawner.y, chosenSpawner.z);
                     break;
                 case 2:
+                case 3:
+                case 4:
+                case 5:
                     chosenSpawner = rightScreen.position;
                     randNum = Random.Range(-heightRange, heightRange);
                     spawnPos = new Vector3(chosenSpawner.x, chosenSpawner.y + randNum, chosenSpawner.z);

@@ -27,6 +27,7 @@ public class ButtonMain : MonoBehaviour {
                 {
                     if (hit.collider.gameObject.CompareTag("Play"))
                     {
+                        SaveManager.instance.maxScores.viewedTutorial = true;
                         play.Pressed();
 
                     }
