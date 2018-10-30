@@ -9,23 +9,34 @@ public class ObstacleCollision : MonoBehaviour
 
     public GameObject explosion;
 
-    // Update is called once per frame
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.tag == "Player")
+        GameObject obj = other.gameObject;
+        if (obj.CompareTag("Player"))
         {
-            Health healthComp = collision.gameObject.GetComponent<Health>();
-            healthComp.TakeDamage(_damage, true);
+            Score score = obj.GetComponent<Score>();
+            if (score) {
+                score.ResetCombo();
+            }
 
-            Rigidbody playerRigid = collision.gameObject.GetComponent<Rigidbody>();
-            playerRigid.velocity = Vector3.zero;
+            Health healthComp = obj.GetComponent<Health>();
+            if (healthComp) {
+                healthComp.TakeDamage(_damage, true);
+            }
 
-            Transform playerT = collision.gameObject.GetComponent<Transform>();
-            playerT.position = new Vector3(playerT.position.x, playerT.position.y, 0);
+            Rigidbody playerRigid = obj.GetComponent<Rigidbody>();
+            if (playerRigid) {
+                playerRigid.velocity = Vector3.zero;
+            }
 
-            collision.gameObject.BroadcastMessage("ResetCombo");
+            Transform playerT = obj.GetComponent<Transform>();
+            if (playerT) {
+                playerT.position = new Vector3(playerT.position.x, playerT.position.y, 0);
+            }
 
-            Instantiate(explosion, transform.position, transform.rotation);
+            if (explosion) {
+                Instantiate(explosion, transform.position, transform.rotation);
+            }
 
             Destroy(gameObject);
         }

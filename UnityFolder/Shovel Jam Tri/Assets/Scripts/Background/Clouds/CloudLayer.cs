@@ -18,6 +18,13 @@ public class CloudLayer : MonoBehaviour {
 		_myTransform = GetComponent<Transform>();
 		_renderer = GetComponent<MeshRenderer>();
 		_lastPosition = _myTransform.position;
+		ScaleToScreen();
+
+	}
+
+	private void ScaleToScreen() {
+		// Orig scale: 1920x1080
+		Vector2 ratio = new Vector2(Screen.width / 1080.0f, Screen.height / 1920.0f);
 
 	}
 	
