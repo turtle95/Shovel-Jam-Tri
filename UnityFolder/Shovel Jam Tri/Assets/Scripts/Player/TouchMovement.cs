@@ -106,6 +106,12 @@ public class TouchMovement : MonoBehaviour {
             transform.rotation = Quaternion.LookRotation(rb.velocity);
             targetObj.SetActive(false);
         }
+
+        //if you're going backwards then turn around
+        if(rb.velocity.x > 0)
+        {
+            rb.velocity = transform.forward * speed;
+        }
     }
 
     //IEnumerator Dash()
