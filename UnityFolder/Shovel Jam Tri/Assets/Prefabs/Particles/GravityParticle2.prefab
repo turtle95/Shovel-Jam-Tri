@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198790793379825384}
   - component: {fileID: 199355963051733966}
   m_Layer: 0
-  m_Name: GravityParticle1
+  m_Name: GravityParticle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
