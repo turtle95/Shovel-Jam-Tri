@@ -6024,7 +6024,7 @@ MonoBehaviour:
   fadeScript: {fileID: 1624184957}
   camScript: {fileID: 237974874}
   minDist: 800
-  maxDist: 1200
+  maxDist: 1000
   area: -1
 --- !u!114 &237974873
 MonoBehaviour:
@@ -61535,7 +61535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1388361186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77889,7 +77889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1919014006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -78952,19 +78952,19 @@ MonoBehaviour:
   - obstaclesToSpawn:
     - obstacle: {fileID: 1233916593899014, guid: 6f6ca260f84ec1f4a914bd6e851184b8,
         type: 2}
-      spawnRate: 20
+      spawnRate: 17
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
         type: 2}
-      spawnRate: 30
+      spawnRate: 10
     - obstacle: {fileID: 1429013795852094, guid: a1e58e58d9d2d754692c749961cb58bd,
         type: 2}
-      spawnRate: 15
+      spawnRate: 13
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
         type: 2}
-      spawnRate: 20
+      spawnRate: 30
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
-      spawnRate: 15
+      spawnRate: 20
     - obstacle: {fileID: 1915460918701840, guid: 43deafad5913130479d95c2dfd00c29c,
         type: 2}
       spawnRate: 10
@@ -79003,17 +79003,17 @@ MonoBehaviour:
       spawnRate: 30
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
-      spawnRate: 40
+      spawnRate: 30
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
         type: 2}
       spawnRate: 2
   - obstaclesToSpawn:
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
-      spawnRate: 30
+      spawnRate: 35
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
         type: 2}
-      spawnRate: 5
+      spawnRate: 15
     - obstacle: {fileID: 1429013795852094, guid: a1e58e58d9d2d754692c749961cb58bd,
         type: 2}
       spawnRate: 5
@@ -79022,11 +79022,11 @@ MonoBehaviour:
       spawnRate: 30
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
         type: 2}
-      spawnRate: 30
+      spawnRate: 15
   - obstaclesToSpawn:
     - obstacle: {fileID: 1735759581281838, guid: d154888e0d946f540ac64320ad0b48a2,
         type: 2}
-      spawnRate: 30
+      spawnRate: 40
     - obstacle: {fileID: 1745954723407640, guid: 7caa8229061fbff48912985812147cd5,
         type: 2}
       spawnRate: 10
@@ -79038,7 +79038,7 @@ MonoBehaviour:
       spawnRate: 25
     - obstacle: {fileID: 1821017637098418, guid: b159458a597ce8848a6e945c6ab661b9,
         type: 2}
-      spawnRate: 25
+      spawnRate: 20
   topScreen: {fileID: 509093403}
   bottomScreen: {fileID: 1745412520}
   rightScreen: {fileID: 1828035338}
@@ -79047,8 +79047,8 @@ MonoBehaviour:
   area: 0
   curDist: 0
   goalDist: 5
-  maxDist: 13
-  minDist: 10
+  maxDist: 10
+  minDist: 8
   player: {fileID: 272641382}
   backgroundSpawner: 0
 --- !u!81 &2073064704

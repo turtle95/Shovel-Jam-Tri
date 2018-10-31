@@ -36,7 +36,7 @@ public class ButtonFire : MonoBehaviour {
     public float flySpeed = 10.0f;
     
     public float rotSpeed = 10.0f;
-
+    public GameObject titleRef;
 
     private void Start()
     {
@@ -61,6 +61,8 @@ public class ButtonFire : MonoBehaviour {
     //turns things on and off depending on which state is called
     public void Pressed()
     {
+        
+
         if (playButton)
         {
             //scene transition animations and whatnot
@@ -75,6 +77,7 @@ public class ButtonFire : MonoBehaviour {
         }
         else
         {
+            titleRef.SetActive(false);
             paintScript.ClearTexture();
             ClearHighScore();
         }
