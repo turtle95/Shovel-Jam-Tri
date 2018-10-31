@@ -8,6 +8,6 @@ public class RotateCamera : MonoBehaviour {
     public Rigidbody playerRb;
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(new Vector3(-playerRb.velocity.y, -playerRb.velocity.x, 0) * Time.deltaTime /5);	
+        transform.Rotate(new Vector3(-playerRb.velocity.y, -playerRb.velocity.x, 0) * Time.deltaTime /8);	
 	}
 }
