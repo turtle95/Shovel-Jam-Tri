@@ -29,20 +29,27 @@ public class SkyboxChanges : MonoBehaviour {
         {
             if (slotOne)
             {
-                if (blendValue < 1.01f)
-                    blendValue += Time.deltaTime;
-                else
+                blendValue += Time.deltaTime;
+
+                if (blendValue >= 1.0f) {
                     blending = false;
+                }
+
             }
             else
             {
-                if (blendValue > -0.01f)
-                    blendValue -= Time.deltaTime;
-                else
+                blendValue -= Time.deltaTime;
+
+                if (blendValue <= 0.0f) {
                     blending = false;
+                }
+
             }
 
+            blendValue = Mathf.Clamp(blendValue, 0.0f, 1.0f);
             RenderSettings.skybox.SetFloat("_Blend", blendValue);
+            CloudLayer.instance.SetSkyboxBlend(blendValue);
+
         }
 	}
 
@@ -55,7 +62,8 @@ public class SkyboxChanges : MonoBehaviour {
         {
             RenderSettings.skybox.SetTexture("_Skybox1", skyboxes[area]);
             slotOne = false;
-        } else
+        }
+        else
         {
             RenderSettings.skybox.SetTexture("_Skybox2", skyboxes[area]);
             slotOne = true;
