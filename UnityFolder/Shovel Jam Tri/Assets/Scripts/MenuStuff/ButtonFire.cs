@@ -40,10 +40,10 @@ public class ButtonFire : MonoBehaviour {
 
     private void Start()
     {
-        if (!playButton)
-        {
-            ClearHighScore();
-        }
+        //if (!playButton)
+        //{
+        //    ClearHighScore();
+        //}
     }
 
     private void Update()

@@ -536,7 +536,7 @@ MeshCollider:
   m_GameObject: {fileID: 72442835}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -8850,6 +8850,20 @@ Prefab:
         type: 2}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20941385703143068, guid: 0db6b891c0867a24ba0988fd8c96369f,
+        type: 2}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 1dd5c06a4ccfb6e4c8067820f3f0e29b, type: 2}
+    - target: {fileID: 1447772223893032, guid: 0db6b891c0867a24ba0988fd8c96369f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20941385703143068, guid: 0db6b891c0867a24ba0988fd8c96369f,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0db6b891c0867a24ba0988fd8c96369f, type: 2}
