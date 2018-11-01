@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TouchMovement : MonoBehaviour {
 
+    public bool phoneBuild = true;
+
+
     Vector3 touchPoint = new Vector3(5, 0, 0); //the spot where you touched
     public Camera cam; //reference to the camera
     public float speed = 5; //the normal speed you move at
@@ -36,36 +39,66 @@ public class TouchMovement : MonoBehaviour {
         w = Screen.width ; //finds the height and width of the screen and halves it
         h = Screen.height ;
       
-        Touch[] myTouches = Input.touches; //gets an array of all the touches going on
-        
-        touchPoint = cam.ScreenToWorldPoint(new Vector3(w, h, 5)); //initializes the touchPoint to being straight in front of the player... probably don't need this anymore
-
-        //
-        for (int i = 0; i < Input.touchCount; i++)
+       
+        //switches between mouse and touch controls
+        if (phoneBuild)
         {
-            if (myTouches[i].phase != TouchPhase.Ended ) //stores the position of the touch
+            Touch[] myTouches = Input.touches; //gets an array of all the touches going on
+
+            
+
+            for (int i = 0; i < Input.touchCount; i++)
             {
-               
-                touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 5));
-               
+                if (myTouches[i].phase != TouchPhase.Ended) //stores the position of the touch
+                {
+
+                    touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 5));
+
+                    touching = true;
+                }
+                else
+                    touching = false;
+
+                if (myTouches[i].phase == TouchPhase.Began) //dash code
+                {
+                    if (rb.velocity.magnitude < maxSpeed / dashSpeed)
+                        rb.AddForce(transform.forward * dashSpeed * rb.velocity.magnitude, ForceMode.Impulse);
+                    else
+                        rb.velocity = (transform.forward * maxSpeed);
+                    dashParticles.Play();
+                    dashParticles2.Play();
+                    dashSound.Play();
+                }
+            }
+        }
+        else
+        {
+            touchPoint = cam.ScreenToWorldPoint(new Vector3(w, h, 5)); //initializes the touchPoint to being straight in front of the player... probably don't need this anymore
+
+            if (Input.GetMouseButton(0)) //stores the position of the touch
+            {
+                Debug.Log("Clicked");
+                touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5));
+
                 touching = true;
             }
             else
                 touching = false;
-            
-            if (myTouches[i].phase == TouchPhase.Began) //dash code
+
+            if (Input.GetMouseButtonDown(1)) //dash code
             {
-                //touching = true;
-                if (rb.velocity.magnitude < maxSpeed/dashSpeed)
-                    rb.AddForce(transform.forward * dashSpeed *rb.velocity.magnitude, ForceMode.Impulse);
+                if (rb.velocity.magnitude < maxSpeed / dashSpeed)
+                    rb.AddForce(transform.forward * dashSpeed * rb.velocity.magnitude, ForceMode.Impulse);
                 else
                     rb.velocity = (transform.forward * maxSpeed);
                 dashParticles.Play();
                 dashParticles2.Play();
                 dashSound.Play();
-                //rb.velocity = transform.forward * dashSpeed * Time.deltaTime;
             }
         }
+
+
+
         touchPoint.z = 0; //sets the z value of the position to 0
         target.position = touchPoint; //sets the target position to the touchPoint
         touchPoint = new Vector3(transform.position.x - 3, touchPoint.y, 0); //this makes it so that you get the same angle of movement no matter where you touch on the screen
@@ -83,11 +116,10 @@ public class TouchMovement : MonoBehaviour {
             rb.AddForce(transform.forward * speed);
         else
         {   //if you are above the speed limit then add force as normal 
-            rb.AddForce(transform.forward * speed);
-            //rb.AddForce(-(rb.velocity.normalized * (rb.velocity.magnitude - maxSpeed)), ForceMode.Impulse);
+            rb.AddForce(transform.forward * speed);           
         }
             
-            //rb.velocity = transform.forward * speed;
+
         if(transform.position.z  != 0)
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
@@ -101,8 +133,7 @@ public class TouchMovement : MonoBehaviour {
             targetObj.SetActive(true);
         }
         else
-        {
-            //transform.LookAt(rb.velocity);
+        {           
             transform.rotation = Quaternion.LookRotation(rb.velocity);
             targetObj.SetActive(false);
         }
@@ -113,13 +144,4 @@ public class TouchMovement : MonoBehaviour {
             rb.velocity = transform.forward * speed;
         }
     }
-
-    //IEnumerator Dash()
-    //{
-    //    dashing = true;
-    //    speed = 10;
-    //    yield return new WaitForSeconds(1f);
-    //    speed = 5;
-    //    dashing = false;
-    //}
 }
