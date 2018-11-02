@@ -25,8 +25,15 @@ public class TouchMovement : MonoBehaviour {
     public float maxSpeed = 10;
     public float maxRegSpeed = 5;
 
+    // For smooth rotation
+    private Quaternion wantRotation = Quaternion.identity;
+
 
     public AudioSource dashSound;
+
+    private void Awake() {
+        wantRotation = transform.rotation;
+    }
 
     private void Start()
     {
@@ -103,6 +110,7 @@ public class TouchMovement : MonoBehaviour {
         target.position = touchPoint; //sets the target position to the touchPoint
         touchPoint = new Vector3(transform.position.x - 3, touchPoint.y, 0); //this makes it so that you get the same angle of movement no matter where you touch on the screen
         Move();
+        SmoothRotation();
         
         //keep player at speed limit
         //should be safe here as all the changes in direction have been applied.
@@ -110,7 +118,7 @@ public class TouchMovement : MonoBehaviour {
             rb.velocity = rb.velocity.normalized * maxSpeed;
     }
 
-    void Move()
+    private void Move()
     {
         if (rb.velocity.magnitude < maxSpeed) //if rb's moving slower than 5, then add force
             rb.AddForce(transform.forward * speed);
@@ -126,22 +134,29 @@ public class TouchMovement : MonoBehaviour {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
 
-        if (touching == true)
-        {
-            //looks at the target position
-            transform.LookAt(touchPoint);
-            targetObj.SetActive(true);
-        }
-        else
-        {           
-            transform.rotation = Quaternion.LookRotation(rb.velocity);
-            targetObj.SetActive(false);
-        }
-
         //if you're going backwards then turn around
         if(rb.velocity.x > 0)
         {
             rb.velocity = transform.forward * speed;
         }
     }
+
+    private void SmoothRotation() {
+        if (touching == true)
+        {
+            //looks at the target position
+            wantRotation = Quaternion.LookRotation(touchPoint - transform.position);
+            targetObj.SetActive(true);
+        }
+        else
+        {           
+            wantRotation = Quaternion.LookRotation(rb.velocity);
+            targetObj.SetActive(false);
+        }
+
+        // Lerp towards target
+        transform.rotation = Quaternion.Slerp(transform.rotation, wantRotation, 18.0f * Time.deltaTime);
+
+    }
+
 }
