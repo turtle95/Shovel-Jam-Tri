@@ -75,6 +75,9 @@ public class TouchMovement : MonoBehaviour {
                     dashParticles.Play();
                     dashParticles2.Play();
                     dashSound.Play();
+
+                    CameraFollow.instance.Screenshake(0.2f);
+
                 }
             }
         }
@@ -101,6 +104,8 @@ public class TouchMovement : MonoBehaviour {
                 dashParticles.Play();
                 dashParticles2.Play();
                 dashSound.Play();
+
+                CameraFollow.instance.Screenshake(0.2f);
             }
         }
 
@@ -128,7 +133,7 @@ public class TouchMovement : MonoBehaviour {
         }
             
 
-        if(transform.position.z  != 0)
+        if(transform.position.z != 0)
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
