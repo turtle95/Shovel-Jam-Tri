@@ -14,6 +14,9 @@ public class ObstacleCollision : MonoBehaviour
         GameObject obj = other.gameObject;
         if (obj.CompareTag("Player"))
         {
+            // Screenshake!
+            CameraFollow.instance.Screenshake(Random.Range(0.5f, 0.8f));
+
             Score score = obj.GetComponent<Score>();
             if (score) {
                 score.ResetCombo();

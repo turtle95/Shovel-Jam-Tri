@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag(target))
         {
+            CameraFollow.instance.Screenshake(0.3f);
+
             //maybe do damage?
             collision.gameObject.BroadcastMessage("ResetCombo");
             Destroy(this.gameObject);

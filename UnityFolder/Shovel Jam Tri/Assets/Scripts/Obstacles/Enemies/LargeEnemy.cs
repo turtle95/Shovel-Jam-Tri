@@ -97,6 +97,8 @@ public class LargeEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            CameraFollow.instance.Screenshake(1.0f);
+
             Health healthComp = collision.gameObject.GetComponent<Health>();
             healthComp.TakeDamage(3, true);
         }
