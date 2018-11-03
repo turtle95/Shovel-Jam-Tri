@@ -126,7 +126,7 @@ public class TouchMovement : MonoBehaviour {
             dashParticles2.Play();
             dashSound.Play();
 
-            CameraFollow.instance.Screenshake(0.2f);
+            CameraFollow.instance.Screenshake(0.075f);
 
         }
         

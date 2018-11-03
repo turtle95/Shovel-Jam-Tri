@@ -62,8 +62,8 @@ public class Score : MonoBehaviour {
                 }
 
                 // Screenshake increases with higher combos
-                float screenshakeIntensity = Mathf.Clamp(0.075f + 0.035f * combo, 0.0f, 0.35f);
-                CameraFollow.instance.Screenshake(screenshakeIntensity);
+                //float screenshakeIntensity = Mathf.Clamp(0.075f + 0.035f * combo, 0.0f, 0.35f);
+                //CameraFollow.instance.Screenshake(screenshakeIntensity);
 
 
 
