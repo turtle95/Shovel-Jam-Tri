@@ -34,12 +34,39 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void GetHealed(int healing) {
+        SetHealth(health + healing);
+        
+    }
+
 	public void TakeDamage(int damage, bool playSounds)
     {
-        health -= damage;
+        SetHealth(health - damage);
 
-        if (health > maxHealth)
+        //TODO proper player dead handling
+        if (health <= 0)
+        {
+          //  Debug.Log("player died.");
+            deathSoundSource.Play();
+            
+            scoreMenu.SetActive(true);
+            gameObject.SetActive(false);
+        }
+		else if(playSounds)
+        {
+            damageSound.Play();
+            damageSound2.Play(); 
+          //  Debug.Log("Current Health = " + health);
+        }
+
+    }
+
+    private void SetHealth(int newHealth) {
+        health = newHealth;
+
+        if (health > maxHealth) {
             health = maxHealth;
+        }
 
         if (health == 3)
         {
@@ -81,21 +108,6 @@ public class Health : MonoBehaviour
             }
         }
 
-        
-        //TODO proper player dead handling
-        if (health <= 0)
-        {
-          //  Debug.Log("player died.");
-            deathSoundSource.Play();
-            
-            scoreMenu.SetActive(true);
-            gameObject.SetActive(false);
-        }
-		else if(playSounds)
-        {
-            damageSound.Play();
-            damageSound2.Play(); 
-          //  Debug.Log("Current Health = " + health);
-        }
     }
+
 }

@@ -47,7 +47,7 @@ public class Score : MonoBehaviour {
                 if (collect.fishOfLife)
                 {
                     effectText.text = "X" + combo.ToString();
-                    hScript.TakeDamage(-1, false);
+                    hScript.GetHealed(1);
                 }
                 else
                 {
@@ -55,9 +55,15 @@ public class Score : MonoBehaviour {
                     effectText.text = adjustedCombo.ToString();
                     score += adjustedCombo; //give points plus combo multiplier
                     scoreCounter.text = "" + score.ToString();
-                    if (score > maxScores.score)
+                    if (score > maxScores.score) {
                         maxScores.score = score;
+                    }
+
                 }
+
+                // Screenshake increases with higher combos
+                float screenshakeIntensity = Mathf.Clamp(0.075f + 0.035f * combo, 0.0f, 0.35f);
+                CameraFollow.instance.Screenshake(screenshakeIntensity);
 
 
 
@@ -67,15 +73,18 @@ public class Score : MonoBehaviour {
                 comboCounter.text = "" + combo.ToString();
 
 
-                if (combo > maxScores.combo)
+                if (combo > maxScores.combo) {
                     maxScores.combo = combo;
+                }
 
 
                 collectNoise.Play();
                 Instantiate(gameFeel, other.gameObject.transform.position, other.gameObject.transform.rotation);
+
             }
                
             Destroy(other.gameObject); //kill the krill :)
+            
         }
     }
 
