@@ -12,6 +12,7 @@ public class TouchMovement : MonoBehaviour {
     public Camera cam; //reference to the camera
     public float speed = 5; //the normal speed you move at
     public float dashSpeed = 600;
+    public float timeBetweenDashes = 0.75f;
     Transform target; //a gameObject for the player to look at
     public GameObject targetObj;
     int w, h; //the width and height of the screen
@@ -24,6 +25,8 @@ public class TouchMovement : MonoBehaviour {
 
     public float maxSpeed = 10;
     public float maxRegSpeed = 5;
+
+    private float sinceDash = 100.0f;
 
     // For smooth rotation
     private Quaternion wantRotation = Quaternion.identity;
@@ -40,6 +43,9 @@ public class TouchMovement : MonoBehaviour {
         target = targetObj.GetComponent<Transform>();
     }
 
+    private void FixedUpdate() {
+        sinceDash += Time.fixedDeltaTime;
+    }
 
     void Update () {
 
@@ -68,16 +74,7 @@ public class TouchMovement : MonoBehaviour {
 
                 if (myTouches[i].phase == TouchPhase.Began) //dash code
                 {
-                    if (rb.velocity.magnitude < maxSpeed / dashSpeed)
-                        rb.AddForce(transform.forward * dashSpeed * rb.velocity.magnitude, ForceMode.Impulse);
-                    else
-                        rb.velocity = (transform.forward * maxSpeed);
-                    dashParticles.Play();
-                    dashParticles2.Play();
-                    dashSound.Play();
-
-                    CameraFollow.instance.Screenshake(0.2f);
-
+                    AttemptDash();
                 }
             }
         }
@@ -85,7 +82,7 @@ public class TouchMovement : MonoBehaviour {
         {
             touchPoint = cam.ScreenToWorldPoint(new Vector3(w, h, 5)); //initializes the touchPoint to being straight in front of the player... probably don't need this anymore
 
-            if (Input.GetMouseButton(0)) //stores the position of the touch
+            if (Input.GetMouseButton(0) || Input.GetMouseButton(1)) //stores the position of the touch
             {
                 Debug.Log("Clicked");
                 touchPoint = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5));
@@ -97,15 +94,7 @@ public class TouchMovement : MonoBehaviour {
 
             if (Input.GetMouseButtonDown(1)) //dash code
             {
-                if (rb.velocity.magnitude < maxSpeed / dashSpeed)
-                    rb.AddForce(transform.forward * dashSpeed * rb.velocity.magnitude, ForceMode.Impulse);
-                else
-                    rb.velocity = (transform.forward * maxSpeed);
-                dashParticles.Play();
-                dashParticles2.Play();
-                dashSound.Play();
-
-                CameraFollow.instance.Screenshake(0.2f);
+                AttemptDash();
             }
         }
 
@@ -121,6 +110,26 @@ public class TouchMovement : MonoBehaviour {
         //should be safe here as all the changes in direction have been applied.
         if (rb.velocity.magnitude > maxSpeed)
             rb.velocity = rb.velocity.normalized * maxSpeed;
+    }
+
+    private void AttemptDash() {
+        // Only dash if haven't dashed too recently (quickly clicking right mouse button or tapping screen)
+        if (sinceDash > timeBetweenDashes) {
+
+            sinceDash = 0.0f;
+
+            if (rb.velocity.magnitude < maxSpeed / dashSpeed)
+                rb.AddForce(transform.forward * dashSpeed * rb.velocity.magnitude, ForceMode.Impulse);
+            else
+                rb.velocity = (transform.forward * maxSpeed);
+            dashParticles.Play();
+            dashParticles2.Play();
+            dashSound.Play();
+
+            CameraFollow.instance.Screenshake(0.2f);
+
+        }
+        
     }
 
     private void Move()
