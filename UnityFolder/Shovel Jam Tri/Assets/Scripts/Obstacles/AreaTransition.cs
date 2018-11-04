@@ -21,9 +21,10 @@ public class AreaTransition : MonoBehaviour {
 
     SkyboxChanges skyChangeScript; //script to fade between skyboxes
 
-    float goalDist = 0f; //distance at which the area will change
+    public float goalDist = 0f; //distance at which the area will change
+    public float curDist = 0;
+    Vector3 lastSpot = Vector3.zero;
 
-   
     public int area = -1;
 
 	private SaveManager.MaxScores maxScores; 
@@ -48,8 +49,11 @@ public class AreaTransition : MonoBehaviour {
 
     void Update()
     {
+        //calculate your own curDist with your own lastSpot, spawnScript was resetting stuff
+        curDist = Vector3.Distance(spawnScript.player.position, lastSpot);
 
-        if (spawnScript.curDist < goalDist)
+
+        if (curDist > goalDist)
         {
 
             SwitchAreas();
@@ -58,18 +62,19 @@ public class AreaTransition : MonoBehaviour {
     }
     void SwitchAreas()
     {
-        Debug.Log("Random areas bool = " + maxScores.randAreas);
+
+        //Debug.Log("Random areas bool = " + maxScores.randAreas);
         //switches randomly between the areas
         if (maxScores.randAreas)
-            {
-                area = Random.Range(0, 7);
-            }
-            else
-            { //switches between the areas in order
-                area++;
-                if (area > 7)
-                    maxScores.randAreas = true;
-            }
+        {
+             area = Random.Range(0, 7);
+        }
+        else
+        { //switches between the areas in order
+              area++;
+              if (area > 7)
+                  maxScores.randAreas = true;
+        }
 
 
             fadeScript.FadeAudio(area); //fades audio based on area
@@ -78,7 +83,9 @@ public class AreaTransition : MonoBehaviour {
             skyChangeScript.SwitchSkybox(area); //fades between skyboxes
             camScript.SwitchArea(area);
 
-            goalDist = spawnScript.curDist - Random.Range(minDist, maxDist); //calculates a new distance goal
+
+            lastSpot = spawnScript.player.position; //resets the spot to calculate travel distance from
+            goalDist = Random.Range(minDist, maxDist); //calculates a new distance goal
 
             //8 stages. at each stage decrease the distToSpawn so we see more obstacles
             //minimum is 3 ... for now.
