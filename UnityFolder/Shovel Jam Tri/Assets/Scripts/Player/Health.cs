@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 
     
     public GameObject scoreMenu;
+    public GameObject scoreMenup2;
     public AudioSource deathSoundSource;
     public AudioSource damageSound;
     public AudioSource damageSound2;
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour
             deathSoundSource.Play();
             
             scoreMenu.SetActive(true);
+            scoreMenup2.SetActive(true);
             gameObject.SetActive(false);
         }
 		else if(playSounds)

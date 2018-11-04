@@ -12,6 +12,9 @@ TagManager:
   - Tutorial
   - LargeEnemy
   - LargeEnemyTarget
+  - Restart
+  - Menu
+  - SkipTutorial
   layers:
   - Default
   - TransparentFX
