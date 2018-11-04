@@ -20200,6 +20200,7 @@ MonoBehaviour:
   - {fileID: 1298033831}
   - {fileID: 460031700}
   - {fileID: 2125543006}
+  - {fileID: 231626772}
   cam: {fileID: 2073064701}
   obsSpawnScript: {fileID: 2073064703}
   pauseUI: {fileID: 183495638}
@@ -123265,7 +123266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1388361186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123349,7 +123350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
