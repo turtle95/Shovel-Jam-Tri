@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  explosion: {fileID: 1887991275556800, guid: 96c03d913ebc1aa45b7c8c9174c36f6f, type: 2}
+  explosion: {fileID: 1245292908330038, guid: 71b9faafd5bf6d747a611489f7c837fc, type: 2}
 --- !u!114 &114501987637941528
 MonoBehaviour:
   m_ObjectHideFlags: 1
